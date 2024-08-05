@@ -1,0 +1,39 @@
+//Header
+
+header {
+    background-color: #fff;
+    padding: 20px 0;
+  
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .logo img {
+      height: 50px;
+    }
+  
+    .main-nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+  
+    .header-items {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+  
+    @media (max-width: $breakpoint-mobile) {
+      .main-nav {
+        display: none;
+      }
+  
+      .btn-hamburger {
+        display: block;
+      }
+    }
+  }
+  
