@@ -1,20 +1,22 @@
 //Header
 
+
+
 header {
-  display: block;
-  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 168px;
+  width: 640px;
   background-color: $header-container;
   padding: 10px 0;
+  font-size: 16px;
 
   .logo img {
     max-height: 50px;
   }
 
   .header-items {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-
+   
     .btn {
       background-color: $accent-color;
       color: $text-color;
@@ -29,8 +31,9 @@ header {
     }
 
     .search-form {
-      display: flex;
-      align-items: center;
+      height: 47px;
+      width: 100%;
+      padding: 5px 40px 15px 5px;
 
       #search-input {
         padding: 5px;
@@ -50,7 +53,7 @@ header {
       display: flex;
     }
   }
-
+}
   .main-nav {
     ul {
       display: flex;
@@ -70,4 +73,3 @@ header {
       }
     }
   }
-}

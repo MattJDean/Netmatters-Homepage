@@ -6,7 +6,8 @@
         'abstracts/mixins';
 
 @import 'base/base',
-        'base/reset';
+        'base/reset',
+        'base/breakpoints';
 
 @import 'layout/header',
         'layout/main',
