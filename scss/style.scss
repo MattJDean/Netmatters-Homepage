@@ -1,13 +1,16 @@
 //Imports
-@import 'abstracts/colors',
-        'abstracts/typography',
-        'abstracts/media-query',
+@import 
         'abstracts/variables',
-        'abstracts/mixins';
+        'abstracts/mixins',
+        'abstracts/colors',
+        'abstracts/typography',
+        'abstracts/media-query';
+        
 
 @import 'base/base',
         'base/reset',
         'base/breakpoints';
+
 
 @import 'layout/header',
         'layout/main',
@@ -18,7 +21,6 @@
         'components/carousel';
 
 @import 'utilities/container';
-
 
 
 

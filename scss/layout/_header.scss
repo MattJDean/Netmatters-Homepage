@@ -1,75 +1,18 @@
 //Header
 
+.header-items {
+   width: 400px;
+   height: 70px;
+   display: flex;
+   flex-wrap: wrap; 
+   box-sizing: border-box; 
+   max-width: 100%;
+   border: 0; 
+   background-color: $header-container;
 
 
-header {
-  display: flex;
-  flex-direction: column;
-  height: 168px;
-  width: 640px;
-  background-color: $header-container;
-  padding: 10px 0;
-  font-size: 16px;
+   .logo {
+    width: auto;
+   } 
 
-  .logo img {
-    max-height: 50px;
-  }
-
-  .header-items {
-   
-    .btn {
-      background-color: $accent-color;
-      color: $text-color;
-      padding: 8px 16px;
-      margin: 0 10px;
-      text-decoration: none;
-      border-radius: 5px;
-
-      &:hover {
-        background-color: darken($accent-color, 10%);
-      }
-    }
-
-    .search-form {
-      height: 47px;
-      width: 100%;
-      padding: 5px 40px 15px 5px;
-
-      #search-input {
-        padding: 5px;
-        border: 1px solid $secondary-color;
-        border-radius: 5px;
-      }
-
-      #search-submit {
-        background: url('../images/search-icon.png') no-repeat center;
-        border: none;
-        width: 30px;
-        height: 30px;
-      }
-    }
-
-    .header-hamburger {
-      display: flex;
-    }
-  }
 }
-  .main-nav {
-    ul {
-      display: flex;
-      list-style-type: none;
-
-      li {
-        margin: 0 15px;
-
-        a {
-          text-decoration: none;
-          color: $text-color;
-
-          &:hover {
-            color: lighten($text-color, 20%);
-          }
-        }
-      }
-    }
-  }

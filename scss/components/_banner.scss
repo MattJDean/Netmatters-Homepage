@@ -1,68 +1,68 @@
-//Banner
+// //Banner
 
-// Banner
-.banner {
-    background: url('../images/banner.jpg') no-repeat center center;
-    background-size: cover;
-    height: 300px;
-    position: relative;
+// // Banner
+// .banner {
+//     background: url('../images/banner.jpg') no-repeat center center;
+//     background-size: cover;
+//     height: 300px;
+//     position: relative;
   
-    .banner-content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      color: $text-color;
+//     .banner-content {
+//       position: absolute;
+//       top: 50%;
+//       left: 50%;
+//       transform: translate(-50%, -50%);
+//       text-align: center;
+//       color: $text-color;
   
-      h1 {
-        font-size: 2.5rem;
-        margin-bottom: 10px;
-      }
+//       h1 {
+//         font-size: 2.5rem;
+//         margin-bottom: 10px;
+//       }
   
-      p {
-        font-size: 1.2rem;
-      }
+//       p {
+//         font-size: 1.2rem;
+//       }
   
-      .btn {
-        background-color: $accent-color;
-        color: $text-color;
-        padding: 10px 20px;
-        text-decoration: none;
-        border-radius: 5px;
+//       .btn {
+//         background-color: $accent-color;
+//         color: $text-color;
+//         padding: 10px 20px;
+//         text-decoration: none;
+//         border-radius: 5px;
   
-        &:hover {
-          background-color: darken($accent-color, 10%);
-        }
-      }
+//         &:hover {
+//           background-color: darken($accent-color, 10%);
+//         }
+//       }
   
-      .banner-list {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
+//       .banner-list {
+//         display: flex;
+//         justify-content: center;
+//         margin-top: 20px;
   
-        li {
-          margin: 0 15px;
-          text-align: left;
+//         li {
+//           margin: 0 15px;
+//           text-align: left;
           
-          h1 {
-            font-size: 1.5rem;
-          }
+//           h1 {
+//             font-size: 1.5rem;
+//           }
           
-          p {
-            font-size: 1rem;
-          }
+//           p {
+//             font-size: 1rem;
+//           }
           
-          .btn {
-            background: none;
-            color: $accent-color;
-            text-decoration: underline;
+//           .btn {
+//             background: none;
+//             color: $accent-color;
+//             text-decoration: underline;
   
-            &:hover {
-              color: darken($accent-color, 10%);
-            }
-          }
-        }
-      }
-    }
-  }
+//             &:hover {
+//               color: darken($accent-color, 10%);
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }

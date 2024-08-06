@@ -6,44 +6,34 @@
         padding: 0;
         box-sizing: border-box;
       }
-}
+      
+    }
 
 @mixin body {
-    display: block;
     font-family: $font-primary;
     font-weight: $normal;
     font-size: 1rem;
     letter-spacing: .4px;
-    color: $body-color;
-    background-color: $body-background;
+    color: #fff;
+    background-color: #fff;
     margin: 0;
   }
 
-// @mixin container {
-//     .container {
-//         overflow: hidden;
-//         position: relative;
-//         z-index: 10;
-//         display: block;
-//         box-sizing: border-box;
-//         width: 100%;
-//         max-width: 1200px;
-//         margin: 0 auto;
-//       }
-// }
-
-@mixin header {
-    width: 100%;
-    display: flex;
-    background-color: $header-fill;
-    font-family: $font-primary;
-    font-weight: $normal;
+@mixin container {
+  .container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px
 }
+}
+
 
 @mixin breakpoint-mobile {
         @media (min-width: #{$breakpoint-mobile}) and (max-width: #{$breakpoint-tablet - 1px}) {
           @content;
         }
+       
       }
 
 @mixin breakpoint-tablet {
