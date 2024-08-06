@@ -2,22 +2,15 @@
 
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  @include reset;
 }
 
 body {
-  font-family: $font-primary;
-  font-size: 1rem;
-  letter-spacing: .4px;
-  background-color: $body-default;
+  @include body;
 }
 
 .container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
+  @include container;
 }
   
   // Responsive layout for navigation

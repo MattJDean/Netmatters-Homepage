@@ -1,2 +1,40 @@
 // Mixins
 
+@mixin reset {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+}
+
+@mixin body {
+    display: block;
+    font-family: $font-primary;
+    font-weight: $normal;
+    font-size: 1rem;
+    letter-spacing: .4px;
+    color: $body-color;
+    background-color: $body-background;
+    margin: 0;
+  }
+
+@mixin container {
+    .container {
+        position: relative;
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+}
+
+@mixin header {
+    width: 100%;
+    display: block;
+    background-color: $header-fill;
+    font-family: $font-primary;
+    font-weight: $normal;
+}
+

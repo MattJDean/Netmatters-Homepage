@@ -1,9 +1,9 @@
 //Header
 
 header {
-  display: flex;
-  flex-direction: row;
-  background-color: $primary-color;
+  display: block;
+  box-sizing: border-box;
+  background-color: $header-container;
   padding: 10px 0;
 
   .logo img {
