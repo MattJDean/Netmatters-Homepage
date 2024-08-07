@@ -12,41 +12,43 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&family=Poppins:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
         <!--Stylesheet-->
+        <link rel="stylesheet" type="text/css" href="css/reset.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
 
     </head>
         
         <!--Body-->
         <body> 
-            <div class="container">
-            <!--Header-->
-                <header>
-                    <!--Header Items-->
-                    <div class="header-items">
-                        <!--Logo-->
-                        <a class="logo" href="#">
-                            <picture><img src="assets/assets/asset 50.png" alt="Netmatters Logo"></picture>
-                        </a>
-                        <!--Phone Icon-->
-                        <a href="#" class="phone-icon"></a>
-                        <span class="btn"></span>
-                    </div>
-                        <!--Hamburger Menu-->
-                        <div class="header-hamburger">
-                            <button class="btn-hamburger" type="button">☰</button>
-                        </div>
-                        <!--Header Search Bar-->
-                        <div class="header-search">
-                            <form class="search-form" method="get" action="#" accept-charset="UTF-8">
-                                <input id="search-input" placeholder="Search..." name="Search" type="text">
-                                <button id="search-submit" type="submit"></button>
-                            </form>
-                        </div>
-                        
-                    </div>
-                </header>     
-            </div>                 
-                    <!--Header Main Nav-->
+            <header class="header">
+                <div class="netmatters__logo">
+                    <img src="assets/icons/f-logo.png" alt="Netmatters Logo" />
+                </div>
+                <button class="header__phone-icon">
+                    <i class="fas fa-phone"></i>
+                </button>
+                <button class="header__search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="header__contact-button">
+                    <i class="fas fa-paper-plane"></i> Contact
+                </button>
+                <button class="header__support-button">
+                    <i class="fas fa-mouse-pointer"></i> Support
+                </button>
+                <div class="header__search-bar">
+                    <form method="get" action="#" accept-charset="UTF-8" class="search-form">
+                    <input type="text" placeholder="Search..." />
+                    <button class="header__search-submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+                </div>
+                <button class="header__hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </header>
+                  
+                    <!-- Header Main Nav -->
                     <nav class="main-nav">                   
                         <ul>
                             <li><a href="#">Bespoke Software</a></li>
@@ -107,9 +109,9 @@
                             </ul>
                         </div>
                     </div>
-            </div>
+            </div> 
 
-            <!--Main-->
+        
             <main>
               <div class="container">
                 <!--Services-->
@@ -167,7 +169,7 @@
                         <button class="btn-testimonial" type="button">Google Reviews</button>
                         <button class="btn-testimonial" type="button">Trustpilot Reviews</button>
                     </div>
-                </div>
+                </div> 
                 
                 <!--News-->
                 <div class="news">

@@ -1,32 +1,172 @@
-//Imports
-@import 
-        'abstracts/variables',
-        'abstracts/mixins',
-        'abstracts/colors',
-        'abstracts/typography',
-        'abstracts/media-query';
-        
+//Body
 
-@import 'base/base',
-        'base/reset',
-        'base/breakpoints';
+body {
+        font-family: Poppins, sans-serif;
+        font-size: 1rem;
+        letter-spacing: .4px;
+        color: #666;
+        margin: 0;
+        padding: 0;
+      }
+      
+
+// Header
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header {
+    display: flex;
+    align-items: column;
+    background-color: #ffffff;
+    padding: 10px;
+    position: relative;
+    
+
+    &__top {
+        display: flex;
+        width: 100%;
+        align-items: center;
 
 
-@import 'layout/header',
-        'layout/main',
-        'layout/footer';
-        
-@import 'components/banner',
-        'components/buttons',
-        'components/carousel';
+    &__logo {
+        margin-right: 10px;
+    }
+    }
+    button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #ffffff;
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+        font-weight: 600;
 
-@import 'utilities/container';
+        &.header__phone-icon {
+            color: #333645;
+        }
+
+        &.header__search-button {
+            background-color: #999aa2;
+            padding: 8px 12px;
+            display: none;
+        }
+
+        &.header__contact-button {
+            background-color: #999aa2;
+            padding: 8px 12px;
+            display: none;
+        }
+
+        &.header__support-button {
+            background-color: #4183d7;
+            padding: 8px 12px;
+            display: none;
+        }
+
+        &.header__hamburger {
+            color: #333645;
+            margin-left: auto;
+        }
+    }
+
+    &__search-bar {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+
+        .header__search-submit {
+            background-color: #999aa2;
+            border: none;
+            padding: 8px 12px;
+            color: #ffffff;
+            cursor: pointer;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .header {
+
+        &__top {
+            flex: 1; 
+        }
+
+        &__phone-icon {
+            display: none;
+        }
+
+        &__search-bar {
+            width: auto;
+            margin-top: 0;
+            display: none;
+        }
+
+        &__search-button {
+            display: flex;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .header {
+        &__contact-button {
+            display: flex;
+        }
+
+        &__support-button {
+            display: flex;
+        }
+
+        &__search-bar {
+            display: none;
+        }
+
+        &__search-button {
+            flex-grow: 1;
+            justify-content: flex-start;
+            .header__search-bar {
+                display: flex;
+                flex-grow: 1;
+                input {
+                    flex-grow: 1;
+                }
+            }
+        }
+    }
+}
+
+
+
+//Banner
 
 
 
 
 
+//Main-------------------------
 
+// Services
 
+// Partners
+
+// About
+
+// News
+
+// Clients
+
+//Footer
 
 
