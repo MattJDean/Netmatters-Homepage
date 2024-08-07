@@ -19,10 +19,13 @@
     </head>
         
         <!--Body-->
-        <body> 
+        <body>
+            <div class="container"> 
             <header class="header">
-                <div class="header__logo">
+                <div class="header__logo-container">
+                    <a class="logo" href="#">
                     <img src="assets/icons/f-logo.png" alt="Netmatters Logo" />
+                    </a>
                 </div>
                 <button class="header__phone-icon">
                     <img src="assets/icomoon/PNG/phone_in_talk.png" alt="Phone Icon" />
@@ -36,18 +39,32 @@
                 <button class="header__support-button">
                     <img src="assets/icomoon/PNG/mouse.png" alt="Mouse Icon" /> Support
                 </button>
-                <div class="header__search-bar">
-                    <form method="get" action="#" accept-charset="UTF-8" class="search-form">
-                    <input class="input" type="text" placeholder="Search..." />
-                    <button class="header__search-submit">
-                        <img src="assets/icomoon/PNG/magnifying-glass.png" alt="Search Icon" />
-                    </button>
-                </form>
-                </div>
+                <!--XS Search Bar-->
+                    <div class="header__xs-search-bar">
+                        <form method="get" action="#" accept-charset="UTF-8" class="search-form">
+                        <input class="input" type="text" placeholder="Search..." />
+                        <button class="header__search-submit">
+                            <img src="assets/icomoon/PNG/magnifying-glass.png" alt="Search Icon" />
+                        </button>
+                        </form>
+                    </div>
+
+                <!--S Search Bar-->
+                    <div class="header__s-search-bar">
+                        <form method="get" action="#" accept-charset="UTF-8" class="search-form">
+                        <input class="input" type="text" placeholder="Search..." />
+                        <button class="header__search-submit">
+                            <img src="assets/icomoon/PNG/magnifying-glass.png" alt="Search Icon" />
+                        </button>
+                        </form>
+                    </div>
+
                 <button class="header__hamburger">
                     <i class="fas fa-bars"></i>
                 </button>
             </header>
+            </div>
+
                   
                     <!-- Header Main Nav -->
                     <nav class="main-nav">                   
