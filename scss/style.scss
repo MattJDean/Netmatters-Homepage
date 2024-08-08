@@ -20,13 +20,16 @@ body {
     margin-left: 20px;
 }
 
+.header__top-row{
+    display: flex;
+    flex-flow: nowrap;
+    height: 70px;
+    width: 100%;
+}
+
 .header {
     height: 168px;
     width: 100%; 
-    display: flex;
-    flex-flow: nowrap;
-    position: relative;
-    gap: 20px;
     background-color: #ffffff;
     padding: 20px 0;
     font-size: 16px;
@@ -35,24 +38,23 @@ body {
     
 }
 
-
     .header__logo {
         display: flex;
         order: 0;
-        align-self: start;
+        align-items: start;
+        height: 70px;
+        max-width: 100%;
 
         img {
-            height: 70px;
-            width: 402px;
+            height: auto;
+            max-width: 100%;
         }
 
     }
           
     .header__phone {
-        display: flex; 
+        display: flex;
         order: 1;
-        align-content: center;
-        justify-content: center;
         height: 32px;
         width: 32px;          
         background: transparent;
@@ -69,8 +71,7 @@ body {
     .header__hamburger {
         display: flex;
         order: 1;
-        align-content: center;
-        justify-content: center;
+  
         width: 56px;
         height: 56px;
         border-radius: 3px;
@@ -91,15 +92,15 @@ body {
     }
 
 .header__xs-search-bar {
-    display: flex;   
+    display: block;   
     align-content: center;
-    justify-content: center;
     width: 100%;
+    margin-left: 20px;
     
     
     
     .search-form {
-        display: flex;
+        display: block;
         align-items: center;
         width: 100%;
         
@@ -107,13 +108,10 @@ body {
     }
 
     #xs-input {
-        display: flex;
-        flex-basis: 100%;
-        order: 1;
+        display: block; 
         position: absolute;
         height: 47px;
         width: 100%;
-
         box-sizing: border-box;
         padding: 5px 40px 5px 15px;
         border: 2px solid rgba(0, 0, 0, .1);
@@ -121,15 +119,12 @@ body {
         outline: 1px solid hsla(0, 0, 100%, .2);
         
         top: 121px;
-        left: 0px;
+        left: 20px;
         
     }
 
     #xs-submit {
-        display: flex;
-        order: 1;
         position: relative;
-        justify-content: center; 
         background: none;
         border: 0;
         width: 32px;
@@ -137,8 +132,10 @@ body {
         padding: 0;
         border-left: none;
         cursor: pointer;
-        top: 60px;
-        left: 113%;
+        top: 130px;
+        
+        
+        
         
         
         
