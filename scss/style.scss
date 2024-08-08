@@ -92,10 +92,10 @@ body {
     }
 
 .header__xs-search-bar {
-    display: block;   
+    display: block; 
+    box-sizing: border-box;  
     align-content: center;
     width: 100%;
-    margin-left: 20px;
     
     
     
@@ -108,22 +108,25 @@ body {
     }
 
     #xs-input {
-        display: block; 
+        display:block;
+        box-sizing: border-box; 
         position: absolute;
         height: 47px;
-        width: 100%;
-        box-sizing: border-box;
+        max-width: 100%;
         padding: 5px 40px 5px 15px;
         border: 2px solid rgba(0, 0, 0, .1);
         background-color: rgba(0, 0, 0, .1);
         outline: 1px solid hsla(0, 0, 100%, .2);
         
-        top: 121px;
+        top: 101px;
         left: 20px;
+        right: 20px;
         
     }
 
     #xs-submit {
+        display: block;
+        box-sizing: border-box;
         position: relative;
         background: none;
         border: 0;
@@ -157,8 +160,6 @@ body {
 .header__s-search-bar{
     display: none;
 }
-
-
 
 
 
