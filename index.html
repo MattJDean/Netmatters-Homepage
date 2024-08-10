@@ -11,8 +11,14 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&family=Poppins:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@24,400,1,0" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
         <link rel="preload" href="assets/icons/Material-Design-Icons.woff" as="font" type="font/woff" crossorigin="">
+        <link rel="preload" href="assets/fonts/fontawesome-webfont.woff" as="font" type="font/woff" crossorigin="">
+        <link rel="preload" href="assets/fonts/icomoon.ttf" as="font" type="font/woff" crossorigin="">
+        <link rel="preload" href="assets/fonts/glyphicons-halflings-regular.woff" as="font" type="font/woff" crossorigin="">
+        <link rel="preload" href="assets/fonts/poppins-v15-latin-600.woff2" as="font" type="font/woff" crossorigin="">
+        <link rel="preload" href="assets/fonts/poppins-v15-latin-regular.woff2" as="font" type="font/woff" crossorigin="">
+        <script src="https://kit.fontawesome.com/ee55ddb165.js" crossorigin="anonymous"></script>
         <!--Stylesheet-->
         <link rel="stylesheet" type="text/css" href="css/style.css">
 
@@ -28,14 +34,14 @@
                     <img src="assets/icons/f-logo.png"alt="Netmatters Logo"/>
                 </div>
                 <div class="header__phone">
-                    <img src="assets/icons/phone-in-talk.png">
+                    <i class="fa-solid fa-phone-volume"></i>
                 </div>
                 <div class="header__contact">
                     <img src="assets/icons/paper-plane-o.png" alt="Paper Plane Icon"/>Content</div>
                 <div class="header__support">
                     <img src="assets/icons/mouse.png">Support</div>
                 <div class="header__hamburger">
-                    <img src="assets/icons/hamburger.png">
+                    <span class="material-symbols-outlined">menu</span>
                 </div>
             </div>
                 
@@ -108,46 +114,47 @@
                 <!--Services-->
                 <div class="services">
                     <!--Text/Link-->
-                    <a href="#"><h2 class="services__h2-left">Our Services</h2></a>
-                    <a href="#"><h2 class="services__h2-right">View Our Work [>]</h2></a>
+                    <a href="#"><h2 class="services__h2--left">Our Services</h2></a>
+                    <a href="#"><h2 class="services__h2--right">View Our Work [>]</h2></a>
                         <!--Cards-->
-                        <div class="services__card">
-                            <div class="icon">[Icon]</div>
+                        <div id="software" class="services__card">
+                            <span class="icon"></span>
+                            <span class="icon-apps"></span>
                             <h2>Bespoke Software</h2>
                             <p>Bespoke software solutions for all your business needs including integrations and reporting.</p>
                             <a href="#" class="read-more">Read More</a>
                         </div>
-                        <div class="services__card">
+                        <div id="it" class="services__card">
                         <div class="icon">[Icon]</div>
                             <h2>IT Support</h2>
                             <p>Fully managed IT support and consultancy packages tailored to meet your exact business needs.</p>
                             <a href="#" class="read-more">Read More</a>
                         </div>
-                        <div class="services__card">
+                        <div id="marketing" class="services__card">
                         <div class="icon">[Icon]</div>
                             <h2>Digital Marketing</h2>
                             <p>Driven brand awareness & ROI through creative digital marketing campaigns.</p>
                             <a href="#" class="read-more">Read More</a>                       
                         </div>
-                        <div class="services__card">
+                        <div id="telecoms" class="services__card">
                         <div class="icon">[Icon]</div>
                             <h2>Telecoms Services</h2>
                             <p>Business telephony solutions including mobile & connectivity solutions.</p>
                             <a href="#" class="read-more">Read More</a>
                         </div>
-                        <div class="services__card">
+                        <div id="design" class="services__card">
                         <div class="icon">[Icon]</div>
                             <h2>Web Design</h2>
                             <p>User-centric design for businesses looking to make a lasting impression.</p>
                             <a href="#" class="read-more">Read More</a>
                         </div>
-                        <div class="services__card">
+                        <div id="security" class="services__card">
                         <div class="icon">[Icon]</div>
                             <h2>Cyber Security</h2>
                             <p>Prevention, testing, consultancy & breach management services.</p>
                             <a href="#" class="read-more">Read More</a>
                         </div>
-                        <div class="services__card">
+                        <div id="training" class="services__card">
                         <div class="icon">[Icon]</div>
                             <h2>Developer Training</h2>
                             <p>Web design & software training courses designed to secure a job in tech.</p>

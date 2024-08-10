@@ -84,36 +84,45 @@ body {
         flex-shrink: 0;
         order: 2; 
         align-items: center;
+        color: #333645;
+        font-size: 32px;
         height: 32px;
         width: 32px;          
         background: transparent;
         border: none; 
         cursor: pointer;
 
-        img {
-            height: auto;
-            width: 100%;
-            
-        }
+    
     }
 
     .header__hamburger {
         display: flex;
-        align-items: center ;
+        flex-grow: 0;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: center;
         order: 3; 
-        width: 56px;
+        width: 63px;
         height: 56px;
         border-radius: 3px;
         background-color: #333645;
+        color: #fff;
         border: 0;
         margin: 0;
         cursor: pointer;
         transition: opacity .15s linear, filter .15s linear;
         
-        img {
-            height: 56px;
-            width: 56px;
+        .material-symbols-outlined {
+            font-size: 42px;       
+            text-transform: uppercase;
+            font-stretch: expanded;
+            margin: 0;             
+            padding: 0; 
+            
+            
+
         }
+   
     }
 }
 
@@ -242,22 +251,22 @@ body {
 
     &__dots {
         position: absolute;
-        bottom: 20px; // Position it slightly above the bottom of the image
-        left: 50%;
-        transform: translateX(-50%);
+        bottom: 50px; 
+        left: 135px;
         display: flex;
-        gap: 10px; // Spacing between dots
+        gap: 20px; 
     
         .dot {
-            width: 15px;
-            height: 15px;
+            width: 12px;
+            height: 12px;
             background-color: rgba(255, 255, 255, 0.6);
-            border-radius: 50%;
+            border-radius: 30px;
             cursor: pointer;
-            transition: box-shadow 0.3s ease;
+            transition: opacity 0.2s ease;
     
             &.active {
-                box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.8); // Halo effect
+                box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.8); 
+                
     
                 &:hover {
                     background-color: rgba(255, 255, 255, 1);
@@ -265,11 +274,11 @@ body {
             }
     
             &:hover {
-                background-color: rgba(255, 255, 255, 0.8); // Brighten on hover
+                background-color: rgba(255, 255, 255, 0.8);
             }
     
             &:active {
-                box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.8); // Halo effect on click
+                box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.8); 
             }
         }
     }
@@ -287,78 +296,211 @@ body {
 //----------------------------------------------------------//
 //----------------------------------------------------------//
 
-
 .services {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 20px;
     padding: 20px;
     font-family: inherit;
     color: #333645;
-
-    a {
-        text-decoration: none;
-        font-family: inherit;
-        color: #333645;
+  
+    @media (min-width: 768px) {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     }
 
-    &__h2-right {
-        display: none;
+    @media (min-width: 1260px) {
+        grid-template-columns: repeat(3, 1fr); 
+      }
+  
+    a {
+      text-decoration: none;
+      font-family: inherit;
+      color: #333645;
+      background: transparent;
+    }
+  
+    &__h2--right {
+      display: none;
     }
   
     &__card {
-      background-color: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      padding: 20px;
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 3px 35px rgba(0, 0, 0, 0.1);
+      padding: 30px;
       text-align: center;
-  
-      .icon {
-        font-size: 40px;
-        margin-bottom: 15px;
-      }
-  
-      h2 {
-        font-size: 2.7rem;
-        font-weight: 400;
-        margin-top: -13px;
-      }
-  
-      p {
-        font-size: 16px;
-        margin-bottom: 20px;
-      }
+      transition: 0.5s;
+      font-weight: 600;
+      z-index: 0;
   
       .read-more {
+        height: 47px;
+        padding: 5px 15px;
+        margin-bottom: 0;
         display: inline-block;
-        padding: 10px 20px;
-        background-color: #ffa500; // Example button color
+        box-sizing: border-box;
+        align-items: center;
+        justify-content: center;
         color: white;
         text-decoration: none;
-        border-radius: 5px;
-        font-weight: bold;
+        text-align: center;
+        border: 1px solid transparent;
+        border-radius: 3px;
+        font-size: 17px;
+        font-weight: 400;
+        text-align: center;
+        text-transform: uppercase;
+        transition: 0.5s ease;
+        
+        
+
+      
+      }
+  
+      &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        color: #fff;
+  
+        .read-more {
+          background-color: #fff;
+          color: #fff;
+        }
+      }
+  
+      
+      &#software {
+        .read-more {
+          background-color: #f7b322;
+        }
   
         &:hover {
-          background-color: darken(#ffa500, 10%);
+          background-color: #f7b322;
+        
+        .read-more {
+            background-color: #fff;
+            color: #f7b322;
+        }
+        
+        }
+      }
+  
+      &#it {
+        .read-more {
+          background-color: #4183d7;
+        }
+  
+        &:hover {
+          background-color: #4183d7;
+          
+          .read-more {
+            background-color: #fff;
+            color: #4183d7;
+        }
+        
+        }
+      }
+  
+      &#marketing {
+        .read-more {
+          background-color: #2ecc71;
+        }
+  
+        &:hover {
+          background-color: #2ecc71;
+          
+          .read-more {
+            background-color: #fff;
+            color: #2ecc71;
+        }
+        
+        }
+      }
+  
+      &#telecoms {
+        .read-more {
+          background-color: #d64541;
+        }
+  
+        &:hover {
+          background-color: #d64541;
+        
+          .read-more {
+            background-color: #fff;
+            color: #d64541;
+        }
+        
+        }
+      }
+  
+      &#design {
+        .read-more {
+          background-color: #926fb1;
+        }
+  
+        &:hover {
+          background-color: #926fb1;
+        
+          .read-more {
+            background-color: #fff;
+            color: #926fb1;
+        }
+        
+        }
+      }
+  
+      &#security {
+        .read-more {
+          background-color: #f62459;
+        }
+  
+        &:hover {
+          background-color: #f62459;
+            
+          .read-more {
+            background-color: #fff;
+            color: #f62459;
+        }
+       
+        }
+      }
+  
+      &#training {
+        .read-more {
+          background-color: #ce4125;
+        }
+  
+        &:hover {
+          background-color: #ce4125;
+        
+          .read-more {
+            background-color: #fff;
+            color: #ce4125;
+        }
+       
+       
         }
       }
     }
   
-    @media (min-width: 768px) {
-      & {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      &__h2-right {
-        display: block;
-      }
-
+    .icon {
+      font-size: 40px;
+      margin-bottom: 15px;
     }
   
-    @media (min-width: 1024px) {
-      & {
-        grid-template-columns: repeat(3, 1fr);
-      }
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 400;
+      padding-bottom: 10px;
+      margin-bottom: 11px;
+    }
+  
+    p {
+      font-size: 0.8125rem;
+      font-weight: 400;
+      margin-bottom: 13px;
     }
   }
   
