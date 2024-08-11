@@ -8,6 +8,7 @@ html {
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 //------------------------------------------------------------//
@@ -79,7 +80,7 @@ body {
         }
     }
           
-    .header__phone {
+    .header__phone {                 //////////position in flex properly/////////////////////////////
       
         display: flex;
         flex-shrink: 0;
@@ -344,9 +345,14 @@ body {
       display: grid;
       place-items: center;
       order: 1; 
-      font-size: 26px;
+      font-size: 1.625rem;
       font-weight: 600;
       text-decoration-style: solid;
+      
+      &:hover {
+        text-decoration: underline;
+      }
+
     }
   
     &__card {
@@ -538,29 +544,70 @@ body {
 //----------------------------------------------------------//
 
 //----------------------------------------------------------//
-//------------------------Partners--------------------------//
+//------------------------Accreditations--------------------//
 //----------------------------------------------------------//
 
 //----------------------------------------------------------//
 //----------------------------------------------------------//
 
 
+.accreditations {
+  height: 70px;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin: 50px 0;
+
+}
+
+.accreditations__row {
+  display: flex;
+  width: calc(100% * 2); 
+  gap: 50px;
+  animation: scroll 30s linear infinite;
 
 
 
+ img {
+  width: auto;
+  height: 70px;
+  filter: grayscale(100%);
+  transition: filter 0.5s ease;
+}
+
+  img:hover {
+  filter: grayscale(0%);
+  animation-play-state: paused;
+  cursor: pointer;
+}
 
 
+@keyframes scroll {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(-50%); 
+  }
+}
+
+}
+
+//----------------------------------------------------------//
+//----------------------------------------------------------//
+
+//----------------------------------------------------------//
+//------------------------About-----------------------------//
+//----------------------------------------------------------//
+
+//----------------------------------------------------------//
+//----------------------------------------------------------//
 
 
-
-
-
-
-
-
-
-
-
+.about {
+  display: block;
+  background-color: #333645;
+}
 
 
 
@@ -666,20 +713,6 @@ body {
 }
 
 
-//Banner
 
-//Main-------------------------
-
-// Services
-
-// Partners
-
-// About
-
-// News
-
-// Clients
-
-//Footer
 
 
