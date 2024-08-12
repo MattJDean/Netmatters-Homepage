@@ -862,13 +862,21 @@ body {
 //----------------------------------------------------------//  
 
 footer {
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
   position: relative;
   padding: 27px 0 0 0;
   background-color: #333645;
   color: #fff;
 
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+
   h4 {
+    display: flex;
     font-size: 1rem;
     text-transform: uppercase;
   }
@@ -882,8 +890,6 @@ footer {
     h4 {
       margin: 24px 0 26px;
     }
-
-
   }
 
   .footer__logo {
@@ -893,8 +899,9 @@ footer {
       border: 0;
     }
   }
-
 }
+
+
 
 
 
