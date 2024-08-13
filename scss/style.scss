@@ -366,6 +366,16 @@ body {
       transition: 0.5s;
       font-weight: 600;
       z-index: 0;
+
+      .icon {
+        display: block;
+        height: 65px;
+        width: 65px;
+        margin: 0 auto;
+        place-items: center;
+        border-radius: 50%;
+        
+      }
   
       .read-more {
         height: 47px;
@@ -408,6 +418,10 @@ body {
         .read-more {
           background-color: #f7b322;
         }
+
+        .icon {
+          background-color: #67809f;
+        }
   
         &:hover {
           background-color: #f7b322;
@@ -416,12 +430,20 @@ body {
             background-color: #fff;
             color: #f7b322;
         }
+
+        .icon {
+          background-color: #fff;
+        }
         
         }
       }
   
       &#it {
         .read-more {
+          background-color: #4183d7;
+        }
+
+        .icon {
           background-color: #4183d7;
         }
   
@@ -432,12 +454,20 @@ body {
             background-color: #fff;
             color: #4183d7;
         }
+
+        .icon {
+          background-color: #fff;
+        }
         
         }
       }
   
       &#marketing {
         .read-more {
+          background-color: #2ecc71;
+        }
+
+        .icon {
           background-color: #2ecc71;
         }
   
@@ -448,12 +478,20 @@ body {
             background-color: #fff;
             color: #2ecc71;
         }
+
+        .icon {
+          background-color: #fff;
+        }
         
         }
       }
   
       &#telecoms {
         .read-more {
+          background-color: #d64541;
+        }
+
+        .icon {
           background-color: #d64541;
         }
   
@@ -464,12 +502,20 @@ body {
             background-color: #fff;
             color: #d64541;
         }
+
+        .icon {
+          background-color: #fff;
+        }
         
         }
       }
   
       &#design {
         .read-more {
+          background-color: #926fb1;
+        }
+
+        .icon {
           background-color: #926fb1;
         }
   
@@ -480,12 +526,20 @@ body {
             background-color: #fff;
             color: #926fb1;
         }
+
+        .icon {
+          background-color: #fff;
+        }
         
         }
       }
   
       &#security {
         .read-more {
+          background-color: #f62459;
+        }
+
+        .icon {
           background-color: #f62459;
         }
   
@@ -496,12 +550,20 @@ body {
             background-color: #fff;
             color: #f62459;
         }
+
+        .icon {
+          background-color: #fff;
+        }
        
         }
       }
   
       &#training {
         .read-more {
+          background-color: #ce4125;
+        }
+
+        .icon {
           background-color: #ce4125;
         }
   
@@ -511,6 +573,10 @@ body {
           .read-more {
             background-color: #fff;
             color: #ce4125;
+        }
+
+        .icon {
+          background-color: #fff;
         }
        
        
