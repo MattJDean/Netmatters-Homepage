@@ -494,94 +494,112 @@ body {
 .nav {
   background-color: #333645;
   height: 99px;
-
-  // &__software,
-  // &__it,
-  // &__marketing,
-  // &__telecoms,
-  // &__design,
-  // &__security,
-  // &__course 
-
-  ul {
-    list-style-type: none;
-    display: flex;
-    align-items: center;
-    height: 100%;
-  }
-
-  li {
-    position: relative;
-  }
-
-  a {
-    display: block;
-    width: 167px;
-    height: 99px;
-    text-align: center;
-    text-decoration: none;
-    color: #fff;
-    padding-top: 50px;
-    font-size: 14px;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  i {
-    color: #fff;
-    font-size: 32px;
-  }
-
-
-
-}
-
-
-.dropdown {
-  &__software {}
-  &__it {}
-  &__marketing {}
-  &__telecoms {}
-  &__design {}
-  &__security {}
-  &__course {}
-  position: absolute;
-  left: 0;
-  top: 99px;
-  background-color: rgba(0, 0, 0, 0.8);
-  width: 100%;
-  padding: 20px;
-  display: none;
-  z-index: 1000;
-}
-
-.dropdown h2 {
-  margin-bottom: 20px;
-  font-size: 18px;
-}
-
-.dropdown ul {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-}
-
-.dropdown ul li {
   display: flex;
-  align-items: center;
-  padding: 10px;
-  background-color: #555;
-  border-radius: 5px;
+  justify-content: space-around; 
+  align-items: center; 
+  text-decoration: none;
 }
 
-.dropdown ul li:hover {
-  background-color: #666;
+.nav__item {
+  position: relative;
+  padding: 15px;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 10;
+  
+ span {
+  text-decoration: none;
+ }
+
+} 
+
+    .nav__smtxt {
+      
+      font-size: 10px;
+      
+    }
+
+    .nav__lgtxt {
+      
+      font-size: 16px;
+      
+    }
+
+    .nav__icon {
+      font-size: 23px;
+    }
+
+ #nav__software {
+  background-color: #67809f;
+      a {
+        text-decoration: none;
+      }
+}
+ #nav__it {
+  background-color: #4183d7;
+}
+ #nav__marketing {
+  background-color: #2ecc71;
+}
+ #nav__telecoms {
+  background-color: #d64541;
+}
+ #nav__design {
+  background-color: #926fb1;
+}
+ #nav__security {
+  background-color: #f62459;
+}
+ #nav__training {
+  background-color: #ce4125;
 }
 
-.main-nav ul li:hover .dropdown {
+
+
+.nav__submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #444;
+  padding: 15px;
+  width: 200px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.nav__submenu h2 {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.nav__submenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav__submenu ul li {
+  padding: 8px 0;
+  color: #ddd;
+}
+
+.nav__submenu ul li:hover {
+  color: #fff;
+}
+
+/* Show the submenu on hover */
+ .nav__submenu {
   display: block;
 }
+
+
+
+
+  
 
 
 
