@@ -1,0 +1,127 @@
+//----------------------------------------------------------//
+//----------------------------------------------------------//
+
+//----------------------------------------------------------//
+//------------------------About-----------------------------//
+//----------------------------------------------------------//
+
+//----------------------------------------------------------//
+//----------------------------------------------------------//
+
+
+.about {
+    display: block;
+    box-sizing: border-box;
+    background-color: $about-background;
+    padding: 50px 15px;
+    margin: 0 auto 0;
+  }
+  
+  .about__welcome, .about__testimonial {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 5px;
+    letter-spacing: 0.4px;
+    color: $font-white;
+  
+    h2 {
+      display: inline-block;
+      font-size: 36px;
+      margin: 6px 0 40px;
+    }
+  
+    p {
+      font-size: 16px;
+      margin-bottom: 25px;
+    }
+  
+    a {
+      text-decoration: none;
+      color: $font-white;
+  
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  
+    strong {
+      font-weight: 600;
+    }
+  
+    .stars {
+      display: inline-block;
+      margin-bottom: 25px;
+      
+    }
+  
+    .client-quote {
+      font-size: 1.3rem;
+      font-weight: 600;
+      font-style: italic;
+      margin-bottom: 25px;
+    }
+  
+    .quote-author {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 25px;
+      color: $quote-text;
+    }
+  
+    .client-link {
+      text-decoration: none;
+      font-style: normal;
+      color: $font-white;
+  
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  
+  .buttons {
+  
+    a {
+      display: inline-block;
+      height: auto;
+      color: $font-white;
+      margin-bottom: 25px;
+      margin-top: 20px;
+      margin-right: 5px; 
+      padding: 10px 30px;
+      border: 1px solid transparent;
+      border-radius: 6px;
+      font-size: 20px;
+      font-weight: 400;
+      text-transform: uppercase;
+      text-align: center;
+      text-decoration: none;
+      vertical-align: middle;
+      cursor: pointer;
+    }
+  } 
+      .btn--wel{
+        background-color: $about-btn;
+  
+        &:hover {
+          background-color: $about-btn-hover;
+        }
+      }
+    
+  
+      .btn--google {
+        background-color: $about-google-btn;
+  
+        &:hover {
+          background-color: $about-google-btn-hover;
+        }
+      }
+  
+      .btn--trustpilot {
+        background-color: $about-google-btn;
+  
+        &:hover {
+          background-color: $about-google-btn-hover;  
+        }
+      } 
+  }
+  

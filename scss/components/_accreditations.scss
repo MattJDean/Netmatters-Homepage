@@ -1,0 +1,41 @@
+//----------------------------------------------------------//
+//----------------------------------------------------------//
+
+//----------------------------------------------------------//
+//------------------------Accreditations--------------------//
+//----------------------------------------------------------//
+
+//----------------------------------------------------------//
+//----------------------------------------------------------//
+
+
+.accreditations {
+    height: 70px;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin: 50px 0;
+  
+  }
+  
+  .accreditations__row {
+    display: flex;
+    width: calc(100% * 2); 
+    gap: 50px;
+    
+   img {
+    width: auto;
+    height: 70px;
+    filter: grayscale(100%);
+    transition: filter 0.5s ease;
+  }
+  
+    img:hover {
+    filter: grayscale(0%);
+    animation-play-state: paused;
+    cursor: pointer;
+  }
+  
+  
+  
+}

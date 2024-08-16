@@ -1,0 +1,76 @@
+//------------------------------------------------------------//
+//------------------------------------------------------------//
+
+//------------------------------------------------------------//
+//------------------------Nav Bar-----------------------------//
+//------------------------------------------------------------//
+
+//------------------------------------------------------------//
+//------------------------------------------------------------//
+
+//Nav Bar
+.nav__item {
+  display: inline-block;
+  text-align: center;
+  padding: 10px 20px;
+  position: relative;
+  cursor: pointer;
+  color: $font-white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.nav__icon {
+  font-size: 24px;
+}
+
+.nav__smtxt {
+  font-size: 10px;
+}
+
+.nav__lgtxt {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+//Submenu
+.nav__submenu {
+  display: none; /* Initially hide the submenu */
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  background-color: #f9f9f9;
+  padding: 20px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+
+.nav__submenu h2 {
+  margin-top: 0;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.nav__submenu ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.nav__submenu li {
+  padding: 5px 0;
+  font-size: 14px;
+}
+
+/* Hover effect to show submenu */
+.nav__item:hover + .nav__submenu,
+.nav__submenu:hover {
+  display: block;
+}
+
+/* To ensure the submenus do not overlap */
+.nav__item {
+  margin-right: 30px;
+}

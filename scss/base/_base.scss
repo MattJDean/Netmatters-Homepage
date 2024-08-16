@@ -1,0 +1,35 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #666;
+  font-size: 1rem;
+  font-family: Poppins, sans-serif;
+  letter-spacing: 0.4px;
+  background-color: #fff;
+}
+
+#wrapper {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+   
+}

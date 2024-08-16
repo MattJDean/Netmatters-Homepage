@@ -1,0 +1,86 @@
+//----------------------------------------------------------//
+//----------------------------------------------------------//
+
+//----------------------------------------------------------//
+//------------------------News------------------------------//
+//----------------------------------------------------------//
+
+//----------------------------------------------------------//
+//----------------------------------------------------------//
+
+.news {
+    display: grid;
+      box-sizing: border-box;
+      gap: 20px;
+      padding: 20px;
+      font-family: inherit;
+      color: #333645;
+    
+      @media (min-width: 768px) {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      }
+  
+      @media (min-width: 1260px) {
+          grid-template-columns: repeat(3, 1fr); 
+        }
+    
+      a {
+        text-decoration: none;
+        font-family: inherit;
+        color: $news-font;
+        background: transparent;
+      }
+  
+      &__h1--left {
+        display: grid;
+        order: -1;
+      }
+  
+      &__h1--right {
+        display: grid;
+        place-items: center;
+        order: 1; 
+        font-size: 1.625rem;
+        font-weight: 600;
+        text-decoration-style: solid;
+        
+        &:hover {
+          text-decoration: underline;
+        }
+  
+        &__card {
+          display: grid;
+          order: 0;
+          background-color: $news-background;
+          border-radius: 15px;
+          box-shadow: 0 3px 35px rgba(0, 0, 0, 0.1);
+          padding: 30px;
+          text-align: center;
+          transition: 0.5s;
+          font-weight: 600;
+          z-index: 0;
+      
+          .read-more {
+            height: 47px;
+            padding: 5px 15px;
+            margin-bottom: 0;
+            display: inline-block;
+            box-sizing: border-box;
+            align-items: center;
+            justify-content: center;
+            color: $font-white;
+            text-decoration: none;
+            text-align: center;
+            border: 1px solid transparent;
+            border-radius: 3px;
+            font-size: 17px;
+            font-weight: 400;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s ease;
+            
+          }
+        }  
+      }
+    }
