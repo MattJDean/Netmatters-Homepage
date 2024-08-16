@@ -86,11 +86,11 @@ footer {
     margin-bottom: 25px;
    }
   
-   .footer__bottom {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100vw;
+  .footer__licence {
+    display: inline;
+    white-space: nowrap !important;
+    height: 35px;
+    width: 100%;
     padding: 10px 20px;
     background-color: $footer-background-licence;
   
