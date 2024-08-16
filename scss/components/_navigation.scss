@@ -22,6 +22,7 @@ display: none;
   } 
 
 .nav__main {
+  display: flex;
   background-color: $nav-background;
   height: 99px;
 }
@@ -41,6 +42,10 @@ display: none;
       display: block;
       text-align: center;
     }
+}
+
+.nav__item {
+  justify-items: center;
 }
 
 
@@ -76,6 +81,35 @@ display: none;
  }
 
 }
+
+#nav__software > i {
+  color: $software-prim;
+}
+
+#nav__it > i {
+  color: $it-prim;
+}
+
+#nav__marketing > i {
+  color: $marketing-prim;
+}
+
+#nav__telecoms > i {
+  color: $telecoms-prim;
+}
+
+#nav__design > i {
+  color: $webdesign-prim;
+}
+
+#nav__security > i {
+  color: $cybersec-prim;
+}
+
+#nav__training > i {
+  color: $training-prim;
+}
+
 
 
 
