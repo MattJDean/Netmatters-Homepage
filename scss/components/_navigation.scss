@@ -9,68 +9,75 @@
 //------------------------------------------------------------//
 
 //Nav Bar
-.nav__item {
-  display: inline-block;
-  text-align: center;
-  padding: 10px 20px;
+.nav__main {
+display: none;
+
+    @media (min-width: 991px) {
+      display: flex;
+    }
+  }
+ 
+.nav__main .nav__item {
   position: relative;
-  cursor: pointer;
-  color: $font-white;
-  text-decoration: none;
-  font-size: 14px;
+  } 
+
+.nav__main {
+  background-color: $nav-background;
+  height: 99px;
+}
+  
+.nav__list { 
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      background-color: $nav-background;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    a {
+      text-decoration: none;
+      color: $font-white;
+      padding: 15px 20px;
+      display: block;
+      text-align: center;
+    }
 }
 
-.nav__icon {
-  font-size: 24px;
-}
 
-.nav__smtxt {
-  font-size: 10px;
-}
-
-.nav__lgtxt {
-  font-size: 16px;
-  font-weight: bold;
-}
-
-//Submenu
-.nav__submenu {
-  display: none; /* Initially hide the submenu */
+.nav__submenu > div {
+  display: none;
   position: absolute;
+  top: 99px; 
   left: 0;
-  top: 100%;
   width: 100%;
-  background-color: #f9f9f9;
-  padding: 20px;
-  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
-  z-index: 100;
+  z-index: 1;
+  height: 99px; 
 }
 
-.nav__submenu h2 {
-  margin-top: 0;
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 10px;
+.nav__item:hover .nav__submenu > div {
+  display: block;
 }
 
 .nav__submenu ul {
   list-style-type: none;
-  padding-left: 0;
   margin: 0;
-}
+  padding: 10px;
 
-.nav__submenu li {
+
+  li {
   padding: 5px 0;
-  font-size: 14px;
+ }
+
+  h2 {
+  margin: 0;
+  padding: 10px;
+  color: $font-white;
+  font-size: 18px;
+ }
+
 }
 
-/* Hover effect to show submenu */
-.nav__item:hover + .nav__submenu,
-.nav__submenu:hover {
-  display: block;
-}
 
-/* To ensure the submenus do not overlap */
-.nav__item {
-  margin-right: 30px;
-}
+
+
+
