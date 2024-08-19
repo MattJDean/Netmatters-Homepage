@@ -19,6 +19,7 @@
   
   .about__welcome, .about__testimonial {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     margin: 0 5px;
     letter-spacing: 0.4px;
@@ -45,14 +46,11 @@
     }
   
     strong {
+      display: inline-block;
       font-weight: 600;
     }
   
-    .stars {
-      display: inline-block;
-      margin-bottom: 25px;
-      
-    }
+    
   
     .client-quote {
       font-size: 1.3rem;
@@ -77,6 +75,12 @@
         text-decoration: underline;
       }
     }
+
+  .stars {
+    display: inline-block;
+    margin-bottom: 25px;
+    
+  }  
   
   .buttons {
   
@@ -117,10 +121,10 @@
       }
   
       .btn--trustpilot {
-        background-color: $about-google-btn;
+        background-color: $about-trust-btn;
   
         &:hover {
-          background-color: $about-google-btn-hover;  
+          background-color: $about-trust-btn-hover;  
         }
       } 
   }

@@ -50,12 +50,27 @@ footer {
         color: $font-white;
         background-color: $footer-socials-background;
         cursor: pointer;
+
       }
   
       h4 {
         margin-bottom: 32px;
       }
-  
+
+    
+    }
+
+    .facebook > i:hover {
+      background-color: $facebook-prim;
+    }
+    .linkedin > i:hover {
+      background-color: $linkedin-prim;
+    }
+    .twitterx > i:hover {
+      background-color: $twitter-prim;
+    }
+    .instagram > i:hover {
+      background-color: $instagram-prim;
     }
   
     .footer__logo {
@@ -87,8 +102,7 @@ footer {
    }
   
   .footer__licence {
-    display: inline;
-    white-space: nowrap !important;
+    // display: inline;
     height: 35px;
     width: 100%;
     padding: 10px 20px;

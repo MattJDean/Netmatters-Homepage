@@ -10,105 +10,106 @@
 
 //Nav Bar
 .nav__main {
-display: none;
-
-    @media (min-width: 991px) {
-      display: flex;
-    }
-  }
- 
-.nav__main .nav__item {
-  position: relative;
-  } 
-
-.nav__main {
-  display: flex;
-  background-color: $nav-background;
-  height: 99px;
-}
-  
-.nav__list { 
-      display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
-      background-color: $nav-background;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    a {
-      text-decoration: none;
-      color: $font-white;
-      padding: 15px 20px;
-      display: block;
-      text-align: center;
-    }
-}
-
-.nav__item {
-  justify-items: center;
-}
-
-
-.nav__submenu > div {
   display: none;
-  position: absolute;
-  top: 99px; 
-  left: 0;
-  width: 100%;
-  z-index: 1;
-  height: 99px; 
 }
 
-.nav__item:hover .nav__submenu > div {
-  display: block;
+@media (min-width: 991px) {
+  .nav__main {
+    display: flex;
+    background-color: $nav-background;
+    height: 99px;
+  }
+
+  .nav__main .nav__item {
+    position: relative;
+    } 
+  
+  .nav__list { 
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        background-color: $nav-background;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      a {
+        text-decoration: none;
+        color: $font-white;
+        padding: 15px 20px;
+        display: block;
+        text-align: center;
+      }
+  }
+  
+  .nav__item {
+    justify-items: center;
+  }
+  
+  
+  .nav__submenu > div {
+    display: none;
+    position: absolute;
+    top: 99px; 
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    height: 99px; 
+  }
+  
+  .nav__item:hover .nav__submenu > div {
+    display: block;
+  }
+  
+  .nav__submenu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+  
+  
+    li {
+    padding: 5px 0;
+   }
+  
+    h2 {
+    margin: 0;
+    padding: 10px;
+    color: $font-white;
+    font-size: 18px;
+   }
+  
+  }
+  
+  #nav__software > i {
+    color: $software-prim;
+  }
+  
+  #nav__it > i {
+    color: $it-prim;
+  }
+  
+  #nav__marketing > i {
+    color: $marketing-prim;
+  }
+  
+  #nav__telecoms > i {
+    color: $telecoms-prim;
+  }
+  
+  #nav__design > i {
+    color: $webdesign-prim;
+  }
+  
+  #nav__security > i {
+    color: $cybersec-prim;
+  }
+  
+  #nav__training > i {
+    color: $training-prim;
+  }
+  
+
 }
 
-.nav__submenu ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 10px;
-
-
-  li {
-  padding: 5px 0;
- }
-
-  h2 {
-  margin: 0;
-  padding: 10px;
-  color: $font-white;
-  font-size: 18px;
- }
-
-}
-
-#nav__software > i {
-  color: $software-prim;
-}
-
-#nav__it > i {
-  color: $it-prim;
-}
-
-#nav__marketing > i {
-  color: $marketing-prim;
-}
-
-#nav__telecoms > i {
-  color: $telecoms-prim;
-}
-
-#nav__design > i {
-  color: $webdesign-prim;
-}
-
-#nav__security > i {
-  color: $cybersec-prim;
-}
-
-#nav__training > i {
-  color: $training-prim;
-}
 
 
 

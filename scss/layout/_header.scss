@@ -38,8 +38,8 @@
       align-items: flex-start;
       justify-content: center;
       gap: 20px;
-      height: 150px;
       width: 100%;
+      margin: 0 20px 0;
     }
           
     .header__phone {                 
@@ -92,7 +92,8 @@
       align-self: center;
       width: calc(100% - 40px);
       height: auto;
-      margin-bottom: 20px; 
+      margin-bottom: 20px;
+      top: 90px;
   
       #xs-input {
           display: block;
@@ -141,6 +142,11 @@
 .header__m-search-btn {
     display: none !important;
 }
+
+.header__content {
+  height: 125px;
+}
+
 }
 //------------------------//
 //-768px - 990 Breakpoint-//
@@ -155,6 +161,8 @@
 .header__m-search-btn {
   display: none !important;
 }  
+
+
 
 .header__s-search-bar {
   
