@@ -14,101 +14,281 @@
 }
 
 @media (min-width: 991px) {
-  .nav__main {
-    display: flex;
-    background-color: $nav-background;
-    height: 99px;
-  }
-
-  .nav__main .nav__item {
+  .nav__menu {
+    background-color: #333645;
     position: relative;
-    } 
-  
-  .nav__list { 
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        background-color: $nav-background;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      a {
-        text-decoration: none;
-        color: $font-white;
-        padding: 15px 20px;
-        display: block;
-        text-align: center;
-      }
   }
   
-  .nav__item {
-    justify-items: center;
-  }
-  
-  
-  .nav__submenu > div {
-    display: none;
-    position: absolute;
-    top: 99px; 
-    left: 0;
-    width: 100%;
-    z-index: 1;
-    height: 99px; 
-  }
-  
-  .nav__item:hover .nav__submenu > div {
-    display: block;
-  }
-  
-  .nav__submenu ul {
+  .nav__menu ul {
     list-style-type: none;
     margin: 0;
-    padding: 10px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
   
-  
-    li {
-    padding: 5px 0;
-   }
-  
-    h2 {
+  .nav__menu ul li {
+    flex: 1;
     margin: 0;
-    padding: 10px;
-    color: $font-white;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .nav__menu ul li a {
+    display: flex;
+    justify-content: center;
+    padding: 19px 0 18px;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
     font-size: 18px;
-   }
-  
+    line-height: 18px;
+    width: 100%;
   }
   
-  #nav__software > i {
-    color: $software-prim;
+  .nav__menu ul li i {
+    display: block;
+    font-size: 24px;
+    margin-bottom: 5px;
+    color: white;
   }
   
-  #nav__it > i {
-    color: $it-prim;
+  .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    z-index: 1;
+    padding: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    align-items: stretch;
+    min-height: 200px;
   }
   
-  #nav__marketing > i {
-    color: $marketing-prim;
+  .submenu::before,
+  .submenu::after,
+  #sub__software::before,
+  #sub__it::before,
+  #sub__marketing::before,
+  #sub__telecoms::before,
+  #sub__design::before,
+  #sub__security::before,
+  #sub__training::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    top: 0;
+    z-index: -1;
   }
   
-  #nav__telecoms > i {
-    color: $telecoms-prim;
+  .submenu::before {
+    left: -9999px;
+    width: 10000px;
   }
   
-  #nav__design > i {
-    color: $webdesign-prim;
+  .submenu::after {
+    right: -9999px;
+    width: 10000px;
   }
   
-  #nav__security > i {
-    color: $cybersec-prim;
+  .submenu h3 {
+    color: #fff;
+    position: absolute;
+    top: 0;
+    margin-left: 30px;
   }
   
-  #nav__training > i {
-    color: $training-prim;
+  .submenu ul {
+    list-style-type: none;
+    margin-left: 20px;
+    margin-top: 40px;
+    padding: 0;
+    gap: 20px;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: left;
+    text-align: left;
+  }
+  
+  .submenu ul li {
+    margin: 5px 0;
+  }
+  
+  .submenu ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    justify-items: left;
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+  
+  .submenu ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .nav-menu ul li:hover .submenu {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: left;
+    margin: 0 auto;
+    left: 0;
+  }
+  
+  #nav__software:hover {
+    background-color: #67809f;
+  }
+  #sub__software {
+    background-color: #526781;
+  }
+  
+  #nav__it:hover,
+  #sub__it {
+    background-color: #286abd;
+  }
+  
+  #nav__marketing:hover,
+  #sub__marketing {
+    background-color: #2ecc71;
+  }
+  
+  #nav__telecoms:hover,
+  #sub__telecoms {
+    background-color: #d64541;
+  }
+  
+  #nav__design:hover,
+  #sub__design {
+    background-color: #926fb1;
+  }
+  
+  #nav__security:hover,
+  #sub__security {
+    background-color: #f62459;
+  }
+  
+  #nav__training:hover,
+  #sub__training {
+    background-color: #ce4125;
   }
   
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   .nav__main {
+//     display: flex;
+//     background-color: $nav-background;
+//     height: 99px;
+//   }
+
+//   .nav__main .nav__item {
+//     position: relative;
+//     } 
+  
+//   .nav__list { 
+//         display: flex;
+//         flex-direction: row;
+//         justify-content: space-evenly;
+//         background-color: $nav-background;
+//         list-style: none;
+//         margin: 0;
+//         padding: 0;
+//       a {
+//         text-decoration: none;
+//         color: $font-white;
+//         padding: 15px 20px;
+//         display: block;
+//         text-align: center;
+//       }
+//   }
+  
+//   .nav__item {
+//     justify-items: center;
+//   }
+  
+  
+//   .nav__submenu > div {
+//     display: none;
+//     position: absolute;
+//     top: 99px; 
+//     left: 0;
+//     width: 100%;
+//     z-index: 1;
+//     height: 99px; 
+//   }
+  
+//   .nav__item:hover .nav__submenu > div {
+//     display: block;
+//   }
+  
+//   .nav__submenu ul {
+//     list-style-type: none;
+//     margin: 0;
+//     padding: 10px;
+  
+  
+//     li {
+//     padding: 5px 0;
+//    }
+  
+//     h2 {
+//     margin: 0;
+//     padding: 10px;
+//     color: $font-white;
+//     font-size: 18px;
+//    }
+  
+//   }
+  
+//   #nav__software > i {
+//     color: $software-prim;
+//   }
+  
+//   #nav__it > i {
+//     color: $it-prim;
+//   }
+  
+//   #nav__marketing > i {
+//     color: $marketing-prim;
+//   }
+  
+//   #nav__telecoms > i {
+//     color: $telecoms-prim;
+//   }
+  
+//   #nav__design > i {
+//     color: $webdesign-prim;
+//   }
+  
+//   #nav__security > i {
+//     color: $cybersec-prim;
+//   }
+  
+//   #nav__training > i {
+//     color: $training-prim;
+//   }
+  
+
+// }
 
 
 
