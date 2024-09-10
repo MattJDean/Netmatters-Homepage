@@ -9,19 +9,19 @@
 //----------------------------------------------------------//
 
 
+
 .about {
     display: block;
-    box-sizing: border-box;
     background-color: $about-background;
-    padding: 50px 15px;
-    margin: 0 auto 0;
+    padding: 50px 0;
+    
   }
   
   .about__welcome, .about__testimonial {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    margin: 0 5px;
+    margin: 0;
     letter-spacing: 0.4px;
     color: $font-white;
   

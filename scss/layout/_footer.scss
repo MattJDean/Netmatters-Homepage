@@ -8,8 +8,13 @@
 //----------------------------------------------------------//
 //----------------------------------------------------------//  
 
+
+
+
 footer {
+    margin: 0;
     position: relative;
+    width: 100%;
     padding: 27px 0 0 0;
     background-color: $footer-background;
     color: $font-white;
@@ -21,97 +26,201 @@ footer {
   
     h4 {
       font-size: 1rem;
+      font-weight: 400;
       text-transform: uppercase;
-      margin: 24px 0 26px;
+      
+    }
+
+    .footer {
+      display: flex;
+      flex-wrap: wrap;
+      flex-basis: space-between;
     }
   
     .footer__top {
       display: flex;
       flex-wrap: wrap;
       width: 100%;
-      justify-content: space-between;
-      padding: 0 15px 0;
-  
-      h4 {
-        margin: 24px 0 26px;
-      }
-    }
-    .footer__social-menu {
-      display: block;
-      width: auto;
-  
-      i {
-        padding: 12px 22px 16px;
-        margin-right: 10px;
-        margin-bottom: 10px;
-        font-size: 26px;
-        text-decoration: none;
-        text-align: center;
-        color: $font-white;
-        background-color: $footer-socials-background;
-        cursor: pointer;
-
-      }
-  
-      h4 {
-        margin-bottom: 32px;
+      height: fit-content;
+      margin-left: 0;
+      margin-right: 0;
+      padding: 0;
+      
+      @media (min-width: 1260px) {
+        width: 350px;
       }
 
-    
-    }
+        .footer__logo {
+          width: 100%;
+          height: 66px;
+          display: flex;
+          
+          
+          img{
+          width: 320px;
+          height: fit-content;
+          vertical-align: middle;
+          border: 0;
+          }
+        }
 
-    .facebook > i:hover {
-      background-color: $facebook-prim;
-    }
-    .linkedin > i:hover {
-      background-color: $linkedin-prim;
-    }
-    .twitterx > i:hover {
-      background-color: $twitter-prim;
-    }
-    .instagram > i:hover {
-      background-color: $instagram-prim;
-    }
+        h4 {
+          text-wrap: nowrap;
+          margin-top: 24px;
+          margin-bottom: 26px;
+
+          @media (max-width: 1260px) {
+            margin-right: 1000px;
+          }
+        }
   
-    .footer__logo {
-      img {
-        width: 320px;
-        vertical-align: middle;
-        border: 0;
-      }
-    }
-  
-   .footer__socials {
+        .footer__socials {
+        width: 250px;
+        min-width: 250px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+
+          @media (min-width: 480px) {
+            width: 350px;
+          }
+        
+          .facebook, .twitterx, .instagram, .linkedin {
+            
+            max-width: 110px;
+            width: 110px;
+            height: 60px; 
+            display: flex;
+            align-items: center; 
+            justify-content: center; 
+            padding: 0; 
+            margin-right: 10px; 
+            margin-bottom: 10px;       
+            font-size: 26px;
+            text-decoration: none;
+            text-align: center;
+            color: $font-white;
+            background-color: $footer-socials-background;
+            cursor: pointer;
+      
+            i {
+              position: relative;
+              top: 0;
+            }
+            
+            @media (min-width: 480px) {
+              width: 70px;
+              height: 55px;
+            }
+          }
+
+          .facebook:hover {
+            background-color: $facebook-prim;
+          }
+          .linkedin:hover {
+            background-color: $linkedin-prim;
+          }
+          .twitterx:hover {
+            background-color: $twitter-prim;
+          }
+          .instagram:hover {
+            background-color: $instagram-prim;
+          }
+        }
+      
+    }   
+}
+
+  .footer__menu {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    margin-bottom: 30px;
-   }
-   .footer__menu {
-    margin: 0 20px;
-    ul{
-      list-style: none;
+    flex-grow: 1;
+    width: auto;
+
+    .footer__about, .footer__services, .footer__industries, .footer__locations {
+      margin-bottom: 30px;
+      width: 100%;
+
+      @media (min-width: 768px) {
+        width: 50%;
+        flex-grow: 1;
+      }
+
+      @media (min-width: 992px) {
+        width: 25%;
+      }
+
+      @media (min-width: 1260px) {
+        width: 10%;
+      }
+    
+      h4 {
+        text-wrap: nowrap;
+        margin-bottom: 26px;
+      }
+
+      a {
+        font-size: 13px;
+      }
+
+      ul{
+        list-style: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }  
     }
-    a:hover {
-      text-decoration: underline;
-    }  
-  
-   }
-   .footer__locations {
-    margin-bottom: 25px;
-   }
-  
-  .footer__licence {
-    // display: inline;
-    height: 35px;
-    width: 100%;
-    padding: 10px 20px;
-    background-color: $footer-background-licence;
-  
-    a:hover {
-      text-decoration: underline;
-    }
-  
-   }
-  
   }
+
+ .footer__bottom {
+   display: flex;
+   justify-content: space-between;
+   width: 100%;
+   padding: 10px 0 0;
+   background-color: $footer-background-licence;
+ 
+   .footer__licence {
+     display: flex;
+     flex-direction: column;
+     width: 100%;
+     padding: 0 15px;
+     text-decoration: none;
+     list-style: none;
+     font-size: 13px;
+     color: $font-white;
+ 
+     .xs-break {
+       @media (min-width: 767px) {
+         display: none;
+       }
+     }
+ 
+     
+     a {
+      display: inline;
+       color: $font-white;
+       text-decoration: none;
+       white-space: nowrap;
+     }
+ 
+     .sitemap-link:hover {
+       text-decoration: underline;
+     }
+   }
+ }
+ 
+ @media (min-width: 768px) {
+   .footer__licence {
+     flex-direction: row;
+     flex-wrap: nowrap;
+     white-space: nowrap;
+    
+    .sitemap-hyphen::before {
+      content: " - ";
+    }
+     
+   }
+ }
+  
+  
