@@ -1,0 +1,31 @@
+// Breakpoint Variables
+$breakpoint-xs: 480px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Media Queries
+
+@mixin respond-min($breakpoint) {
+    @if $breakpoint == sm {
+      @media (min-width: 480px) { @content; }
+    } @else if $breakpoint == md {
+      @media (min-width: 768px) { @content; }
+    } @else if $breakpoint == lg {
+      @media (min-width: 992px) { @content; }
+    } @else if $breakpoint == xl {
+      @media (min-width: 1200px) { @content; }
+    }
+  }
+
+  @mixin respond-max($breakpoint) {
+    @if $breakpoint == sm {
+      @media (max-width: 479.98px) { @content; }
+    } @else if $breakpoint == md {
+      @media (max-width: 767.98px) { @content; }
+    } @else if $breakpoint == lg {
+      @media (max-width: 991.98px) { @content; }
+    } @else if $breakpoint == xl {
+      @media (max-width: 1199.98px) { @content; }
+    }
+  }

@@ -249,11 +249,11 @@
     
         &#design {
           .read-more {
-            background-color: $webdesign-prim;
+            background-color: $design-prim;
           }
   
           .icon {
-            background-color: $webdesign-prim;
+            background-color: $design-prim;
           }
   
           i {
@@ -261,11 +261,11 @@
           }
     
           &:hover {
-            background-color: $webdesign-prim;
+            background-color: $design-prim;
           
             .read-more {
               background-color: $font-white;
-              color: $webdesign-prim;
+              color: $design-prim;
           }
   
           .icon {
@@ -273,7 +273,7 @@
           }
   
           i {
-            color: $webdesign-prim;
+            color: $design-prim;
           }
           
           }
@@ -281,11 +281,11 @@
     
         &#security {
           .read-more {
-            background-color: $cybersec-prim;
+            background-color: $security-prim;
           }
   
           .icon {
-            background-color: $cybersec-prim;
+            background-color: $security-prim;
           }
   
           i {
@@ -293,11 +293,11 @@
           }
     
           &:hover {
-            background-color: $cybersec-prim;
+            background-color: $security-prim;
               
             .read-more {
               background-color: $font-white;
-              color: $cybersec-prim;
+              color: $security-prim;
           }
   
           .icon {
@@ -305,7 +305,7 @@
           }
   
           i {
-            color: $cybersec-prim;
+            color: $security-prim;
           }
          
           }

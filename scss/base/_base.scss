@@ -1,48 +1,12 @@
-
-*,
-*::before,
-*::after {
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-html,
 body {
-  scroll-behavior: smooth;
-}
-
-body {
-  color: #666;
-  font-size: 1rem;
-  font-family: Poppins, sans-serif;
-  letter-spacing: 0.4px;
+  font-family: 'Poppins', sans-serif;
   background-color: #fff;
-}
-
-#wrapper {
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-}
-
-
-
-.container {
-  
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-    
-    @media (min-width: 768px) {
-    width: 750px;
-    }
-    
-    @media (min-width: 992px) {
-    width: 970px;
-    }
-    
-    @media (min-width: 1260px) {
-    width: 1200px;
-    }
-    
+  color: #666;
+  line-height: 1.4285;
 }

@@ -1,298 +1,281 @@
-//------------------------------------------------------------//
-//------------------------------------------------------------//
+.nav__menu {
+  position: relative;
+  background-color: #333645;
 
-//------------------------------------------------------------//
-//------------------------Nav Bar-----------------------------//
-//------------------------------------------------------------//
-
-//------------------------------------------------------------//
-//------------------------------------------------------------//
-
-//Nav Bar
-.nav__main {
-  display: none;
-}
-
-@media (min-width: 991px) {
-  .nav__menu {
-    background-color: #333645;
-    position: relative;
-  }
-  
-  .nav__menu ul {
-    list-style-type: none;
-    margin: 0;
+    ul {
     padding: 0;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .nav__menu ul li {
-    flex: 1;
     margin: 0;
-    cursor: pointer;
-    text-align: center;
-  }
-  
-  .nav__menu ul li a {
+    list-style: none;
     display: flex;
-    justify-content: center;
-    padding: 19px 0 18px;
-    text-transform: uppercase;
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    line-height: 18px;
-    width: 100%;
+    flex-direction: row;
+    }
+
+    .nav__item {
+      flex: 1;
+      -webkit-flex: 1;
+      text-align: center;
+
+      .nav__icon {
+        font-size: 1.438rem;
+        display: block;
+        padding-bottom: 10px;
+      }
+
+      small {
+        display: block;
+        font-size: .625rem;
+        padding-bottom: 1px;
+      }
+
+      a {
+        position: relative;
+        display: block;
+        color: #fff;
+        padding: 19px 0 18px;
+        text-transform: uppercase;
+        font-size: 1.125rem;
+        text-decoration: none;
+        line-height: 1rem;
+      }
+    }
+
+    .sub__banner {
+      margin: 0;
+      display: none;
+      background-color: #1d1f28;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 100%;
+      z-index: 10;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    .submenu {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: -15px;
+      list-style: none;
+      text-align: left;
+      padding: 0;
+
+      .submenu-title {
+        display: block;
+        width: 100%;
+        color: #fff;
+        margin-bottom: 10px;
+        margin-top: 15px;
+        font-weight: 500;
+      }
+
+      .submenu-item {
+        width: 33%;
+        margin-top: 15px;
+
+        a {
+          color: #fff;
+          font-size: 1.2rem;
+          line-height: 1.313rem;
+          padding: .625rem .938rem .625rem 0;
+          display: flex;
+          align-items: center;
+          text-decoration: none;
+        }
+        
+        a:hover {
+          text-decoration: none;
+        }
+
+        .submenu-item-text {
+          margin-left: 10px;
+        }
+
+        .submenu-item-text:hover {
+          text-decoration: underline;
+        }
+
+        .submenu-item-icon {
+          display: flex;
+          justify-content: left;
+          align-items: center;
+          min-width: 25px;
+        }
+      }
+    }
+
+    .nav__item:hover > .sub__banner {
+      display: flex;
+    }
+
+    @media (min-width: 992px) {
+      .nav__item:hover > .sub__banner {
+        display: block;
+      }
+    }
+
+    .nav__item:hover > a::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -35px;
+      transform: translateX(-50%);
+      z-index: 90;
+      width: 0;
+      height: 0;
+      border-color: #007bff transparent transparent;
+      border-style: solid;
+      border-width: 35px 83.5px 0;
+    }
+
+    @media (max-width: 1259px) {
+      nav-item:hover > a::before {
+          border-width:35px 68px 0;
+      }
+    }
+
+    .nav__software:hover,
+    .nav__it:hover,
+    .nav__marketing:hover,
+    .nav__telecoms:hover,
+    .nav__design:hover,
+    .nav__security:hover,
+    .nav__training:hover {
+      border-color: transparent;
+    }
+
+    .nav__software:hover > .nav__icon,
+    .nav__it:hover > .nav__icon,
+    .nav__marketing:hover > .nav__icon,
+    .nav__telecoms:hover > .nav__icon,
+    .nav__design:hover > .nav__icon,
+    .nav__security:hover > .nav__icon,
+    .nav__training:hover > .nav__icon {
+       color: #fff;
+    }
+
+    // Software
+    #nav__software:hover {
+      background-color: $software-prim;
+    }
+
+    #nav__software > .nav__icon {
+      color: $software-prim;
+    }
+
+    #nav__software:hover a::before {
+      border-color: $software-prim transparent transparent;
+    }
+
+    #sub__software {
+      background-color: $software-submenu;
+    }
+
+    // IT
+    #nav__it:hover {
+      background-color: $it-prim;
+    }
+
+    #nav__it > .nav__icon {
+      color: $it-prim;
+    }
+
+    #nav__it:hover a::before {
+      border-color: $it-prim transparent transparent;
+    }
+
+    #sub__it {
+      background-color: $it-submenu;
+    }
+
+    // Marketing
+    #nav__marketing:hover {
+      background-color: $marketing-prim;
+    }
+
+    #nav__marketing > .nav__icon {
+      color: $marketing-prim;
+    }
+
+    #nav__marketing:hover a::before {
+      border-color: $marketing-prim transparent transparent;
+    }
+
+    #sub__marketing {
+      background-color: $marketing-submenu;
+    }
+
+    // Telecoms
+    #nav__telecoms:hover {
+      background-color: $telecoms-prim;
+    }
+
+    #nav__telecoms > .nav__icon {
+      color: $telecoms-prim;
+    }
+
+    #nav__telecoms:hover a::before {
+      border-color: $telecoms-prim transparent transparent;
+    }
+
+    #sub__telecoms {
+      background-color: $telecoms-submenu;
+    }
+
+    // Design
+    #nav__design:hover {
+      background-color: $design-prim;
+    }
+
+    #nav__design > .nav__icon {
+      color: $design-prim;
+    }
+
+    #nav__design:hover a::before {
+      border-color: $design-prim transparent transparent;
+    }
+
+    #sub__design {
+      background-color: $design-submenu;
+    }
+
+    // Security
+    #nav__security:hover {
+      background-color: $security-prim;
+    }
+
+    #nav__security > .nav__icon {
+      color: $security-prim;
+    }
+
+    #nav__security:hover a::before {
+      border-color: $security-prim transparent transparent;
+    }
+
+    #sub__security {
+      background-color: $security-submenu;
+    }
+
+    // Training
+    #nav__training:hover {
+      background-color: $training-prim;
+    }
+
+    #nav__training > .nav__icon {
+      color: $training-prim;
+    }
+
+    #nav__training:hover a::before {
+      border-color: $training-prim transparent transparent;
+    }
+
+    #sub__training {
+      background-color: $training-submenu;
+    }
+
+
+
+
   }
-  
-  .nav__menu ul li i {
-    display: block;
-    font-size: 24px;
-    margin-bottom: 5px;
-    color: white;
-  }
-  
-  .submenu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100vw;
-    z-index: 1;
-    padding: 20px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    align-items: stretch;
-    min-height: 200px;
-  }
-  
-  .submenu::before,
-  .submenu::after,
-  #sub__software::before,
-  #sub__it::before,
-  #sub__marketing::before,
-  #sub__telecoms::before,
-  #sub__design::before,
-  #sub__security::before,
-  #sub__training::before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    top: 0;
-    z-index: -1;
-  }
-  
-  .submenu::before {
-    left: -9999px;
-    width: 10000px;
-  }
-  
-  .submenu::after {
-    right: -9999px;
-    width: 10000px;
-  }
-  
-  .submenu h3 {
-    color: #fff;
-    position: absolute;
-    top: 0;
-    margin-left: 30px;
-  }
-  
-  .submenu ul {
-    list-style-type: none;
-    margin-left: 20px;
-    margin-top: 40px;
-    padding: 0;
-    gap: 20px;
-    max-width: 1200px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-items: left;
-    text-align: left;
-  }
-  
-  .submenu ul li {
-    margin: 5px 0;
-  }
-  
-  .submenu ul li a {
-    color: white;
-    text-decoration: none;
-    display: block;
-    justify-items: left;
-    font-size: 12px;
-    padding: 5px 10px;
-  }
-  
-  .submenu ul li a:hover {
-    text-decoration: underline;
-  }
-  
-  .nav-menu ul li:hover .submenu {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    text-align: left;
-    margin: 0 auto;
-    left: 0;
-  }
-  
-  #nav__software:hover {
-    background-color: #67809f;
-  }
-  #sub__software {
-    background-color: #526781;
-  }
-  
-  #nav__it:hover,
-  #sub__it {
-    background-color: #286abd;
-  }
-  
-  #nav__marketing:hover,
-  #sub__marketing {
-    background-color: #2ecc71;
-  }
-  
-  #nav__telecoms:hover,
-  #sub__telecoms {
-    background-color: #d64541;
-  }
-  
-  #nav__design:hover,
-  #sub__design {
-    background-color: #926fb1;
-  }
-  
-  #nav__security:hover,
-  #sub__security {
-    background-color: #f62459;
-  }
-  
-  #nav__training:hover,
-  #sub__training {
-    background-color: #ce4125;
-  }
-  
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//   .nav__main {
-//     display: flex;
-//     background-color: $nav-background;
-//     height: 99px;
-//   }
-
-//   .nav__main .nav__item {
-//     position: relative;
-//     } 
-  
-//   .nav__list { 
-//         display: flex;
-//         flex-direction: row;
-//         justify-content: space-evenly;
-//         background-color: $nav-background;
-//         list-style: none;
-//         margin: 0;
-//         padding: 0;
-//       a {
-//         text-decoration: none;
-//         color: $font-white;
-//         padding: 15px 20px;
-//         display: block;
-//         text-align: center;
-//       }
-//   }
-  
-//   .nav__item {
-//     justify-items: center;
-//   }
-  
-  
-//   .nav__submenu > div {
-//     display: none;
-//     position: absolute;
-//     top: 99px; 
-//     left: 0;
-//     width: 100%;
-//     z-index: 1;
-//     height: 99px; 
-//   }
-  
-//   .nav__item:hover .nav__submenu > div {
-//     display: block;
-//   }
-  
-//   .nav__submenu ul {
-//     list-style-type: none;
-//     margin: 0;
-//     padding: 10px;
-  
-  
-//     li {
-//     padding: 5px 0;
-//    }
-  
-//     h2 {
-//     margin: 0;
-//     padding: 10px;
-//     color: $font-white;
-//     font-size: 18px;
-//    }
-  
-//   }
-  
-//   #nav__software > i {
-//     color: $software-prim;
-//   }
-  
-//   #nav__it > i {
-//     color: $it-prim;
-//   }
-  
-//   #nav__marketing > i {
-//     color: $marketing-prim;
-//   }
-  
-//   #nav__telecoms > i {
-//     color: $telecoms-prim;
-//   }
-  
-//   #nav__design > i {
-//     color: $webdesign-prim;
-//   }
-  
-//   #nav__security > i {
-//     color: $cybersec-prim;
-//   }
-  
-//   #nav__training > i {
-//     color: $training-prim;
-//   }
-  
-
-// }
-
-
-
-
-
-
 
