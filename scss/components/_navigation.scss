@@ -1,6 +1,15 @@
 .nav__menu {
-  position: relative;
-  background-color: #333645;
+
+  @include respond-min(lg) {
+    display: block;
+    position: relative;
+    background-color: #333645;
+  }
+
+  @include respond-max(lg) {
+    display: none;
+  }
+  
 
     ul {
     padding: 0;
@@ -16,26 +25,24 @@
       text-align: center;
 
       .nav__icon {
-        font-size: 1.438rem;
+        font-size: 32px;
         display: block;
-        padding-bottom: 10px;
+        padding-bottom: 0;
       }
 
       small {
-        display: block;
         font-size: .625rem;
         padding-bottom: 1px;
       }
 
       a {
         position: relative;
-        display: block;
         color: #fff;
-        padding: 19px 0 18px;
+        padding: 22px 0 18px;
         text-transform: uppercase;
         font-size: 1.125rem;
         text-decoration: none;
-        line-height: 1rem;
+        line-height: .1rem;
       }
     }
 
@@ -67,6 +74,7 @@
         color: #fff;
         margin-bottom: 10px;
         margin-top: 15px;
+        font-size: 2rem;
         font-weight: 500;
       }
 
@@ -119,7 +127,7 @@
       content: "";
       position: absolute;
       left: 50%;
-      bottom: -35px;
+      bottom: -39.3px;
       transform: translateX(-50%);
       z-index: 90;
       width: 0;
@@ -145,19 +153,30 @@
       border-color: transparent;
     }
 
-    .nav__software:hover > .nav__icon,
-    .nav__it:hover > .nav__icon,
-    .nav__marketing:hover > .nav__icon,
-    .nav__telecoms:hover > .nav__icon,
-    .nav__design:hover > .nav__icon,
-    .nav__security:hover > .nav__icon,
-    .nav__training:hover > .nav__icon {
-       color: #fff;
+    .nav__software:hover,
+    .nav__it:hover, 
+    .nav__marketing:hover,
+    .nav__telecoms:hover, 
+    .nav__design:hover, 
+    .nav__security:hover, 
+    .nav__training:hover  {
+      
+        i {
+          color: #fff;
+      }   
+    }
+
+    .nav__item:hover > i {
+      color: #fff; 
+      
     }
 
     // Software
     #nav__software:hover {
       background-color: $software-prim;
+        .sub__banner {
+          background-color: $software-submenu;
+        }
     }
 
     #nav__software > .nav__icon {
@@ -170,11 +189,15 @@
 
     #sub__software {
       background-color: $software-submenu;
+        
     }
 
     // IT
     #nav__it:hover {
       background-color: $it-prim;
+        .sub__banner {
+          background-color: $it-submenu;
+        }
     }
 
     #nav__it > .nav__icon {
@@ -192,6 +215,9 @@
     // Marketing
     #nav__marketing:hover {
       background-color: $marketing-prim;
+        .sub__banner {
+          background-color: $marketing-submenu;
+        }
     }
 
     #nav__marketing > .nav__icon {
@@ -209,6 +235,9 @@
     // Telecoms
     #nav__telecoms:hover {
       background-color: $telecoms-prim;
+        .sub__banner {
+          background-color: $telecoms-submenu;
+        }
     }
 
     #nav__telecoms > .nav__icon {
@@ -226,6 +255,9 @@
     // Design
     #nav__design:hover {
       background-color: $design-prim;
+        .sub__banner {
+          background-color: $design-submenu;
+        }
     }
 
     #nav__design > .nav__icon {
@@ -243,6 +275,9 @@
     // Security
     #nav__security:hover {
       background-color: $security-prim;
+        .sub__banner {
+          background-color: $security-submenu;
+        }
     }
 
     #nav__security > .nav__icon {
@@ -260,6 +295,9 @@
     // Training
     #nav__training:hover {
       background-color: $training-prim;
+        .sub__banner {
+          background-color: $training-submenu;
+        }
     }
 
     #nav__training > .nav__icon {
