@@ -13,7 +13,6 @@
 
     ul {
     padding: 0;
-    margin: 0;
     list-style: none;
     display: flex;
     flex-direction: row;
@@ -23,27 +22,38 @@
       flex: 1;
       -webkit-flex: 1;
       text-align: center;
+      padding: 19px 0 18px;
 
       .nav__icon {
-        font-size: 32px;
+        font-size: 23px;
         display: block;
-        padding-bottom: 0;
+        padding-bottom: 10px;
+      }
+
+      .nav__icon:hover {
+        color: #fff;
       }
 
       small {
+        display: block;
         font-size: .625rem;
         padding-bottom: 1px;
+        
       }
 
       a {
         position: relative;
         color: #fff;
-        padding: 22px 0 18px;
         text-transform: uppercase;
         font-size: 1.125rem;
         text-decoration: none;
-        line-height: .1rem;
+        line-height: 1;
+        
       }
+    }
+
+    .nav__item:hover {
+      cursor: pointer;
     }
 
     .sub__banner {
@@ -81,6 +91,7 @@
       .submenu-item {
         width: 33%;
         margin-top: 15px;
+        text-transform: capitalize;
 
         a {
           color: #fff;
@@ -89,15 +100,13 @@
           padding: .625rem .938rem .625rem 0;
           display: flex;
           align-items: center;
-          text-decoration: none;
+          
         }
         
-        a:hover {
-          text-decoration: none;
-        }
 
         .submenu-item-text {
           margin-left: 10px;
+          text-transform: none;
         }
 
         .submenu-item-text:hover {
@@ -127,7 +136,7 @@
       content: "";
       position: absolute;
       left: 50%;
-      bottom: -39.3px;
+      bottom: -79px;
       transform: translateX(-50%);
       z-index: 90;
       width: 0;
@@ -151,26 +160,10 @@
     .nav__security:hover,
     .nav__training:hover {
       border-color: transparent;
+      color: #fff;
     }
 
-    .nav__software:hover,
-    .nav__it:hover, 
-    .nav__marketing:hover,
-    .nav__telecoms:hover, 
-    .nav__design:hover, 
-    .nav__security:hover, 
-    .nav__training:hover  {
-      
-        i {
-          color: #fff;
-      }   
-    }
-
-    .nav__item:hover > i {
-      color: #fff; 
-      
-    }
-
+   
     // Software
     #nav__software:hover {
       background-color: $software-prim;
@@ -185,6 +178,10 @@
 
     #nav__software:hover a::before {
       border-color: $software-prim transparent transparent;
+    }
+
+    #nav__software:hover > .nav__icon {
+      color: #fff;
     }
 
     #sub__software {
@@ -208,6 +205,10 @@
       border-color: $it-prim transparent transparent;
     }
 
+    #nav__it:hover > .nav__icon {
+      color: #fff;
+    }
+
     #sub__it {
       background-color: $it-submenu;
     }
@@ -226,6 +227,10 @@
 
     #nav__marketing:hover a::before {
       border-color: $marketing-prim transparent transparent;
+    }
+
+    #nav__marketing:hover > .nav__icon {
+      color: #fff;
     }
 
     #sub__marketing {
@@ -248,6 +253,10 @@
       border-color: $telecoms-prim transparent transparent;
     }
 
+    #nav__telecoms:hover > .nav__icon {
+      color: #fff;
+    }
+
     #sub__telecoms {
       background-color: $telecoms-submenu;
     }
@@ -266,6 +275,10 @@
 
     #nav__design:hover a::before {
       border-color: $design-prim transparent transparent;
+    }
+
+    #nav__design:hover > .nav__icon {
+      color: #fff;
     }
 
     #sub__design {
@@ -288,6 +301,10 @@
       border-color: $security-prim transparent transparent;
     }
 
+    #nav__security:hover > .nav__icon {
+      color: #fff;
+    }
+
     #sub__security {
       background-color: $security-submenu;
     }
@@ -306,6 +323,10 @@
 
     #nav__training:hover a::before {
       border-color: $training-prim transparent transparent;
+    }
+
+    #nav__training:hover > .nav__icon {
+      color: #fff;
     }
 
     #sub__training {
