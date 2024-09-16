@@ -9,16 +9,14 @@
         <title>Full Service Digital Agency | Cambridgeshire & Norfolk | Netmatters</title>
         <!--Fonts/Icons-->
         
-        <link rel="stylesheet" type="text/css" href="css/font-awesome.css"> 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&family=Poppins:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
-        <!--Variable Icon-->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-        <!--Static Icon-->
         <link rel="stylesheet" href="https://i.icomoon.io/public/temp/1185cdb643/NetmattersHomepage/style.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,1,0" />
         <link rel="stylesheet" href="https://i.icomoon.io/public/1185cdb643/UntitledProject1/style.css">
+
         <!--Stylesheet-->
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
@@ -27,27 +25,43 @@
         
     <body>
                 <!--Header--> 
-                <div class="container">       
-                    <header class="header">
-
+            <header>        
+                <div class="header__top">
+                    <div class="container">       
                         <div class="header__content"> 
+                            <!--logo-->
                             <div class="header__logo">
                                 <img src="assets/icons/f-logo.png"alt="Netmatters Logo"/>
                             </div>
+
+                            <!--Phone Icon  Max 768px-->
                             <div class="header__phone">
                                 <i class="icon-phone-in-talk"></i>
                             </div>
+
+                            <!--Buttons/Search Bar-->
+                            <!-- <div class="header__actions"> -->
+
+                            <!--Support Button-->
                             <div class="header__support">
-                                <i class="icon-mouse"></i>Support</div>
-                            <div class="header__contact">
-                                <i class="icon-paper-plane"></i>Contact</div>
-                            <div class="header__hamburger">
-                                <i>menu</i>
+                                <i class="icon-mouse"></i>Support
                             </div>
 
-                            <!--XS Search Bar--> <!--Hidden at >768px-->
+                            <!--Contact Button-->
+                            <div class="header__contact">
+                                <i class="icon-paper-plane"></i>Contact
+                            </div>
+
+                            <!--Burger Menu-->
+                            <div class="header__hamburger">
+                                <div class="line top"></div>
+                                <div class="line middle"></div>
+                                <div class="line bottom"></div>
+                            </div>
+                        
+                            <!--XS Search Bar--> <!--Hidden at 768px-->
                             <div class="header__xs-search-bar">
-                                <form method="get" action="#" accept-charset="UTF-8" class="search-form">
+                                <form class="search-form" method="get" action="#" accept-charset="UTF-8" >
                                 <input id="xs-input" type="text" placeholder="Search...">
                                 <button id="xs-submit">
                                     <i class="icon-search"></i>
@@ -55,22 +69,28 @@
                                 </form>
                             </div>
 
-                            <!--Displays at >768px-->
-                            <!--S Search Bar-->
+                            
+                            
+                            <!--Mobile Search Bar   Max 768px-->
                             <div class="header__s-search-bar">
-                                <form method="get" action="#" accept-charset="UTF-8" class="search-form">
-                                <input class="input" type="text" placeholder="Search..." />
-                                <button id="s-submit">
-                                    <i class="icon-search"></i>
-                                </button>
+                                <form class="header__form" method="get" action="#" accept-charset="UTF-8" class="search-form">
+                                    <input class="input" type="text" placeholder="Search..." />
+                                        <button id="s-submit">
+                                            <i class="icon-search"></i>
+                                        </button>
                                 </form>
                             </div>
-                            <!--991px - 1259px Search Button-->
-                            <div class="header__m-search-btn"><i class="icon-search"></i></div>
-                        </div>     
-                    </header>
-                </div>
+                            
+                            <!--768px + Search Button-->
+                            <div class="header__m-search-btn">
+                                <i class="icon-search"></i>
+                            </div>
 
+                        </div>
+                    </div>     
+                </div>
+            </header>    
+            
 
 
                 <!--Nav Menu-->  
