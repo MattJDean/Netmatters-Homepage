@@ -280,7 +280,7 @@
 //-992px - 1260px Breakpoint-//
 //---------------------------//
 
-  @media (min-width: 992px)  {
+  @media (min-width: 992px) and (max-width: 1260px) {
     .md-form .md-input {
       display: none;
     }
@@ -388,12 +388,14 @@
 //---------------------------//
 
 @media (min-width: 1260px) {
-  .header__content {
-    #md-input {
+  
+  .header__md-search-bar{
+    .md-form, #md-input {
       grid-column: 4 / 5;
       grid-row: 1 / 2;
       display: inline-block !important;
       width: 240px;
     }
   }
+  
 }
