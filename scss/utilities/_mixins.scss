@@ -30,17 +30,23 @@ $breakpoint-xl: 1200px;
     }
   }
 
+  @mixin respond-md-lg {
+    @media (min-width: $breakpoint-md) and (max-width: calc(#{$breakpoint-lg} - 0.02px)) {
+      @content;
+    }
+  }
+
   //Buttons
 
   @mixin button(
-  $padding: 6px 12px,
+  $padding: 5px 15px,
   $bg-color: #333645,
   $text-color: #fff,
   $border-color: transparent,
   $font-weight: 400,
-  $font-size: 14px,
+  $font-size: 1.063rem,
   $line-height: 1.42857143,
-  $border-radius: 2px,
+  $border-radius: 3px,
   $hover-bg-color: darken($bg-color, 10%),
   $hover-text-color: $text-color,
   $icon-size: 16px,
@@ -50,6 +56,8 @@ $breakpoint-xl: 1200px;
   display: inline-block;
   margin-bottom: 0;
   font-weight: $font-weight;
+  text-transform: uppercase; 
+  text-decoration: none;
   text-align: center;
   vertical-align: middle;
   cursor: pointer;

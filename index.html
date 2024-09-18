@@ -24,32 +24,52 @@
        
         
     <body>
-                <!--Header--> 
+            <!--Header--> 
             <header>        
                 <div class="header__top">
                     <div class="container">       
                         <div class="header__content"> 
+
                             <!--logo-->
                             <div class="header__logo">
                                 <img src="assets/icons/f-logo.png"alt="Netmatters Logo"/>
                             </div>
 
-                            <!--Phone Icon  Max 768px-->
-                            <div class="header__phone">
-                                <i class="icon-phone-in-talk"></i>
+                            <!--xs Search Bar--> <!--Hidden at 768px-->
+                            <div class="header__xs-search-bar">
+                                <form class="xs-form" method="get" action="#" accept-charset="UTF-8" >
+                                    <input id="xs-input" type="text" placeholder="Search...">
+                                        <button id="xs-submit">
+                                            <i class="icon-search"></i>
+                                        </button>
+                                </form>
                             </div>
 
-                            <!--Buttons/Search Bar-->
-                            <!-- <div class="header__actions"> -->
+                            
 
-                            <!--Support Button-->
+                            <!--Support Button   Min 992px-->
                             <div class="header__support">
                                 <i class="icon-mouse"></i>Support
                             </div>
 
-                            <!--Contact Button-->
+                            <!--Contact Button    Min 992px-->
                             <div class="header__contact">
                                 <i class="icon-paper-plane"></i>Contact
+                            </div>
+
+                             <!--md Search Bar 768px - 992px-->
+                             <div class="header__md-search-bar">
+                                <form class="md-form" method="get" action="#" accept-charset="UTF-8">
+                                    <input class="md-input" type="text" placeholder="Search..." />
+                                        <button id="md-submit">
+                                            <i class="icon-search"></i>
+                                        </button>
+                                </form>
+                            </div>
+                            
+                            <!--Phone Icon    Max 768px-->
+                            <div class="header__phone">
+                                <i class="icon-phone-in-talk"></i>
                             </div>
 
                             <!--Burger Menu-->
@@ -58,40 +78,12 @@
                                 <div class="line middle"></div>
                                 <div class="line bottom"></div>
                             </div>
-                        
-                            <!--XS Search Bar--> <!--Hidden at 768px-->
-                            <div class="header__xs-search-bar">
-                                <form class="search-form" method="get" action="#" accept-charset="UTF-8" >
-                                <input id="xs-input" type="text" placeholder="Search...">
-                                <button id="xs-submit">
-                                    <i class="icon-search"></i>
-                                </button>
-                                </form>
-                            </div>
-
-                            
-                            
-                            <!--Mobile Search Bar   Max 768px-->
-                            <div class="header__s-search-bar">
-                                <form class="header__form" method="get" action="#" accept-charset="UTF-8" class="search-form">
-                                    <input class="input" type="text" placeholder="Search..." />
-                                        <button id="s-submit">
-                                            <i class="icon-search"></i>
-                                        </button>
-                                </form>
-                            </div>
-                            
-                            <!--768px + Search Button-->
-                            <div class="header__m-search-btn">
-                                <i class="icon-search"></i>
-                            </div>
-
                         </div>
                     </div>     
                 </div>
             </header>    
             
-
+            <!--------------------------------------------------------------------------------------------------------------------------------------------->
 
                 <!--Nav Menu-->  
                 <nav class="nav__menu">
