@@ -51,47 +51,46 @@ $breakpoint-xl: 1200px;
   $hover-text-color: $text-color,
   $icon-size: 16px,
   $icon-position: left, 
-  $icon-margin: 8px
-) {
-  display: inline-block;
-  margin-bottom: 0;
-  font-weight: $font-weight;
-  text-transform: uppercase; 
-  text-decoration: none;
-  text-align: center;
-  vertical-align: middle;
-  cursor: pointer;
-  background-image: none;
-  border: 1px solid $border-color;
-  white-space: nowrap;
-  padding: $padding;
-  font-size: $font-size;
-  line-height: $line-height;
-  border-radius: $border-radius;
-  background-color: $bg-color;
-  color: $text-color;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  $icon-margin: 8px) {
+      display: inline-block;
+      margin-bottom: 0;
+      font-weight: $font-weight;
+      text-transform: uppercase; 
+      text-decoration: none;
+      text-align: center;
+      vertical-align: middle;
+      cursor: pointer;
+      background-image: none;
+      border: 1px solid $border-color;
+      white-space: nowrap;
+      padding: $padding;
+      font-size: $font-size;
+      line-height: $line-height;
+      border-radius: $border-radius;
+      background-color: $bg-color;
+      color: $text-color;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+      transition: background-color 0.3s ease, color 0.3s ease;
 
-  &:hover {
-    background-color: $hover-bg-color;
-    color: $hover-text-color;
-  }
+      &:hover {
+        background-color: $hover-bg-color;
+        color: $hover-text-color;
+      }
 
-  &:focus {
-    outline: none;
-  }
+      &:focus {
+        outline: none;
+      }
 
 
-  // Icon styles
-  i {
-    font-size: $icon-size;
-    @if $icon-position == left {
-      margin-right: $icon-margin;  // Margin to the right for left-positioned icon
-      margin-left: 0;              // No margin on the left
+    // Icon styles
+    i {
+      font-size: $icon-size;
+      @if $icon-position == left {
+        margin-right: $icon-margin;  // Margin to the right for left-positioned icon
+        margin-left: 0;              // No margin on the left
+      }
+      @else if $icon-position == right {
+        margin-left: $icon-margin;   // Margin to the left for right-positioned icon
+        margin-right: 0;             // No margin on the right
+      }
     }
-    @else if $icon-position == right {
-      margin-left: $icon-margin;   // Margin to the left for right-positioned icon
-      margin-right: 0;             // No margin on the right
-    }
-  }
 }

@@ -236,7 +236,7 @@
             border-color: $search-form-border;
             font-size: 14px;
             color: $search-form-text;
-            margin-left: 25px;
+            
           }
 
             #md-submit {
@@ -289,7 +289,7 @@
 
     .header__content {
       display: grid;
-      grid-template-columns: repeat(3, auto) 1fr auto;
+      grid-template-columns: auto .5fr .5fr .8fr .1fr;
       
     }
 
@@ -390,12 +390,16 @@
 @media (min-width: 1260px) {
   
   .header__md-search-bar{
-    .md-form, #md-input {
+    .md-form, .md-input {
       grid-column: 4 / 5;
       grid-row: 1 / 2;
       display: inline-block !important;
+    }
+    .md-input {
       width: 240px;
     }
+  
   }
+
   
 }

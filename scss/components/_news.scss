@@ -9,27 +9,19 @@
 //----------------------------------------------------------//
 
 
-.news__container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 20px;
-  
 
-    @media (max-width: 768px) {
-      display: flex;
-      flex-direction: column;
-    }
-
-
-}
-
+  .news__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;  
+    
     .news__h1 {
       color: $news-font;
       font-size: 26px;
       margin: 15px 0;
     }
-
+    
     .news__view-all {
       font-size: 18px;
       text-decoration: none;
@@ -39,10 +31,20 @@
       &:hover {
         text-decoration: underline;
       }
-      
     }
+  }
 
-    .news__card {
+
+@media (min-width: 992px) {
+  .news__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+  }
+}
+
+.news__card {
       border: none;
       border-radius: 3px;
       overflow: hidden;
@@ -56,81 +58,73 @@
         width: 100%;
       }
 
+      &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+      }
+    
+      &--header {
+        background-color: $news-background;
+      }
 
-          &:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+      &--banner {
+        position: relative;
+        text-align: center;
+        background-color: $news-banner-strip;
+
+          img {
+            width: 100%;
+            height: auto;
           }
-        
-          &--header {
-            background-color: $news-background;
-          }
+      }
 
-          &--banner {
-            position: relative;
-            text-align: center;
-            background-color: $news-banner-strip;
+      .news__badge {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: $news-badge;
+        color: $font-white;
+        padding: 5px 10px;
+        border-radius: 2px;
+        font-size: 12px;
+        font-weight: bold;
+      }
 
-              img {
-                width: 100%;
-                height: auto;
+      &--body {
+        padding: 15px;
 
-              }
-
-          }
-
-        .news__badge {
-          position: absolute;
-          top: 10px;
-          right: 10px;
-          background-color: $news-badge;
-          color: $font-white;
-          padding: 5px 10px;
-          border-radius: 2px;
-          font-size: 12px;
-          font-weight: bold;
-        }
-
-        &--body {
-          padding: 15px;
-
-              h2 {
-                font-size: 16px;
-                margin: 0 0 10px 0;
-                color: $news-headline;
-              
-                span {
-                  font-size: 13px;
-                  color: $news-read-time;
-                  text-transform: uppercase;
-  
-                }
-              
-              }
-
+        h2 {
+          font-size: 16px;
+          margin: 0 0 10px 0;
+          color: $news-headline;
             
-
-              p {
-                font-size: 13px;
-                color: $news-text;
-                line-height: 1.5;
-                margin-bottom: 20px;
-              }
-
+          span {
+            font-size: 13px;
+            color: $news-read-time;
+            text-transform: uppercase;
+          }
         }
 
-
-
-        .news__read--btn {
-          display: inline-block;
-          padding: 10px 20px;
-          background-color: $news-read-more;
-          color: $font-white;
-          text-decoration: none;
-          border-radius: 5px;
-          font-weight: bold;
-          text-align: center;
+        p {
+          font-size: 13px;
+          color: $news-text;
+          line-height: 1.5;
+          margin-bottom: 20px;
         }
+      }
+
+
+
+    .news__read--btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: $news-read-more;
+      color: $font-white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      text-align: center;
+    }
 
         &--footer {
           display: flex;
