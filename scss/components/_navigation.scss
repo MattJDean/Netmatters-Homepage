@@ -136,8 +136,8 @@
       content: "";
       position: absolute;
       left: 50%;
-      bottom: -79px;
-      transform: translateX(-50%);
+      bottom: -79px; //Chrome fix -54.6px
+      transform: translateX(-50%); //Chrome fix -65%
       z-index: 90;
       width: 0;
       height: 0;

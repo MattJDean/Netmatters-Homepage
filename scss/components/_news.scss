@@ -9,22 +9,23 @@
 //----------------------------------------------------------//
 
 
-
   .news__container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 20px;  
-    
+
     .news__h1 {
       color: $news-font;
-      font-size: 26px;
-      margin: 15px 0;
+      font-size: 2.25 rem;
+      margin: 50px 0 28px;
     }
     
     .news__view-all {
       font-size: 18px;
       text-decoration: none;
+      text-align: center;
+      margin-top: 60px;
       margin: auto;
       color: $news-font;
       cursor: pointer;
@@ -32,31 +33,50 @@
         text-decoration: underline;
       }
     }
-  }
+    
+    .news__view-all--top {
+      position: relative;
+      font-size: 18px;
+      text-decoration: none;
+      text-align: right;
+      color: $news-font;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+    
+    
+    @media (min-width: 768px) {
+        .news__container {
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 20px;
+        }
+        .news__view-all {
+          display: none;
+        }
+        .news__view-all--top {
+          display: block;
+          bottom: 90px;
+        }
+    }
 
-
-@media (min-width: 992px) {
-  .news__container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 20px;
-  }
-}
-
+//News Card Layout
 .news__card {
       border: none;
       border-radius: 3px;
       overflow: hidden;
-      width: 300px;
+      width: 100%;
       margin-bottom: 20px;
       font-family: $font-primary;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.5s ease;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
 
-      @media (max-width: 768px) {
-        width: 100%;
-      }
+   
 
       &:hover {
         transform: translateY(-10px);
@@ -81,7 +101,7 @@
       .news__badge {
         position: absolute;
         top: 10px;
-        right: 10px;
+        right: 0;
         background-color: $news-badge;
         color: $font-white;
         padding: 5px 10px;
@@ -109,12 +129,12 @@
           font-size: 13px;
           color: $news-text;
           line-height: 1.5;
+          padding-bottom: 20px;
           margin-bottom: 20px;
         }
       }
-
-
-
+      
+    // Read more button
     .news__read--btn {
       display: inline-block;
       padding: 10px 20px;
@@ -126,29 +146,42 @@
       text-align: center;
     }
 
-        &--footer {
-          display: flex;
-          align-items: center;
-          padding: 15px;
-          border-top: 1px solid #e0e0e0;
-        }
-
-        &--pic {
+      &--footer {
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        margin-top: 30px;
+        padding-top: 30px;
+        border-top: 1px solid #ccc;
+      
+        //avatar
+        img {
           border-radius: 50%;
-          width: 40px;
-          height: 40px;
+          width: 47px;
+          height: 47px;
           margin-right: 10px;
         }
-
-        &--info {
-          font-size: 12px;
-          color: $news-text;
-          
+        // Posted by
+        .news__card--info {
+          padding-left: 20px;
+          font-size: .875rem;
+          font-weight: 600;
+          color: #333645;
+            // Profile
+            span {
+              font-size: .875rem;
+              font-weight: 600;
+              color: $news-font;
+            }
+            // Date
+            small {
+              font-weight: 400;
+              color: $news-read-time;
+            }
             p {
               margin: 0;
             }
-
         }
+      }
 
-
-    }
+    }}

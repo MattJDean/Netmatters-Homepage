@@ -208,6 +208,10 @@
       .header__logo {
         grid-column: 1 / 2;
         max-width: 50%;
+
+        img {
+          width: 350px;
+        }
       }
   
       //md Search Bar //
@@ -226,7 +230,7 @@
             justify-self: center;
             position: relative;
             position: absolute;
-            bottom: 10px;
+            bottom: 5px;
             right: 63px;
             height: 56px;
             overflow: hidden;
@@ -245,7 +249,7 @@
               position: relative;
               display: inline-block;
               position: absolute;
-              bottom: 11px;
+              bottom: 6px;
               right: 0;
               background-color: $search-btn;
               height: 56px;
@@ -289,13 +293,13 @@
 
     .header__content {
       display: grid;
-      grid-template-columns: auto .5fr .5fr .8fr .1fr;
+      grid-template-columns: 1fr 1fr .5fr .3fr auto;
       
     }
 
     .header__logo {
       grid-column: 1 / 2;
-      max-width: 50%;
+      max-width: 370px;
     }
 
     .header__support {
@@ -324,8 +328,9 @@
       }
 
         i {
-            height: 23px;
-            width: 23px;
+            font-size: 23px;
+            height: 28px;
+            width: 28px;
             margin-right: 5px;
         }
     }
@@ -345,7 +350,7 @@
       font-size: 1.125rem;
       line-height: 46px;
       background-color: $contact-btn;
-      padding: 5px 15px;
+      padding: 5px 20px 5px 15px;
       margin: 0 10px;
       align-self: center;
       justify-self: start;
@@ -356,8 +361,9 @@
       }
 
           i {
-              height: 23px;
-              width: 23px;
+              font-size: 23px;
+              height: 28px;
+              width: 28px;
               margin-right: 5px;
           }
     }
@@ -388,8 +394,11 @@
 //---------------------------//
 
 @media (min-width: 1260px) {
-  
-  .header__md-search-bar{
+  .header__content {
+    display: grid;
+    grid-template-columns: 1fr .8fr .5fr 1fr auto;
+  }
+  .header__md-search-bar {
     .md-form, .md-input {
       grid-column: 4 / 5;
       grid-row: 1 / 2;

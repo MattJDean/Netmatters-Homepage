@@ -51,6 +51,11 @@
       }
     }
 
+    &__button {
+      position: absolute;
+      @include button;
+      }
+
     &__dots {
         position: absolute;
         width: 100vw;
@@ -85,5 +90,4 @@
             }
         }
     }
-}
- 
+} 

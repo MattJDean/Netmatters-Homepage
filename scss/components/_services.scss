@@ -7,7 +7,10 @@
 
 //----------------------------------------------------------//
 //----------------------------------------------------------//
+.services {
+  padding: 15px 0 50px;
 
+}
 @media (max-width: 768px){
   .services__cards {
     display:flex;
@@ -206,7 +209,7 @@
 }
 
 .services__txt--left {
-  font-size: 43.2px;
+  font-size: 2.7rem;
   font-weight: 400;
   color: #333645;
   
