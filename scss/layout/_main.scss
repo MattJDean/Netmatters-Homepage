@@ -128,4 +128,14 @@
         }
       } 
   }
+
+  @media (min-width: 992px) {
+    .about__content {
+      display: flex;
+      flex-direction: row;
+    }
+    .about__welcome, .about__testimonial {
+      width: 50%;
+    }
+  }
   
