@@ -139,23 +139,23 @@
               line-height: 1.42857143;
               color: #555;
               background-color: rgba(0,0,0,.1);
-              outline: 1px solid hsla(0,0%,100%,.2);
-              border: 2px solid rgba(0,0,0,.1);
+              // outline: 1px solid hsla(0,0%,100%,.2);
+              // border: 2px solid rgba(0,0,0,.1);
               transition: none;
-              box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+              // box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
               
-              &:active, &:focus {
-                box-shadow:0 0 3px #fff
-              }
+              // &:active, &:focus {
+              //   box-shadow:0 0 3px #fff
+              // }
     
-              &:-webkit-autofill,
-              &:-webkit-autofill:active,
-              &:-webkit-autofill:focus,
-              &:-webkit-autofill:hover {
-                -webkit-box-shadow: 0 0 0 30px #333645 inset !important;
-                -webkit-text-fill-color:#fff;
-                border:1px solid hsla(0,0%,100%,.1)
-              }
+              // &:-webkit-autofill,
+              // &:-webkit-autofill:active,
+              // &:-webkit-autofill:focus,
+              // &:-webkit-autofill:hover {
+              //   -webkit-box-shadow: 0 0 0 30px #333645 inset !important;
+              //   -webkit-text-fill-color:#fff;
+              //   border:1px solid hsla(0,0%,100%,.1)
+              // }
 
               &::placeholder {
                 color: #888;
@@ -249,7 +249,7 @@
               position: relative;
               display: inline-block;
               position: absolute;
-              bottom: 6px;
+              bottom: 5px;
               right: 0;
               background-color: $search-btn;
               height: 56px;

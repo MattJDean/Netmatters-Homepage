@@ -135,13 +135,17 @@
     .nav__item:hover > a::before {
       content: "";
       position: absolute;
-      left: 50%;
-      bottom: -79px; //Chrome fix -54.6px
-      transform: translateX(-50%); //Chrome fix -65%
+      left: 0;
+      top: 286.5%; 
+      -webkit-transform: translateX(-50%); /* Chrome, Safari */
+      -moz-transform: translateX(-50%); /* Firefox */
+      -ms-transform: translateX(-50%); /* IE */
+      -o-transform: translateX(-50%); /* Opera */
+      transform: translateX(-50%); 
       z-index: 90;
       width: 0;
       height: 0;
-      border-color: #007bff transparent transparent;
+      border-color: #ccc transparent transparent;
       border-style: solid;
       border-width: 35px 83.5px 0;
     }
