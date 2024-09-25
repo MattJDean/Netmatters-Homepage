@@ -1,0 +1,36 @@
+//Sidebar Menu
+
+.sidebar {
+    position:fixed;
+    top:0;
+    right:0;
+    z-index:9;
+    height:100%;
+    background:#333645;
+    width:275px;
+    overflow:auto;
+    -webkit-overflow-scrolling:touch;
+
+    ul {
+        list-style:none;
+        padding:0;
+        margin:0;
+    
+        li {
+            a {
+                display: block;
+                color:#fff;
+                text-align: center;
+                text-transform: uppercase;
+                text-decoration: none;
+                font-size:1.125rem;
+                padding:19px 0 18px;
+                border-radius:3px;
+                outline:1px solid rgba(0,0,0,.25);
+                border:1px solid hsla(0,0%,100%,.1);
+            }
+        }
+    
+    }
+
+}
