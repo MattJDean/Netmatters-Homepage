@@ -17,6 +17,8 @@
 
         <!--Stylesheet-->
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" href="owl-carousel/owl.carousel.css">
+        <link rel="stylesheet" href="owl-carousel/owl.theme.css">
     </head>
 
        
@@ -237,24 +239,132 @@
                        
                 
 
-                <!--Carousel-->
-                <div class="carousel">
-                    <!--Carousel Items-->
-                            <div class="carousel__item">
+                <!--Banner-->
+                <div class="banner">
+                    <!--Banner Slides-->
+                            <div class="banner__slide active">
                                 <!--Image-->
-                                <img id="start" src="assets/img/start.png" alt="Performance-driven digital and technology services.">
-                                    <!--Caption-->
-                                    <div class="carousel__caption">
-                                        <h2>The East Of England's Leading Technology Company</h2>
-                                        <p>Performance-driven digital and technology services<br>with complete transparency</p>
-                                    </div>
+                                <img id="start-slide" src="assets/img/start.png" alt="Performance-driven digital and technology services.">
+                                    <div class="container">
+                                        <!--Caption Text-->    
+                                        <div class="banner__caption">
+                                            <h2>The East Of England's Leading<br> Technology Company</h2>
+                                            <p>Performance-driven digital and technology services<br>with complete transparency.</p>
+                                        </div>
                                         <!--Button-->    
-                                        <div class="carousel__button">
+                                        <div id="start-btn" class="banner__button">
                                             <a href="#" class="btn">Why Choose Us? <i class="icon-arrow-right-solid"></i></a>
-                                        </div>       
+                                        </div>
+                                    </div>
                             </div>
+                           
+                            <div class="banner__slide">
+                                <!--Image-->
+                                <img id="software-slide" src="assets/img/software__slide.jpg" alt="Delivering expert bespoke software.">
+                                    <div class="container">
+                                        <!--Caption Text-->    
+                                        <div class="banner__caption">
+                                            <h2>Bespoke Software</h2>
+                                            <p>Delivering expert bespoke software<br>
+                                                solutions across a range of industries.</p>
+                                        </div>
+                                        <!--Button-->    
+                                        <div id="software-btn" class="banner__button">
+                                            <a href="#" class="btn">Find Out More <i class="icon-arrow-right-solid"></i></a>
+                                        </div>
+                                    </div>
+                            </div>
+
+                            <div class="banner__slide">
+                                <!--Image-->
+                                <img id="it-slide" src="assets/img/it__slide.png" alt="Fast and cost-effective IT support">
+                                    <div class="container">
+                                        <!--Caption Text-->    
+                                        <div class="banner__caption">
+                                            <h2>IT Support</h2>
+                                            <p>Fast and cost-effective IT support<br>
+                                                services for your business.</p>
+                                        </div>
+                                        <!--Button-->    
+                                        <div id="it-btn" class="banner__button">
+                                            <a href="#" class="btn">Find Out More <i class="icon-arrow-right-solid"></i></a>
+                                        </div>
+                                    </div>
+                            </div>
+
+                            <div class="banner__slide">
+                                <!--Image-->
+                                <img id="marketing-slide" src="assets/img/marketing__slide.png" alt="Delivering expert bespoke software.">
+                                    <div class="container">
+                                        <!--Caption Text-->    
+                                        <div class="banner__caption">
+                                            <h2>Digital Marketing</h2>
+                                            <p>Generating your new business through<br>
+                                                results-driven marketing activities.</p>
+                                        </div>
+                                        <!--Button-->    
+                                        <div id="marketing-btn" class="banner__button">
+                                            <a href="#" class="btn">Find Out More <i class="icon-arrow-right-solid"></i></a>
+                                        </div>
+                                    </div>
+                            </div>
+
+                            <div class="banner__slide">
+                                <!--Image-->
+                                <img id="telecoms-slide" src="assets/img/telecoms__slide.png" alt="A new approach to connectivity">
+                                    <div class="container">
+                                        <!--Caption Text-->    
+                                        <div class="banner__caption">
+                                            <h2>Telecoms Services</h2>
+                                            <p>A new approach to connectivity, see<br>
+                                                how we can help your business.</p>
+                                        </div>
+                                        <!--Button-->    
+                                        <div id="telecoms-btn" class="banner__button">
+                                            <a href="#" class="btn">Find Out More <i class="icon-arrow-right-solid"></i></a>
+                                        </div>
+                                    </div>
+                            </div>
+
+                            <div class="banner__slide">
+                                <!--Image-->
+                                <img id="design-slide" src="assets/img/design__slide.jpg" alt="For businesses looking to make a strong and effective first impression.">
+                                    <div class="container">
+                                        <!--Caption Text-->    
+                                        <div class="banner__caption">
+                                            <h2>Web Design</h2>
+                                            <p>For businesses looking to make a strong<br>
+                                                and effective first impression.</p>
+                                        </div>
+                                        <!--Button-->    
+                                        <div id="design-btn" class="banner__button">
+                                            <a href="#" class="btn">Find Out More <i class="icon-arrow-right-solid"></i></a>
+                                        </div>
+                                    </div>
+                            </div>
+
+                            <div class="banner__slide">
+                                <!--Image-->
+                                <img id="security-slide" src="assets/img/security__slide.png" alt="Keeping businesses and their customers sensitive information protected.">
+                                    <div class="container">
+                                        <!--Caption Text-->    
+                                        <div class="banner__caption">
+                                            <h2>Cyber Security</h2>
+                                            <p>Keeping businesses and their customers<br>
+                                                sensitive information protected.</p>
+                                        </div>
+                                        <!--Button-->    
+                                        <div id="security-btn" class="banner__button">
+                                            <a href="#" class="btn">Find Out More <i class="icon-arrow-right-solid"></i></a>
+                                        </div>
+                                    </div>
+                            </div>
+                </div>        
+                         
+                            
                             <!--Dot Container--> 
-                            <div class="carousel__dots">
+                            <div class="banner__dots container">
+                                <div class="dot active"></div>
                                 <div class="dot"></div>
                                 <div class="dot"></div>
                                 <div class="dot"></div>
@@ -262,7 +372,7 @@
                                 <div class="dot"></div>
                                 <div class="dot"></div>
                             </div> 
-                </div>
+                
                   
               
             
@@ -572,6 +682,7 @@
 
         </div>
     </div>
+<script src="js/script.js"></script>
 </body>
 </div>
 
