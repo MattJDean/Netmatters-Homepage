@@ -1,0 +1,120 @@
+//Cookies Dialog Popup
+
+
+/* Semi-transparent overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7); 
+  z-index: 9998;
+}
+
+
+  .cookies {
+    display: none;
+    position: fixed;
+    height: 350px;
+    width: 1200px;
+
+    background-color:#fff;
+    border: 1px solid #999;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 5px;
+    box-shadow: 0 3px 9px rgba(0,0,0,.5);
+    background-clip: padding-box;
+    outline: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: $font-primary, sans-serif;
+    transition: transform 0.3s ease-in-out;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px; 
+    text-align: center; 
+  }
+
+      .cookies__header {
+        font-weight: 400;
+        margin: 0 0 15px;
+        color: #333645;
+        line-height: 1.42857143;
+        font-size: 1.625rem;
+        padding: 15px;
+        border-bottom: 1px solid #e5e5e5;
+        min-height: 16.42857143px;
+      }
+
+      .cookies__body {
+        display: flex;
+        justify-content: center;
+        line-height: 1.875rem;
+        margin-bottom: 25px;
+        font-family: Poppins,sans-serif;
+        font-size: 1rem;
+        letter-spacing: .4px;
+        color: #666;
+
+        p {
+          margin: 0;
+          padding: 0;
+        }
+
+        a {
+          color: #333645;
+          text-decoration: none;
+
+            &:hover {
+              text-decoration: underline;
+            }
+        }
+      }
+
+      .cookies__footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 15px;
+        padding: 19px 20px 20px;
+        text-align: right;
+        border-top: 1px solid #e5e5e5;
+
+        .btn {
+          display: block;
+          width: auto;
+          height: auto;
+          line-height: 35px;
+          padding: 5px 15px;
+          text-transform: uppercase;
+          font-size: 1.063rem;
+          border-radius: 3px;
+          white-space: normal;
+          margin-bottom: 0;
+          font-weight: 400;
+          text-align: center;
+          cursor: pointer;
+          background-image: none;
+          border: 1px solid transparent;
+        }
+
+        .change__btn {
+          color: #fff;
+          background-color: #999aa2;
+          border-color: #999aa2;
+        }
+        .accept__btn {
+          color: #fff;
+          background-color: #926fb1;
+          border-color: #926fb1;
+        }
+      }
+
