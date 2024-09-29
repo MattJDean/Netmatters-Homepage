@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Show the cookies dialog on page load
-    showCookiesDialog();
+    // showCookiesDialog();
   
     // Function to handle accept button click
     function handleAccept() {
