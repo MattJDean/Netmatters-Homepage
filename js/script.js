@@ -38,6 +38,8 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 
+
+
   // Cookies
 
   document.addEventListener('DOMContentLoaded', function() {
@@ -83,6 +85,27 @@ document.addEventListener('DOMContentLoaded', function() {
     changeBtn.addEventListener('click', handleChangeSettings);
   });
 
+
+
+  
   // Sticky Header
+
+  let lastScrollY = window.pageYOffset;
+
+  window.addEventListener('scroll', function() {
+    const header = document.getElementById('main-header');
+    let currentScrollY = window.pageYOffset;
+  
+    if (currentScrollY > lastScrollY && currentScrollY > 210) {
+      header.classList.add('hidden');
+    } else {
+      header.classList.remove('hidden');
+    }
+  
+    lastScrollY = currentScrollY;
+  });
+  
+// Sidebar
+
 
  
