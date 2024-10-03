@@ -1,89 +1,191 @@
-//Sidebar Menu
+/* Desktop Sidebar (Visible above 991px) */
+
+@media (min-width: 991px) {
+    
+  .xs-sidebar {
+    display: none; /* Hide mobile sidebar on desktop */
+  }  
+
 
 .sidebar {
     display: flex;
     flex-direction: column;
     position:fixed;
-    flex-grow: 1;
     top:0;
-    right: -300;
+    right: 0;
     z-index: 2001;
     height:100vh;
     background:#262834;
-    width:auto;
-    overflow:scroll;
-    -webkit-overflow-scrolling:touch;
-    transition: left 0.3s ease;
-
-    ul {
-        display: flex;
-        flex-direction: column;
-        list-style:none;
-        padding:0;
-        margin:0;
-
-        h2 {
-            font-size: 1rem;
-            font-weight: 400;
-            line-height: 1;
-            color: $font-white;
-            background-color: #333645; 
-            padding: 20px;
-            text-transform: uppercase;
-
-        }
-    
-        li {
-            a {
-                display: block;
-                color:#fff;
-                text-align: left;
-                text-transform: uppercase;
-                text-decoration: none;
-                font-size: 0.8rem;
-                padding: 19px 0 18px;
-                border-radius:3px;
-                outline:1px solid rgba(0,0,0,.25);
-                border:1px solid hsla(0,0%,100%,.1);
-            }
-
-            i {
-                color: #fff;
-                font-size: 8px;
-                line-height: 1.5;
-                padding-left: 15px;
-                padding-right: 15px;
-            }
-             
-        }
+    width: 350px;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    transform: translateX(100%); /* Hidden by default */
+    transition: transform 0.3s ease;
 
     &.active {
-        right: 0; /* Visible when active */
+        transform: translateX(0) /* Visible when active */
+    }
+   
+            /* Sidebar Content (Desktop) */
+            ul {
+                display: flex;
+                flex-direction: column;
+                list-style:none;
+                padding:0;
+                margin:0;
+
+                /*List Heading*/
+                h2 {
+                    font-size: 1rem;
+                    font-weight: 400;
+                    line-height: 1;
+                    color: $font-white;
+                    background-color: #333645; 
+                    padding: 20px;
+                    text-transform: uppercase;
+                }
+                
+                /*List Items*/
+                li {
+                    a {
+                        display: block;
+                        color:#fff;
+                        text-align: left;
+                        text-transform: uppercase;
+                        text-decoration: none;
+                        font-size: 0.875rem;
+                        padding: 15px 20px;
+                        border-radius:3px;
+                        outline:1px solid rgba(0,0,0,.25);
+                        border-top:1px solid hsla(0,0%,100%,.1);
+                    }
+
+                    /*Chevrons icon >>*/
+                    i {
+                        color: #fff;
+                        font-size: 6px;
+                        line-height: 1.5;
+                        padding-right: 15px;
+                    }
+                }
+
+            /*H2 Background Colour on Hover*/
+            &:hover {
+                    
+                h2 {
+                    background-color: #3D404E;
+                    transition: background-color 0.1s ease;
+                }
+            }
+        }
+}
+}
+
+/* Mobile Sidebar (Visible up to 990px) */
+@media (max-width: 990px) {
+
+    .sidebar {
+        display: none; /* Hide desktop sidebar on mobile */
     }
 
-    &:hover {
-               
-        h2 {
-            background-color: #3D404E;
-            transition: background-color 0.1s ease;
+.xs-sidebar {
+    display: flex;
+    flex-direction: column;
+    position:fixed;
+    top:0;
+    right: 0;
+    z-index: 2001;
+    height:100vh;
+    background:#262834;
+    width: 350px;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    transform: translateX(100%); /* Hidden by default */
+    transition: transform 0.3s ease;
+
+    &.active {
+        transform: translateX(0) /* Visible when active */
+    }
+   
+            /*Sidebar Content Mobile*/
+            ul {
+                display: flex;
+                flex-direction: column;
+                list-style:none;
+                padding:0;
+                margin:0;
+
+                /*List Heading*/
+                h2 {
+                    font-size: 1rem;
+                    font-weight: 400;
+                    line-height: 1;
+                    color: $font-white;
+                    background-color: #333645; 
+                    padding: 20px;
+                    text-transform: uppercase;
+                }
+                
+                /*List Items*/
+                li {
+                    a {
+                        display: block;
+                        color:#fff;
+                        text-align: left;
+                        text-transform: uppercase;
+                        text-decoration: none;
+                        font-size: 0.875rem;
+                        padding: 15px 20px;
+                        border-radius:3px;
+                        outline:1px solid rgba(0,0,0,.25);
+                        border-top:1px solid hsla(0,0%,100%,.1);
+                    }
+
+                    /*Chevrons icon >>*/
+                    i {
+                        color: #fff;
+                        font-size: 6px;
+                        line-height: 1.5;
+                        padding-right: 15px;
+                    }
+                }
+
+            /*H2 Background Colour on Hover*/
+            &:hover {
+                    
+                h2 {
+                    background-color: #3D404E;
+                    transition: background-color 0.1s ease;
+                }
+            }
+        }
+}
+
+}
+    /*Background Overlay*/
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 2000;
+        display: none;
+        cursor: pointer;
+        
+        &.active {
+            display: block;
         }
     }
 
-}
-
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 2000;
-    display: none;
+    /*Page Wrapper*/
+    .page-wrapper {
+        position: relative;
+        z-index: 1000;
+        transition: transform 0.3s ease;
     
-    &.active {
-        display: block;
+        &.shift-left {
+            transform: translateX(-350px); /* Move content left by the width of the sidebar */
+        }
     }
-}
-
-}
