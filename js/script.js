@@ -1,44 +1,17 @@
 // Slider
 
-document.addEventListener('DOMContentLoaded', function() {
-    const slides = document.querySelectorAll('.banner__slide');
-    const dots = document.querySelectorAll('.dot');
-    let currentSlide = 0;
-    const slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
-  
-    function nextSlide() {
-      console.log('Next slide');
-      goToSlide(currentSlide + 1);
-    }
-  
-    function goToSlide(n) {
-      console.log('Go to slide', n);  
-      slides[currentSlide].classList.remove('active');
-      dots[currentSlide].classList.remove('active');
-      currentSlide = (n + slides.length) % slides.length;
-      slides[currentSlide].classList.add('active');
-      dots[currentSlide].classList.add('active');
-    }
-
-    function resetInterval() {
-        clearInterval(slideInterval);
-        slideInterval = setInterval(nextSlide, 5000);
-      }
-  
-    dots.forEach((dot, index) => {
-      dot.addEventListener('click', () => {
-        console.log('Dot clicked', index);
-        goToSlide(index);
-        resetInterval(); // Restart the interval timer
-      });
-    });
-  
-    slides[currentSlide].classList.add('active'); // Show the first slide initially
-    dots[currentSlide].classList.add('active'); // Highlight the first dot initially
+$(document).ready(function(){
+  $('.banner-slider').slick({
+    dots: true,  // Adds navigation dots
+    infinite: true,  // Infinite looping
+    speed: 500,  // Transition speed
+    fade: true,  // Enables fading effect
+    cssEase: 'linear',  // Smooth transition
+    autoplay: true,  // Automatically transition between slides
+    autoplaySpeed: 5000,  // 5 seconds between each slide
+    arrows: false,  // Shows navigation arrows
   });
-
-
-
+});
 
 
 
@@ -88,9 +61,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-
-
-
   
 // Sticky Header
 
@@ -110,10 +80,6 @@ window.addEventListener('scroll', function() {
 });
 
 
-
-
-
-  
 // Sidebar
 
 document.addEventListener('DOMContentLoaded', function() {
