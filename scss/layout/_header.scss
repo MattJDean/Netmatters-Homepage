@@ -9,11 +9,24 @@
 //------------------------------------------------------------//
 
 
+#main-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: top 0.5s ease; 
+}
+
+.hidden {
+  transform: translateY(-100%); /* Moves the header out of the viewport */
+  transition: top 0.5s ease; 
+}
+
 .header__top {
   background-color: $header-background;
   width: 100%;
   height: auto;
-  padding: 20px 0; 
+  padding: 20px 0;
+  
 }
 
  // Burger Menu //
@@ -32,6 +45,7 @@
   border: 0;
   cursor: pointer;
   transition: opacity .15s linear, filter .15s linear;
+  z-index: 1050;
 
    .line {
     display: block;
@@ -41,6 +55,7 @@
     margin: 0;
     background-color: #fff;
     transition: background-color .15s linear;
+    transition: all 0.3s ease;
 
     &.top {
       top: 15px;
@@ -51,10 +66,27 @@
     &.bottom {
       top: 35px;
     }
-   }  
+   } 
+   
+    // Animation for when the menu is active (burger to X) 
+    &.is-active .top {
+    transform: rotate(45deg);
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    }
+
+    &.is-active .middle {
+        opacity: 0; // Hide middle line 
+    }
+
+    &.is-active .bottom {
+        transform: rotate(-45deg);
+        top: 50%;
+        transform: translateY(-50%) rotate(-45deg);
+    }
 }
 
-//Hidden Initially
+// Hidden Initially
 @media (max-width: 768px) {
   .header__support,
   .header__contact,
@@ -350,7 +382,7 @@
       font-size: 1.125rem;
       line-height: 46px;
       background-color: $contact-btn;
-      padding: 5px 20px 5px 15px;
+      padding: 5px 15px 5px 5px;
       margin: 0 10px;
       align-self: center;
       justify-self: start;

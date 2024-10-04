@@ -38,59 +38,5 @@ $breakpoint-xl: 1200px;
 
   //Buttons
 
-  @mixin button(
-  $padding: 5px 15px,
-  $bg-color: #333645,
-  $text-color: #fff,
-  $border-color: transparent,
-  $font-weight: 400,
-  $font-size: 1.063rem,
-  $line-height: 1.42857143,
-  $border-radius: 3px,
-  $hover-bg-color: darken($bg-color, 10%),
-  $hover-text-color: $text-color,
-  $icon-size: 16px,
-  $icon-position: left, 
-  $icon-margin: 8px) {
-      display: inline-block;
-      margin-bottom: 0;
-      font-weight: $font-weight;
-      text-transform: uppercase; 
-      text-decoration: none;
-      text-align: center;
-      vertical-align: middle;
-      cursor: pointer;
-      background-image: none;
-      border: 1px solid $border-color;
-      white-space: nowrap;
-      padding: $padding;
-      font-size: $font-size;
-      line-height: $line-height;
-      border-radius: $border-radius;
-      background-color: $bg-color;
-      color: $text-color;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
-      transition: background-color 0.3s ease, color 0.3s ease;
-
-      &:hover {
-        background-color: $hover-bg-color;
-        color: $hover-text-color;
-      }
-
-      &:focus {
-        outline: none;
-      }
 
 
-    // Icon styles
-    i {
-      font-size: $icon-size;
-      @if $icon-position == left {
-        margin-right: $icon-margin;  // Margin to the right for left-positioned icon
-        margin-left: 0;              // No margin on the left
-      }
-      @else if $icon-position == right {
-        margin-left: $icon-margin;   // Margin to the left for right-positioned icon
-        margin-right: 0;             // No margin on the right
-      }
-    }
-}
