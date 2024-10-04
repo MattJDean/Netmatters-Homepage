@@ -18,10 +18,11 @@ $(document).ready(function(){
 // Cookies
 
 document.addEventListener('DOMContentLoaded', function() {
-  const cookiesOverlay = document.querySelector('.cookies-overlay');
+  const cookiesOverlay = document.querySelector('.overlay');
   const cookiesDialog = document.querySelector('.cookies');
   const acceptBtn = document.querySelector('.accept__btn');
   const changeBtn = document.querySelector('.change__btn');
+  const manageConsentBtn = document.querySelector('.cookie__consent-btn');
 
   // Function to show the cookies dialog
   function showCookiesDialog() {
@@ -35,7 +36,12 @@ document.addEventListener('DOMContentLoaded', function() {
     cookiesDialog.style.display = 'none';
   }
 
-  // Show the cookies dialog on page load
+  // Show the cookies dialog on page load if not accepted yet
+  if (localStorage.getItem('cookiesAccepted') !== 'true') {
+    showCookiesDialog();
+  }
+
+  //Show the cookies dialog on page load - debug
   // showCookiesDialog();
 
   // Function to handle accept button click
@@ -58,6 +64,12 @@ document.addEventListener('DOMContentLoaded', function() {
   // Hide the cookies dialog when the accept button is clicked
   acceptBtn.addEventListener('click', handleAccept);
   changeBtn.addEventListener('click', handleChangeSettings);
+
+  // Add event listener for the "Manage Consent" button to show the dialog again
+  manageConsentBtn.addEventListener('click', function() {
+    showCookiesDialog();
+  });
+  
 });
 
 
