@@ -13,10 +13,12 @@
   position: sticky;
   top: 0;
   z-index: 1000;
+  transition: top 0.5s ease; 
 }
 
 .hidden {
   transform: translateY(-100%); /* Moves the header out of the viewport */
+  transition: top 0.5s ease; 
 }
 
 .header__top {
@@ -24,7 +26,7 @@
   width: 100%;
   height: auto;
   padding: 20px 0;
-  transition: all 0.3s ease-in-out; 
+  
 }
 
  // Burger Menu //
