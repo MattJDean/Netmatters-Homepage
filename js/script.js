@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (isMobileViewport()) {
         // Mobile sidebar logic
         mobileSidebar.classList.toggle('active');
-        pageWrapper.classList.toggle('shift-left'); // Moves the main content
+        pageWrapper.classList.toggle('shift-left-xs'); // Moves the main content
       } else {
         // Desktop sidebar logic
         desktopSidebar.classList.toggle('active');
@@ -153,6 +153,7 @@ document.addEventListener('DOMContentLoaded', function() {
       mobileSidebar.classList.remove('active');
       desktopSidebar.classList.remove('active');
       pageWrapper.classList.remove('shift-left'); // Reset page position
+      pageWrapper.classList.remove('shift-left-xs'); // Reset mobile page position
       overlay.classList.remove('active');
       hamburger.classList.remove('is-active');
     });
