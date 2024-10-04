@@ -80,6 +80,8 @@ window.addEventListener('scroll', function() {
 });
 
 
+
+
 // Sidebar
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -88,6 +90,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const mobileSidebar = document.querySelector('.xs-sidebar'); // Mobile sidebar
   const overlay = document.querySelector('.overlay');
   const pageWrapper = document.querySelector('.page-wrapper');
+
+  let isSidebarOpen = false; // Track if sidebar is open
 
   // Helper function to determine if it's a mobile viewport
   function isMobileViewport() {
@@ -111,6 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       overlay.classList.toggle('active');
       hamburger.classList.toggle('is-active');
+      isSidebarOpen = !isSidebarOpen; // Update sidebar open state
     });
 
     // Close sidebar when overlay is clicked
@@ -122,16 +127,34 @@ document.addEventListener('DOMContentLoaded', function() {
       pageWrapper.classList.remove('shift-left-xs'); // Reset mobile page position
       overlay.classList.remove('active');
       hamburger.classList.remove('is-active');
+      isSidebarOpen = false; // Reset sidebar state
     });
 
     // Reset sidebar state on window resize
     window.addEventListener('resize', function() {
-      if (!isMobileViewport()) {
-        mobileSidebar.classList.remove('active'); // Ensure mobile sidebar is closed
-        overlay.classList.remove('active');
-        hamburger.classList.remove('is-active');
+      if (isMobileViewport()) {
+        // If switching to mobile, hide desktop sidebar 
+        desktopSidebar.classList.remove('active');
+        pageWrapper.classList.remove('shift-left');
+        if (isSidebarOpen) {
+          mobileSidebar.classList.add('active'); // Keep mobile sidebar open 
+          pageWrapper.classList.add('shift-left-xs');
+          overlay.classList.add('active');
+          hamburger.classList.add('is-active');
+        }
+      } else {
+        // If switching to desktop, hide mobile sidebar and show desktop sidebar
+        mobileSidebar.classList.remove('active');
+        pageWrapper.classList.remove('shift-left-xs');
+        if (isSidebarOpen) {
+          desktopSidebar.classList.add('active'); // Keep desktop sidebar open 
+          pageWrapper.classList.add('shift-left');
+          overlay.classList.add('active');
+          hamburger.classList.add('is-active');
+        }
       }
     });
+
   } else {
     console.error('One or more elements not found. Check class names.');
   }
