@@ -9,7 +9,7 @@
 //------------------------------------------------------------//
 
 .banner-slider {
-    display: flex;
+    
     position: relative;
     box-sizing: border-box;
     width: 100%;
@@ -18,18 +18,15 @@
     overflow: hidden;
   
   
-    &__slide {
-      position: absolute;
+    .slick-slide {
+      position: relative;
       width: 100%;
       height: 100%;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-
-      &.active {
-        opacity: 1;
-      }
+      display: block;
+      justify-content: center;
+      align-items: center;
+      opacity: 1;
       
-  
       a {
         text-decoration: none;
         color: $font-white;
@@ -46,12 +43,12 @@
 
     }
   
-    &__caption {
+    .banner__caption {
       position: absolute;
-      bottom: 250px;
-      left: 10%;
+      bottom: 37%;
+      left: 12%;
       color: $font-white;
-      z-index: 50;
+      z-index: 5000;
   
       h2 {
         font-size: 4rem;
@@ -63,14 +60,15 @@
         font-size: 1.625rem;
         line-height: 2.5rem;
         font-weight: 600;
+        margin-bottom: 50px;
       }
     }
 
     .banner__button {
       position: absolute;
-      bottom: 145px;
-      left: 10%;
-      z-index: 50;
+      bottom: 26.5%;
+      left: 12%;
+      z-index: 5000;
       padding: 5px 20px;
       height: auto;
       text-transform: uppercase;
@@ -149,46 +147,41 @@
           border-color: $security-hover;
         }
       }
-    
 
-    &__dots {
-        position: relative;
-        width: 100%;
+      .slick-dots {
+        position: absolute;
         bottom: 60px; 
-        justify-content: center;
+        width: 100%;
         display: flex;
-        gap: 20px; 
-        z-index: 100;
-    
-        .dot {
-            width: 13px;
-            height: 13px;
-            background-color: rgba(255, 255, 255, 0.6);
-            border-radius: 30px;
-            cursor: pointer;
-            transition: opacity 0.2s ease;
-    
-            &.active {
-                background-color: rgba(255, 255, 255, 1);
-            }
-              
-
-            background: #fff;
-            border: 2px solid #666;
-            color: #666;
-              
-                // &:hover {
-                //     background-color: rgba(255, 255, 255, 1);
-                // }
-            }
-    
-            // &:hover {
-            //     background-color: rgba(255, 255, 255, 0.8);
-            // }
-    
-            // &:active {
-            //     border: 1px solid rgba(255, 255, 255, 0.8);
-            //     border-radius: 50%; 
-            // }
-        }
+        justify-content: center;
+        list-style: none;
+        padding: 0;
     }
+
+    
+    .slick-dots li {
+      margin: 0 5px;  
+    }
+    
+    .slick-dots li button {
+        font-size: 0;
+        line-height: 0;
+        color: transparent;
+        width: 12px;
+        height: 12px;
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;  
+        transition: background-color 0.3s ease; 
+    }
+    
+    .slick-dots li.slick-active button {
+        background-color: rgba(255, 255, 255, 1);
+    }
+
+    .slick-dots li button:hover {
+      background-color: rgba(255, 255, 255, 0.8);  
+
+    }
+}
