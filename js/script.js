@@ -131,81 +131,159 @@ window.addEventListener('scroll', function() {
 
 // Sidebar
 
-document.addEventListener('DOMContentLoaded', function() {
-  const hamburger = document.querySelector('.header__hamburger');
-  const desktopSidebar = document.querySelector('.sidebar'); // Desktop sidebar
-  const mobileSidebar = document.querySelector('.xs-sidebar'); // Mobile sidebar
-  const overlay = document.querySelector('.overlay');
-  const pageWrapper = document.querySelector('.page-wrapper');
+document.addEventListener('DOMContentLoaded', () => {
+  const elements = {
+    hamburger: document.querySelector('.header__hamburger'),
+    desktopSidebar: document.querySelector('.sidebar'),
+    mobileSidebar: document.querySelector('.xs-sidebar'),
+    overlay: document.querySelector('.overlay'),
+    pageWrapper: document.querySelector('.page-wrapper')
+  };
 
-  let isSidebarOpen = false; // Track if sidebar is open
+  const toggleClass = (element, className) => element.classList.toggle(className);
+  const addClass = (element, className) => element.classList.add(className);
+  const removeClass = (element, className) => element.classList.remove(className);
+  const isMobile = () => window.innerWidth <= 990;
+  let isSidebarOpen = false;
 
-  // Helper function to determine if it's a mobile viewport
-  function isMobileViewport() {
-    return window.innerWidth <= 990;
-  }
+  const openSidebar = () => {
+    const sidebar = isMobile() ? elements.mobileSidebar : elements.desktopSidebar;
+    const shiftClass = isMobile() ? 'shift-left-xs' : 'shift-left';
 
-  // Check if all required elements are selected
-  if (hamburger && desktopSidebar && mobileSidebar && overlay && pageWrapper) {
-    
-    // Toggle sidebar visibility on hamburger click
-    hamburger.addEventListener('click', function() {
-      console.log('Hamburger clicked'); //debug
-      if (isMobileViewport()) {
-        // Mobile sidebar logic
-        mobileSidebar.classList.toggle('active');
-        pageWrapper.classList.toggle('shift-left-xs'); // Moves the main content
+    addClass(sidebar, 'active');
+    addClass(elements.pageWrapper, shiftClass);
+    addClass(elements.overlay, 'active');
+    addClass(elements.hamburger, 'is-active');
+    isSidebarOpen = true;
+  };
+
+  const closeSidebar = () => {
+    removeClass(elements.mobileSidebar, 'active');
+    removeClass(elements.desktopSidebar, 'active');
+    removeClass(elements.pageWrapper, 'shift-left');
+    removeClass(elements.pageWrapper, 'shift-left-xs');
+    removeClass(elements.overlay, 'active');
+    removeClass(elements.hamburger, 'is-active');
+    isSidebarOpen = false;
+  };
+
+  if (Object.values(elements).every(el => el)) {
+    elements.hamburger.addEventListener('click', () => {
+      if (isSidebarOpen) {
+        closeSidebar();
       } else {
-        // Desktop sidebar logic
-        desktopSidebar.classList.toggle('active');
-        pageWrapper.classList.toggle('shift-left'); // Moves the main content
-      }
-      overlay.classList.toggle('active');
-      hamburger.classList.toggle('is-active');
-      isSidebarOpen = !isSidebarOpen; // Update sidebar open state
-    });
-
-    // Close sidebar when overlay is clicked
-    overlay.addEventListener('click', function() {
-      // Close both sidebars
-      mobileSidebar.classList.remove('active');
-      desktopSidebar.classList.remove('active');
-      pageWrapper.classList.remove('shift-left'); // Reset page position
-      pageWrapper.classList.remove('shift-left-xs'); // Reset mobile page position
-      overlay.classList.remove('active');
-      hamburger.classList.remove('is-active');
-      isSidebarOpen = false; // Reset sidebar state
-    });
-
-    // Reset sidebar state on window resize
-    window.addEventListener('resize', function() {
-      if (isMobileViewport()) {
-        // If switching to mobile, hide desktop sidebar 
-        desktopSidebar.classList.remove('active');
-        pageWrapper.classList.remove('shift-left');
-        if (isSidebarOpen) {
-          mobileSidebar.classList.add('active'); // Keep mobile sidebar open 
-          pageWrapper.classList.add('shift-left-xs');
-          overlay.classList.add('active');
-          hamburger.classList.add('is-active');
-        }
-      } else {
-        // If switching to desktop, hide mobile sidebar and show desktop sidebar
-        mobileSidebar.classList.remove('active');
-        pageWrapper.classList.remove('shift-left-xs');
-        if (isSidebarOpen) {
-          desktopSidebar.classList.add('active'); // Keep desktop sidebar open 
-          pageWrapper.classList.add('shift-left');
-          overlay.classList.add('active');
-          hamburger.classList.add('is-active');
-        }
+        openSidebar();
       }
     });
 
+    elements.overlay.addEventListener('click', closeSidebar);
+
+    window.addEventListener('resize', () => {
+      const wasMobile = isMobile();
+
+      if (isSidebarOpen) {
+        if (wasMobile) {
+          // Switch to mobile, hide desktop sidebar and maintain mobile sidebar state
+          removeClass(elements.desktopSidebar, 'active');
+          removeClass(elements.pageWrapper, 'shift-left');
+          addClass(elements.mobileSidebar, 'active');
+          addClass(elements.pageWrapper, 'shift-left-xs');
+        } else {
+          // Switch to desktop, hide mobile sidebar and maintain desktop sidebar state
+          removeClass(elements.mobileSidebar, 'active');
+          removeClass(elements.pageWrapper, 'shift-left-xs');
+          addClass(elements.desktopSidebar, 'active');
+          addClass(elements.pageWrapper, 'shift-left');
+        }
+        addClass(elements.overlay, 'active');
+        addClass(elements.hamburger, 'is-active');
+      } else {
+        // If no sidebar is open, make sure both are closed
+        closeSidebar();
+      }
+    });
   } else {
     console.error('One or more elements not found. Check class names.');
   }
 });
+
+
+
+// document.addEventListener('DOMContentLoaded', function() {
+//   const hamburger = document.querySelector('.header__hamburger');
+//   const desktopSidebar = document.querySelector('.sidebar'); // Desktop sidebar
+//   const mobileSidebar = document.querySelector('.xs-sidebar'); // Mobile sidebar
+//   const overlay = document.querySelector('.overlay');
+//   const pageWrapper = document.querySelector('.page-wrapper');
+
+//   let isSidebarOpen = false; // Track if sidebar is open
+
+//   // Helper function to determine if it's a mobile viewport
+//   function isMobileViewport() {
+//     return window.innerWidth <= 990;
+//   }
+
+//   // Check if all required elements are selected
+//   if (hamburger && desktopSidebar && mobileSidebar && overlay && pageWrapper) {
+    
+//     // Toggle sidebar visibility on hamburger click
+//     hamburger.addEventListener('click', function() {
+//       console.log('Hamburger clicked'); //debug
+//       if (isMobileViewport()) {
+//         // Mobile sidebar logic
+//         mobileSidebar.classList.toggle('active');
+//         pageWrapper.classList.toggle('shift-left-xs'); // Moves the main content
+//       } else {
+//         // Desktop sidebar logic
+//         desktopSidebar.classList.toggle('active');
+//         pageWrapper.classList.toggle('shift-left'); // Moves the main content
+//       }
+//       overlay.classList.toggle('active');
+//       hamburger.classList.toggle('is-active');
+//       isSidebarOpen = !isSidebarOpen; // Update sidebar open state
+//     });
+
+//     // Close sidebar when overlay is clicked
+//     overlay.addEventListener('click', function() {
+//       // Close both sidebars
+//       mobileSidebar.classList.remove('active');
+//       desktopSidebar.classList.remove('active');
+//       pageWrapper.classList.remove('shift-left'); // Reset page position
+//       pageWrapper.classList.remove('shift-left-xs'); // Reset mobile page position
+//       overlay.classList.remove('active');
+//       hamburger.classList.remove('is-active');
+//       isSidebarOpen = false; // Reset sidebar state
+//     });
+
+//     // Reset sidebar state on window resize
+//     window.addEventListener('resize', function() {
+//       if (isMobileViewport()) {
+//         // If switching to mobile, hide desktop sidebar 
+//         desktopSidebar.classList.remove('active');
+//         pageWrapper.classList.remove('shift-left');
+//         if (isSidebarOpen) {
+//           mobileSidebar.classList.add('active'); // Keep mobile sidebar open 
+//           pageWrapper.classList.add('shift-left-xs');
+//           overlay.classList.add('active');
+//           hamburger.classList.add('is-active');
+//         }
+//       } else {
+//         // If switching to desktop, hide mobile sidebar and show desktop sidebar
+//         mobileSidebar.classList.remove('active');
+//         pageWrapper.classList.remove('shift-left-xs');
+//         if (isSidebarOpen) {
+//           desktopSidebar.classList.add('active'); // Keep desktop sidebar open 
+//           pageWrapper.classList.add('shift-left');
+//           overlay.classList.add('active');
+//           hamburger.classList.add('is-active');
+//         }
+//       }
+//     });
+
+//   } else {
+//     console.error('One or more elements not found. Check class names.');
+//   }
+// });
 
 
  
