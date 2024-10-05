@@ -10,6 +10,8 @@ $(document).ready(function(){
     autoplay: true,  // Automatically transition between slides
     autoplaySpeed: 5000,  // 5 seconds between each slide
     arrows: false,  // Shows navigation arrows
+    mobileFirst: true,  // Mobile first design
+    respondTo: 'window',  // Respond to window resizing
   });
 });
 
@@ -24,53 +26,86 @@ document.addEventListener('DOMContentLoaded', function() {
   const changeBtn = document.querySelector('.change__btn');
   const manageConsentBtn = document.querySelector('.cookie__consent-btn');
 
-  // Function to show the cookies dialog
-  function showCookiesDialog() {
-    cookiesOverlay.style.display = 'block';
-    cookiesDialog.style.display = 'block';
+  // Show or hide the cookies dialog based on display value
+  function toggleCookiesDialog(show = true) {
+    const display = show ? 'block' : 'none';
+    cookiesOverlay.style.display = display;
+    cookiesDialog.style.display = display;
   }
 
-  // Function to hide the cookies dialog
-  function hideCookiesDialog() {
-    cookiesOverlay.style.display = 'none';
-    cookiesDialog.style.display = 'none';
+  // Handle consent change and update localStorage
+  function updateConsent(accepted) {
+    localStorage.setItem('cookiesAccepted', accepted ? 'true' : 'false');
+    toggleCookiesDialog(false);
   }
 
   // Show the cookies dialog on page load if not accepted yet
   if (localStorage.getItem('cookiesAccepted') !== 'true') {
-    showCookiesDialog();
+    toggleCookiesDialog();
   }
 
-  //Show the cookies dialog on page load - debug
-  // showCookiesDialog();
+  // Event listeners for buttons
+  acceptBtn.addEventListener('click', () => updateConsent(true));
+  changeBtn.addEventListener('click', () => updateConsent(false));
+  manageConsentBtn.addEventListener('click', () => toggleCookiesDialog());
 
-  // Function to handle accept button click
-  function handleAccept() {
-    localStorage.setItem('cookiesAccepted', 'true');
-    hideCookiesDialog();
-  }
-
-  // Function to handle change settings button click
-  function handleChangeSettings() {
-    localStorage.setItem('cookiesAccepted', 'false');
-    hideCookiesDialog();
-  }
-
-  // Check localStorage to see if cookies have been accepted
-  if (localStorage.getItem('cookiesAccepted') !== 'true') {
-    showCookiesDialog();
-  }
-
-  // Hide the cookies dialog when the accept button is clicked
-  acceptBtn.addEventListener('click', handleAccept);
-  changeBtn.addEventListener('click', handleChangeSettings);
-
-  // Add event listener for the "Manage Consent" button to show the dialog again
-  manageConsentBtn.addEventListener('click', function() {
-    showCookiesDialog();
-  });
-  
 });
+
+
+// document.addEventListener('DOMContentLoaded', function() {
+//   const cookiesOverlay = document.querySelector('.overlay');
+//   const cookiesDialog = document.querySelector('.cookies');
+//   const acceptBtn = document.querySelector('.accept__btn');
+//   const changeBtn = document.querySelector('.change__btn');
+//   const manageConsentBtn = document.querySelector('.cookie__consent-btn');
+
+//   // Function to show the cookies dialog
+//   function showCookiesDialog() {
+//     cookiesOverlay.style.display = 'block';
+//     cookiesDialog.style.display = 'block';
+//   }
+
+//   // Function to hide the cookies dialog
+//   function hideCookiesDialog() {
+//     cookiesOverlay.style.display = 'none';
+//     cookiesDialog.style.display = 'none';
+//   }
+
+//   // Show the cookies dialog on page load if not accepted yet
+//   if (localStorage.getItem('cookiesAccepted') !== 'true') {
+//     showCookiesDialog();
+//   }
+
+//   //Show the cookies dialog on page load - debug
+//   // showCookiesDialog();
+
+//   // Function to handle accept button click
+//   function handleAccept() {
+//     localStorage.setItem('cookiesAccepted', 'true');
+//     hideCookiesDialog();
+//   }
+
+//   // Function to handle change settings button click
+//   function handleChangeSettings() {
+//     localStorage.setItem('cookiesAccepted', 'false');
+//     hideCookiesDialog();
+//   }
+
+//   // Check localStorage to see if cookies have been accepted
+//   if (localStorage.getItem('cookiesAccepted') !== 'true') {
+//     showCookiesDialog();
+//   }
+
+//   // Hide the cookies dialog when the accept button is clicked
+//   acceptBtn.addEventListener('click', handleAccept);
+//   changeBtn.addEventListener('click', handleChangeSettings);
+
+//   // Add event listener for the "Manage Consent" button to show the dialog again
+//   manageConsentBtn.addEventListener('click', function() {
+//     showCookiesDialog();
+//   });
+  
+// });
 
 
   
