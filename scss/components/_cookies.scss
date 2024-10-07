@@ -3,8 +3,9 @@
   .cookies {
     display: none;
     position: fixed;
-    height: 350px;
-    width: 1200px;
+    height: 370px;
+    width: 600px;
+    
 
     background-color:#fff;
     border: 1px solid #999;
@@ -13,10 +14,6 @@
     box-shadow: 0 3px 9px rgba(0,0,0,.5);
     background-clip: padding-box;
     outline: none;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
     z-index: 9999;
     font-size: 14px;
     line-height: 1.5;
@@ -25,19 +22,41 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 20px; 
+    padding: 0; 
     text-align: center; 
   }
 
+  @media (max-width: 768px) {
+    .cookies {
+      width: 90%;
+      height: auto;
+      padding: 10px;
+      font-size: 13px;
+      text-align: center;
+    }
+  }
+  
+  /* For mobile devices */
+  @media (max-width: 480px) {
+    .cookies {
+      width: 95%;
+      height: auto;
+      font-size: 12px;
+      padding: 10px;
+      text-align: center;
+    }
+  }
+
       .cookies__header {
+        text-align: left;
         font-weight: 400;
         margin: 0 0 15px;
         color: #333645;
         line-height: 1.42857143;
         font-size: 1.625rem;
-        padding: 15px;
+        padding: 15px 20px;
         border-bottom: 1px solid #e5e5e5;
-        min-height: 16.42857143px;
+       
       }
 
       .cookies__body {
@@ -52,7 +71,8 @@
 
         p {
           margin: 0;
-          padding: 0;
+          padding: 10px 15px 10px 20px;
+          text-align: left;
         }
 
         a {
@@ -77,12 +97,13 @@
 
         .btn {
           display: block;
-          width: auto;
-          height: auto;
+          width: 265px;
+          height: 50px;
           line-height: 35px;
           padding: 5px 15px;
           text-transform: uppercase;
           font-size: 1.063rem;
+          letter-spacing: 0.4px;
           border-radius: 3px;
           white-space: normal;
           margin-bottom: 0;
@@ -97,11 +118,51 @@
           color: #fff;
           background-color: #999aa2;
           border-color: #999aa2;
+
+          &:hover {
+            background-color: #84858f;
+            border-color: #797a85;
+          }
         }
         .accept__btn {
           color: #fff;
           background-color: #926fb1;
           border-color: #926fb1;
+
+          &:hover {
+            background-color: #7e57a0;
+            border-color: #735093;
+          }
         }
+      }
+
+      .cookie__consent-btn {
+
+        button {
+        position: fixed;
+        line-height: 22px;
+        z-index: 5000;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        font-family: $font-primary, sans-serif;
+        font-size: .8rem;
+        font-weight: 600;
+        text-transform: capitalize;
+        background: #75788a;
+        color: #fff;
+        border: solid #75788a;
+        border-width: 1px 1px 0 0;
+        border-radius: 0;
+        border-top-right-radius: 0px;
+        border-top-right-radius: 10px;
+        padding: 0 10px;
+        cursor: pointer;
+      }
+
+      .overlay {
+        cursor: default;
+      }
+       
       }
 

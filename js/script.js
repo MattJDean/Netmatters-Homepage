@@ -1,3 +1,30 @@
+
+  window.addEventListener('scroll', () => {
+    console.log('Scroll detected'); // To see if the scroll is being captured
+  });
+
+
+  // Sticky Header 
+
+const header = document.getElementById('main-header');
+let lastScrollY = window.pageYOffset;
+
+window.addEventListener('scroll', () => {
+  const currentScrollY = window.pageYOffset;
+
+  if (currentScrollY > lastScrollY) {
+    // Scroll down, hide header
+    header.classList.add('hidden');
+    header.classList.remove('visible');
+  } else if (currentScrollY < lastScrollY) {
+    // Scroll up, show header
+    header.classList.remove('hidden');
+    header.classList.add('visible');
+  }
+
+  lastScrollY = currentScrollY;
+});
+
 // Slider
 
 $(document).ready(function(){
@@ -10,6 +37,11 @@ $(document).ready(function(){
     autoplay: true,  // Automatically transition between slides
     autoplaySpeed: 5000,  // 5 seconds between each slide
     arrows: false,  // Shows navigation arrows
+    mobileFirst: true,  // Mobile first design
+    respondTo: 'window',  // Respond to window resizing
+    swipe: false,   // Disable swipe gestures
+    vertical: false, 
+    adaptiveHeight: true
   });
 });
 
@@ -18,118 +50,109 @@ $(document).ready(function(){
 // Cookies
 
 document.addEventListener('DOMContentLoaded', function() {
-  const cookiesOverlay = document.querySelector('.cookies-overlay');
+  const cookiesOverlay = document.querySelector('.overlay');
   const cookiesDialog = document.querySelector('.cookies');
   const acceptBtn = document.querySelector('.accept__btn');
   const changeBtn = document.querySelector('.change__btn');
+  const manageConsentBtn = document.querySelector('.cookie__consent-btn');
 
-  // Function to show the cookies dialog
-  function showCookiesDialog() {
-    cookiesOverlay.style.display = 'block';
-    cookiesDialog.style.display = 'block';
+  // Show or hide the cookies dialog based on display value
+  function toggleCookiesDialog(show = true) {
+    const display = show ? 'block' : 'none';
+    cookiesOverlay.style.display = display;
+    cookiesDialog.style.display = display;
   }
 
-  // Function to hide the cookies dialog
-  function hideCookiesDialog() {
-    cookiesOverlay.style.display = 'none';
-    cookiesDialog.style.display = 'none';
+  // Handle consent change and update localStorage
+  function updateConsent(accepted) {
+    localStorage.setItem('cookiesAccepted', accepted ? 'true' : 'false');
+    toggleCookiesDialog(false);
   }
 
-  // Show the cookies dialog on page load
-  // showCookiesDialog();
-
-  // Function to handle accept button click
-  function handleAccept() {
-    localStorage.setItem('cookiesAccepted', 'true');
-    hideCookiesDialog();
-  }
-
-  // Function to handle change settings button click
-  function handleChangeSettings() {
-    localStorage.setItem('cookiesAccepted', 'false');
-    hideCookiesDialog();
-  }
-
-  // Check localStorage to see if cookies have been accepted
+  // Show the cookies dialog on page load if not accepted yet
   if (localStorage.getItem('cookiesAccepted') !== 'true') {
-    showCookiesDialog();
+    toggleCookiesDialog();
   }
 
-  // Hide the cookies dialog when the accept button is clicked
-  acceptBtn.addEventListener('click', handleAccept);
-  changeBtn.addEventListener('click', handleChangeSettings);
-});
+  // Event listeners for buttons
+  acceptBtn.addEventListener('click', () => updateConsent(true));
+  changeBtn.addEventListener('click', () => updateConsent(false));
+  manageConsentBtn.addEventListener('click', () => toggleCookiesDialog());
 
-
-  
-// Sticky Header
-
-let lastScrollY = window.pageYOffset;
-
-window.addEventListener('scroll', function() {
-  const header = document.getElementById('main-header');
-  let currentScrollY = window.pageYOffset;
-
-  if (currentScrollY > lastScrollY && currentScrollY > 210) {
-    header.classList.add('hidden');
-  } else {
-    header.classList.remove('hidden');
-  }
-
-  lastScrollY = currentScrollY;
 });
 
 
 // Sidebar
 
-document.addEventListener('DOMContentLoaded', function() {
-  const hamburger = document.querySelector('.header__hamburger');
-  const desktopSidebar = document.querySelector('.sidebar'); // Desktop sidebar
-  const mobileSidebar = document.querySelector('.xs-sidebar'); // Mobile sidebar
-  const overlay = document.querySelector('.overlay');
-  const pageWrapper = document.querySelector('.page-wrapper');
+document.addEventListener('DOMContentLoaded', () => {
+  const elements = {
+    hamburger: document.querySelector('.header__hamburger'),
+    desktopSidebar: document.querySelector('.sidebar'),
+    mobileSidebar: document.querySelector('.xs-sidebar'),
+    overlay: document.querySelector('.overlay'),
+    pageWrapper: document.querySelector('.page-wrapper')
+  };
 
-  // Helper function to determine if it's a mobile viewport
-  function isMobileViewport() {
-    return window.innerWidth <= 990;
-  }
+  const toggleClass = (element, className) => element.classList.toggle(className);
+  const addClass = (element, className) => element.classList.add(className);
+  const removeClass = (element, className) => element.classList.remove(className);
+  const isMobile = () => window.innerWidth <= 990;
+  let isSidebarOpen = false;
 
-  // Check if all required elements are selected
-  if (hamburger && desktopSidebar && mobileSidebar && overlay && pageWrapper) {
-    
-    // Toggle sidebar visibility on hamburger click
-    hamburger.addEventListener('click', function() {
-      console.log('Hamburger clicked'); //debug
-      if (isMobileViewport()) {
-        // Mobile sidebar logic
-        mobileSidebar.classList.toggle('active');
-        pageWrapper.classList.toggle('shift-left-xs'); // Moves the main content
+  const openSidebar = () => {
+    const sidebar = isMobile() ? elements.mobileSidebar : elements.desktopSidebar;
+    const shiftClass = isMobile() ? 'shift-left-xs' : 'shift-left';
+
+    addClass(sidebar, 'active');
+    addClass(elements.pageWrapper, shiftClass);
+    addClass(elements.overlay, 'active');
+    addClass(elements.hamburger, 'is-active');
+    isSidebarOpen = true;
+  };
+
+  const closeSidebar = () => {
+    removeClass(elements.mobileSidebar, 'active');
+    removeClass(elements.desktopSidebar, 'active');
+    removeClass(elements.pageWrapper, 'shift-left');
+    removeClass(elements.pageWrapper, 'shift-left-xs');
+    removeClass(elements.overlay, 'active');
+    removeClass(elements.hamburger, 'is-active');
+    isSidebarOpen = false;
+  };
+
+  if (Object.values(elements).every(el => el)) {
+    elements.hamburger.addEventListener('click', () => {
+      if (isSidebarOpen) {
+        closeSidebar();
       } else {
-        // Desktop sidebar logic
-        desktopSidebar.classList.toggle('active');
-        pageWrapper.classList.toggle('shift-left'); // Moves the main content
+        openSidebar();
       }
-      overlay.classList.toggle('active');
-      hamburger.classList.toggle('is-active');
     });
 
-    // Close sidebar when overlay is clicked
-    overlay.addEventListener('click', function() {
-      // Close both sidebars
-      mobileSidebar.classList.remove('active');
-      desktopSidebar.classList.remove('active');
-      pageWrapper.classList.remove('shift-left'); // Reset page position
-      pageWrapper.classList.remove('shift-left-xs'); // Reset mobile page position
-      overlay.classList.remove('active');
-      hamburger.classList.remove('is-active');
-    });
+    elements.overlay.addEventListener('click', closeSidebar);
 
-    // Reset sidebar state on window resize
-    window.addEventListener('resize', function() {
-      if (!isMobileViewport()) {
-        mobileSidebar.classList.remove('active'); // Ensure mobile sidebar is closed
-        overlay.classList.remove('active');
-        hamburger.classList.remove('is-active');
+    window.addEventListener('resize', () => {
+      const wasMobile = isMobile();
+
+      if (isSidebarOpen) {
+        if (wasMobile) {
+          // Switch to mobile, hide desktop sidebar and maintain mobile sidebar state
+          removeClass(elements.desktopSidebar, 'active');
+          removeClass(elements.pageWrapper, 'shift-left');
+          addClass(elements.mobileSidebar, 'active');
+          addClass(elements.pageWrapper, 'shift-left-xs');
+        } else {
+          // Switch to desktop, hide mobile sidebar and maintain desktop sidebar state
+          removeClass(elements.mobileSidebar, 'active');
+          removeClass(elements.pageWrapper, 'shift-left-xs');
+          addClass(elements.desktopSidebar, 'active');
+          addClass(elements.pageWrapper, 'shift-left');
+        }
+        addClass(elements.overlay, 'active');
+        addClass(elements.hamburger, 'is-active');
+      } else {
+        // If no sidebar is open, make sure both are closed
+        closeSidebar();
       }
     });
   } else {
@@ -137,5 +160,3 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-
- 

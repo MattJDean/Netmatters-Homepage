@@ -16,12 +16,24 @@
     padding: 50px 0;
     
   }
+
+  .about__welcome {
+    margin-right: 20px;
+
+    p {
+      margin-bottom: 25px;
+    }
+
+    strong {
+      font-weight: 600;
+    }
+  }
   
   .about__welcome, .about__testimonial {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    margin: 0;
+    line-height: 1.875rem;
     letter-spacing: 0.4px;
     color: $font-white;
   
@@ -31,11 +43,7 @@
       margin: 6px 0 40px;
     }
   
-    p {
-      font-size: 16px;
-      margin-bottom: 25px;
-    }
-  
+
     a {
       text-decoration: none;
       color: $font-white;
@@ -49,8 +57,6 @@
       display: inline-block;
       font-weight: 600;
     }
-  
-    
   
     .client-quote {
       font-size: 1.3rem;
