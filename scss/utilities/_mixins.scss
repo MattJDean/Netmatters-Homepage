@@ -36,7 +36,40 @@ $breakpoint-xl: 1200px;
     }
   }
 
-  //Buttons
+/*Buttons*/
+
+@mixin button (
+  $bg-color: #666,  
+  $color: #fff,    
+  $hover-bg-color: darken($bg-color, 10%), 
+  $height: auto,
+  $line: 35px,
+  $padding: 5px 15px,
+  $transform: uppercase,
+  $font: 1.063rem,
+  $radius: 3px,
+  $white-space: normal,
+  $cursor: pointer
+  ) {
+    background-color: $bg-color;
+    color: $color;
+    height: $height;
+    line-height: $line;
+    padding: $padding;
+    text-transform: $transform;
+    font-size: $font;
+    border-radius: $radius;
+    white-space: $white-space;
+    cursor: $cursor;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    letter-spacing: .4px;
+
+      &:hover {
+        background-color: $hover-bg-color;
+      }
+}
+
 
   @mixin button(
   $padding: 5px 15px,

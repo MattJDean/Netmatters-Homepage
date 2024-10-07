@@ -9,6 +9,23 @@
 //------------------------------------------------------------//
 
 
+#main-header {
+  position: sticky;
+  top: -215px;
+  z-index: 10000 !important;
+  transition: top 0.5s ease; 
+
+  .visible {
+    top: 0;
+  }
+  
+  .hidden {
+    top: -215px; 
+  }
+}
+
+
+
 .header__top {
   background-color: $header-background;
   width: 100%;
@@ -43,18 +60,35 @@
     transition: background-color .15s linear;
 
     &.top {
-      top: 15px;
+      top: 17.5px;
     }
     &.middle {
-      top: 25px;
+      top: 27.5px;
     }
     &.bottom {
-      top: 35px;
+      top: 37px;
     }
-   }  
+   } 
+   
+    // Animation for when the menu is active (burger to X) 
+    &.is-active .top {
+    transform: rotate(45deg);
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    }
+
+    &.is-active .middle {
+        opacity: 0; // Hide middle line 
+    }
+
+    &.is-active .bottom {
+        transform: rotate(-45deg);
+        top: 50%;
+        transform: translateY(-50%) rotate(-45deg);
+    }
 }
 
-//Hidden Initially
+// Hidden Initially
 @media (max-width: 768px) {
   .header__support,
   .header__contact,
@@ -101,6 +135,10 @@
           background: transparent;
           border: none; 
           cursor: pointer;
+
+          &:hover {
+            text-decoration: none;
+          }
         }
 
          // Burger Menu //
@@ -139,23 +177,16 @@
               line-height: 1.42857143;
               color: #555;
               background-color: rgba(0,0,0,.1);
-              // outline: 1px solid hsla(0,0%,100%,.2);
-              // border: 2px solid rgba(0,0,0,.1);
+              outline: 1px solid hsla(0,0%,100%,.2);
+              border: 2px solid rgba(0,0,0,.1);
+              border-radius: 2px;
+              box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
               transition: none;
-              // box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-              
-              // &:active, &:focus {
-              //   box-shadow:0 0 3px #fff
-              // }
-    
-              // &:-webkit-autofill,
-              // &:-webkit-autofill:active,
-              // &:-webkit-autofill:focus,
-              // &:-webkit-autofill:hover {
-              //   -webkit-box-shadow: 0 0 0 30px #333645 inset !important;
-              //   -webkit-text-fill-color:#fff;
-              //   border:1px solid hsla(0,0%,100%,.1)
-              // }
+
+              &:focus {
+                outline: none;
+                box-shadow: none;
+              }
 
               &::placeholder {
                 color: #888;
@@ -235,11 +266,19 @@
             height: 56px;
             overflow: hidden;
             width: 174px;
+            border: 1px solid $search-form-border;
             border-right: none;
             padding: 5px 15px;
-            border-color: $search-form-border;
             font-size: 14px;
             color: $search-form-text;
+            box-shadow:inset 0 1px 1px rgba(0,0,0,.075);
+            transition:border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+            &:focus {
+              border-color: #5bc0de;
+              outline: 0;
+              box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(91,192,222,.6);
+            }
             
           }
 
@@ -251,24 +290,21 @@
               position: absolute;
               bottom: 5px;
               right: 0;
-              background-color: $search-btn;
-              height: 56px;
+              @include button($bg-color: $search-btn, $hover-bg-color: $search-btn-hover, $height: 56px, $line: 46px, $padding: 5px 15px, $font: 1.125rem, $radius: 0 3px 3px 0);
               width: 63px;
               justify-self: flex-end;
               justify-content: center;
               align-content: center;
               outline: none;
-              border-radius: 0 3px 3px 0;
+              border: 1px solid #e5e5e5;
               cursor: pointer;
+              
             
-                &:hover {
-                  background-color: $search-btn-hover;
-                }
             
                 i {
                   font-size: 23px;
                   color: $font-white;
-                  padding: 15px 15px;
+                  padding: 0;
                 }  
             }
         }
@@ -306,18 +342,10 @@
       display: inline-block;
       grid-column: 2 / 3;
       grid-row: 1 / 2;
-      height: 56px;
+
+      @include button($bg-color: $support-btn, $hover-bg-color: $support-btn-hover, $height: 56px, $line: 46px, $padding: 5px 15px, $font: 1.125rem, $radius: 3px);
       width: 141px;
-      border: 1px solid transparent;
-      border-radius: 3px;
-      color: $header-button;
-      text-transform: uppercase;
       text-align: center;
-      letter-spacing: .4px;
-      font-size: 1.125rem;
-      line-height: 46px;
-      background-color: $support-btn;
-      padding: 5px 15px;
       margin: 0 10px;
       align-self: center;
       justify-self: end;
@@ -339,22 +367,12 @@
       display: inline-block;
       grid-column: 3 / 4;
       grid-row: 1 / 2;
-      height: 56px;
-      width: 141px;
-      border: 1px solid transparent;
-      border-radius: 3px;
-      color: $header-button;
-      text-transform: uppercase;
-      text-align: center;
-      letter-spacing: .4px;
-      font-size: 1.125rem;
-      line-height: 46px;
-      background-color: $contact-btn;
-      padding: 5px 20px 5px 15px;
+      @include button($bg-color: $contact-btn, $hover-bg-color: $contact-btn-hover, $height: 56px, $line: 46px, $padding: 5px 15px 5px 10px, $font: 1.125rem, $radius: 3px);
+      width: 148px;
       margin: 0 10px;
       align-self: center;
       justify-self: start;
-      cursor: pointer;
+      
 
       &:hover {
         background-color: $contact-btn-hover;
@@ -380,6 +398,7 @@
       }
         #md-submit {
           grid-column: 4 / 5;
+          border-radius: 3px;
         }
     }
 
@@ -406,6 +425,9 @@
     }
     .md-input {
       width: 240px;
+    }
+    #md-submit {
+      border-radius: 0 3px 3px 0;
     }
   
   }
