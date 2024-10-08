@@ -11,59 +11,28 @@
 
 #main-header {
   position: sticky;
-  top: -215px;
-  z-index: 10000 !important;
-  transition: top 0.5s ease; 
-
-  .visible {
-    top: 0;
-  }
-  
-  .hidden {
-    top: -215px; 
-  }
-}
-
-
-
-#main-header {
-  position: sticky;
-  top: -215px;
-  z-index: 10000 !important;
-  transition: top 0.5s ease; 
-
-  .visible {
-    top: 0;
-  }
-  
-  .hidden {
-    top: -215px; 
-  }
-}
-
-
-
-#main-header {
-  position: sticky;
-  top: -215px;
-  z-index: 10000 !important;
-  transition: top 0.5s ease; 
-}
-
-#main-header.visible {
   top: 0;
+  z-index: 10000;
+  transition: transform 0.3s ease-in-out;
+
+  #main-header.hidden {
+    top: -215px !important;
+  }
+
+  #main-header.visible {
+    top: 0 !important;
+  }
+  
+
 }
 
-#main-header.hidden {
-  top: -215px; 
-}
+
 
 .header__top {
   background-color: $header-background;
   width: 100%;
   height: auto;
-  padding: 20px 0;
-  
+  padding: 20px 0; 
 }
 
  // Burger Menu //
@@ -82,7 +51,6 @@
   border: 0;
   cursor: pointer;
   transition: opacity .15s linear, filter .15s linear;
-  z-index: 1050;
 
    .line {
     display: block;
@@ -92,7 +60,6 @@
     margin: 0;
     background-color: #fff;
     transition: background-color .15s linear;
-    transition: all 0.3s ease;
 
     &.top {
       top: 17.5px;

@@ -43,19 +43,59 @@
       }
 
     }
+
+    .banner__content {
+      display: flex;
+      flex-direction: column;
+      padding: 3.75rem 0;
+    }
+
+    @media (min-width: 991px){
+      .banner__content {
+        display: block;
+      }
+
+      .banner__caption {
+        position: absolute;
+        margin-left: 20px;
+        
+        h2 {
+          text-align: left !important;
+          font-size: 4rem !important;
+          line-height: 5rem !important;
+        }
+
+        p {
+          text-align: left !important;
+          font-size: 1.625rem !important;
+          line-height: 2.5rem !important;
+        }
+      }
+
+      .banner__button {
+        position: absolute;
+        left: 150px !important;
+      }
+
+      #start-btn {
+        left: 160px !important;
+      }
+    }
   
     .banner__caption {
       position: absolute;
-      
-      bottom: 37%;
+      padding: 0 20px;
+      width: 100%;
+      height: auto;
+      bottom: 50%;
       left: 50%;
       transform: translateX(-50%);
-      
       color: $font-white;
       z-index: 5000;
   
       h2 {
         font-size: 2.5rem;
+        font-weight: 600;
         line-height: 3rem;
         margin-bottom: 20px;
         text-align: center;
@@ -72,23 +112,37 @@
   
     .banner__button {
       position: absolute;
-      bottom: 26.5%;
+      display: inline-block;
+      bottom: 40%;
       left: 50%;
       transform: translateX(-50%);
       z-index: 5000;
       padding: 5px 20px;
-      height: auto;
+      height: 65px;
+      width: auto;
       text-transform: uppercase;
+      text-align: center;
+      vertical-align: middle;
       font-weight: 400;
       font-size: 1.25rem;
       line-height: 50px;
       color: $font-white;
       border-radius: 3px;
+      white-space: nowrap;
     }
 
+    // @media (max-width: 991px) {
+    //   #start__caption {
+    //     bottom: 20%;
+    //   }
 
+    //   #start-btn {
+    //     bottom: 15%;
+    //   }
+    // }
 
       #start-btn {
+        
         background-color: $design-prim;
         border-color: $design-prim;
 
