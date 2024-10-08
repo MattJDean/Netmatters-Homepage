@@ -94,21 +94,32 @@
       z-index: 5000;
   
       h2 {
-        font-size: 2.5rem;
+        font-size: clamp(1.25rem, 2.5rem, 2.6rem);
         font-weight: 600;
-        line-height: 3rem;
+        line-height: clamp(1.25rem, 3rem, 3rem);
         margin-bottom: 20px;
         text-align: center;
       }
   
       p {
-        font-size: 1.25rem;
-        line-height: 1.75rem;
+        font-size: clamp(1rem, 1.25rem, 1.5rem);
+        line-height: clamp(1rem, 1.25rem, 1.5rem);
         font-weight: 600;
         margin-bottom: 50px;
         text-align: center;
       }
-  }
+    }
+
+    @media (max-width: 500px) {
+      #start__caption {
+        bottom: 250px !important;
+      }
+
+      #start-btn {
+        bottom: 200px !important;
+      }
+    }
+
   
     .banner__button {
       position: absolute;
@@ -131,15 +142,7 @@
       white-space: nowrap;
     }
 
-    // @media (max-width: 991px) {
-    //   #start__caption {
-    //     bottom: 20%;
-    //   }
-
-    //   #start-btn {
-    //     bottom: 15%;
-    //   }
-    // }
+ 
 
       #start-btn {
         

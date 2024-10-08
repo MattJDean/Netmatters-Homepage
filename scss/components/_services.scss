@@ -8,7 +8,7 @@
 //----------------------------------------------------------//
 //----------------------------------------------------------//
 .services {
-  padding: 15px 0 50px;
+  padding: 15px 0 0;
 
 }
 @media (max-width: 768px){
@@ -128,6 +128,10 @@
 
     .marketing { 
       grid-area: marketing;
+
+        p {
+          margin-bottom: 40px;
+        }
     }
 
   }
@@ -139,7 +143,7 @@
   position: relative;
   background-color: #fff;
   border: 1px solid #ccc;
-  padding: 20px;
+  padding: 30px;
   margin-top: 0;
   font-weight: 600;
   text-align: center;
@@ -214,16 +218,14 @@
 .services__txt--bottom {
   text-align: center;
   font-size: 1.625rem;
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: .4px;
-  
 }
 
 .services__txt--left {
   font-size: 2.7rem;
   font-weight: 400;
   color: #333645;
-  
 }
 
 .services__txt--left, .services__txt--bottom, .services__txt--right {
@@ -242,18 +244,18 @@
    }
   }
 
-
-
 .services__txt--right {
   display: none;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .services__txt--bottom {
       display: none;
   }
   .services__txt--right {
       display: block;
+      font-size: 2.25rem;
+      font-weight: 600;
   }
 }
     

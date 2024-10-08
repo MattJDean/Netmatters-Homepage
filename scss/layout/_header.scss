@@ -13,20 +13,19 @@
   position: sticky;
   top: 0;
   z-index: 10000;
-  transition: transform 0.3s ease-in-out;
-
-  #main-header.hidden {
-    top: -215px !important;
-  }
-
-  #main-header.visible {
-    top: 0 !important;
-  }
   
 
 }
 
+#main-header.hidden {
+  top: -215px !important;
+  transition: top 0.3s ease-in-out;
+}
 
+#main-header.visible {
+  top: 0 !important;
+  transition: top 0.3s ease-in-out;
+}
 
 .header__top {
   background-color: $header-background;

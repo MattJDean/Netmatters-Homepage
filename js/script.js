@@ -35,7 +35,7 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Slider
+// Sliders
 
 $(document).ready(function(){
   $('.banner-slider').slick({
@@ -49,8 +49,6 @@ $(document).ready(function(){
     arrows: false,  // Shows navigation arrows
     mobileFirst: true,  // Mobile first design
     respondTo: 'window',  // Respond to window resizing
-    swipe: false,   // Disable swipe gestures
-    vertical: false, 
     adaptiveHeight: true
   });
 });
