@@ -36,7 +36,7 @@ $breakpoint-xl: 1200px;
     }
   }
 
-/*Buttons*/
+/*Button*/
 
 @mixin button (
   $bg-color: #666,  
@@ -63,6 +63,7 @@ $breakpoint-xl: 1200px;
     cursor: $cursor;
     transition: background-color 0.3s ease;
     text-align: center;
+    text-decoration: none;
     letter-spacing: .4px;
 
       &:hover {
@@ -70,6 +71,45 @@ $breakpoint-xl: 1200px;
       }
 }
 
+/*Tooltip*/
+@mixin tooltip($base: 70px, $height: 40px, $position: 50%, $color: #333645, $bg-color: #926fb1) {
+  $b: $base; /*base length of tooltip triangle*/
+  $h: $height; /*height of tooltip triangle*/
+  $p: $position; /*x position of tooltip triangle*/ 
+  $c: $color; 
+
+  border-image: fill 0 conic-gradient($c 0 0);
+  clip-path: polygon(
+    0 100%, 
+    0 0, 
+    100% 0, 
+    100% 100%,
+    min(100%, $p + $b / 2) 100%,
+    $p calc(100% + $h),
+    max(0%, $p - $b / 2) 100%
+  );
+  color: #fff;
+  padding: 20px;
+  max-width: 280px;
+  margin: 0 auto 50px;
+
+   h3 {
+    position: relative;
+    font-size: 1.125rem;
+    padding-bottom: 17px;
+    margin: 0;
+   }
+
+   p {
+    font-size: .8125rem;
+    line-height: 1.375rem;
+    margin-bottom: 0;
+   }
+
+   a {
+    @include button($bg-color);
+   }
+}
 
 
 

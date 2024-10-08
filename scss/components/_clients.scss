@@ -15,19 +15,31 @@
     overflow: hidden;
     position: relative;
     margin: 50px 0;
+    padding: 0 20px;
   
   }
   
 .clients__row {
+  display: flex;
+  align-items: center; 
+  
+
+  .slick-slide {
+    margin: 0 50px;
     display: flex;
-    width: calc(100% * 2); 
-    gap: 50px;
+    align-content: center;
+    justify-content: space-between;
    
+  }
+ 
    img {
-    width: auto;
-    height: 70px;
+    position: relative;
+    max-width: 200px;
+    max-height: 70px;
+    margin: 0;
+    padding: 0;
     filter: grayscale(100%);
-    transition: filter 0.5s ease;
+    transition: filter 0.05s ease;
   }
   
     img:hover {
@@ -36,5 +48,16 @@
     cursor: pointer;
   }
   
-  
   }
+
+.clients__item {
+  .tooltip {
+    @include tooltip;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    z-index: 2000;
+    overflow: visible;
+  }
+}
+  

@@ -37,7 +37,7 @@ window.addEventListener('scroll', () => {
 
 // Sliders
 
-//Our Services Slider
+// Our Services Slider
 $(document).ready(function(){
   $('.banner-slider').slick({
     dots: true,  // Adds navigation dots
@@ -54,7 +54,7 @@ $(document).ready(function(){
   });
 });
 
-//Accreditations Slider
+// Accreditations Slider
 $(document).ready(function(){
   $('.accreditations__row').slick({
     dots: false,  
@@ -65,13 +65,28 @@ $(document).ready(function(){
     autoplay: true,  
     autoplaySpeed: 3000,  
     arrows: false,  
-    slidesToShow: 8,
+    variableWidth: true,
+    slidesToShow: 6,
     rows: 1,
-    
   });
 });
 
-
+// Clients Slider
+$(document).ready(function(){
+  $('.clients__row').slick({
+    dots: false,  
+    infinite: true,  
+    speed: 200,  
+    fade: false,  
+    cssEase: 'linear',  
+    autoplay: true,  
+    autoplaySpeed: 3000,  
+    arrows: false,  
+    variableWidth: true,
+    slidesToShow: 5,
+    rows: 1,
+  });
+});
 
 
 // Cookies
