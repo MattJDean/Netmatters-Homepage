@@ -37,6 +37,7 @@ window.addEventListener('scroll', () => {
 
 // Sliders
 
+//Our Services Slider
 $(document).ready(function(){
   $('.banner-slider').slick({
     dots: true,  // Adds navigation dots
@@ -52,6 +53,24 @@ $(document).ready(function(){
     adaptiveHeight: true
   });
 });
+
+//Accreditations Slider
+$(document).ready(function(){
+  $('.accreditations__row').slick({
+    dots: false,  
+    infinite: true,  
+    speed: 200,  
+    fade: false,  
+    cssEase: 'linear',  
+    autoplay: true,  
+    autoplaySpeed: 3000,  
+    arrows: false,  
+    slidesToShow: 8,
+    rows: 1,
+    
+  });
+});
+
 
 
 

@@ -14,14 +14,12 @@
     max-width: 100%;
     overflow: hidden;
     position: relative;
-    margin: 50px 0;
-  
+    margin: 100px 0 50px;
   }
-  
+
   .accreditations__row {
     display: flex;
-    width: calc(100% * 2); 
-    gap: 50px;
+    width: 150%; 
     
    img {
     width: auto;
@@ -35,7 +33,5 @@
     animation-play-state: paused;
     cursor: pointer;
   }
-  
-  
-  
+    
 }
