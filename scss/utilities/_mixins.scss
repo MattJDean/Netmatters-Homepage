@@ -44,7 +44,7 @@ $breakpoint-xl: 1200px;
   $hover-bg-color: darken($bg-color, 10%), 
   $height: auto,
   $line: 35px,
-  $padding: 5px 15px,
+  $padding: 10px 15px,
   $transform: uppercase,
   $font: 1.063rem,
   $radius: 3px,
@@ -69,46 +69,6 @@ $breakpoint-xl: 1200px;
       &:hover {
         background-color: $hover-bg-color;
       }
-}
-
-/*Tooltip*/
-@mixin tooltip($base: 70px, $height: 40px, $position: 50%, $color: #333645, $bg-color: #926fb1) {
-  $b: $base; /*base length of tooltip triangle*/
-  $h: $height; /*height of tooltip triangle*/
-  $p: $position; /*x position of tooltip triangle*/ 
-  $c: $color; 
-
-  border-image: fill 0 conic-gradient($c 0 0);
-  clip-path: polygon(
-    0 100%, 
-    0 0, 
-    100% 0, 
-    100% 100%,
-    min(100%, $p + $b / 2) 100%,
-    $p calc(100% + $h),
-    max(0%, $p - $b / 2) 100%
-  );
-  color: #fff;
-  padding: 20px;
-  max-width: 280px;
-  margin: 0 auto 50px;
-
-   h3 {
-    position: relative;
-    font-size: 1.125rem;
-    padding-bottom: 17px;
-    margin: 0;
-   }
-
-   p {
-    font-size: .8125rem;
-    line-height: 1.375rem;
-    margin-bottom: 0;
-   }
-
-   a {
-    @include button($bg-color);
-   }
 }
 
 

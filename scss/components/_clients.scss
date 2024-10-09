@@ -22,42 +22,147 @@
 .clients__row {
   display: flex;
   align-items: center; 
+  position: relative;
   
+      .slick-slide {
+        margin: 0 50px;
+        display: flex;
+        align-content: center;
+        justify-content: space-between;
+      
+      }
+    
+      img {
+        position: relative;
+        max-width: 200px;
+        max-height: 70px;
+        margin: 0;
+        padding: 0;
+        filter: grayscale(100%);
+        transition: filter 0.05s ease;
+      }
+      
+        img:hover {
+        filter: grayscale(0%);
+        animation-play-state: paused;
+        cursor: pointer;
+      }
+}
 
-  .slick-slide {
-    margin: 0 50px;
-    display: flex;
-    align-content: center;
-    justify-content: space-between;
-   
-  }
- 
-   img {
-    position: relative;
-    max-width: 200px;
-    max-height: 70px;
-    margin: 0;
-    padding: 0;
-    filter: grayscale(100%);
-    transition: filter 0.05s ease;
-  }
-  
-    img:hover {
-    filter: grayscale(0%);
-    animation-play-state: paused;
-    cursor: pointer;
-  }
-  
-  }
+.slick-slider {
+  overflow: hidden;  
+}
+
+.slick-list {
+  overflow: hidden;
+  position: relative;
+}
+
+.slick-track {
+  overflow: visible;
+}
 
 .clients__item {
-  .tooltip {
-    @include tooltip;
-    display: block;
+  position: relative;
+
+
+.tooltip {
     position: absolute;
-    bottom: 0;
-    z-index: 2000;
-    overflow: visible;
+    bottom: 100%;
+    left: -200px;
+    right: -200px;
+    max-width: 285px;
+    z-index: 9999;
+    background-color:#333645;
+    color: #fff;
+    padding: 20px;
+    font-size: .875rem;
+    margin: 0 auto 50px;
+    text-align: center;
+    visibility: hidden;
+    overflow: visible !important;
+    opacity: 0;
+    transition: opacity 0.1s ease, visibility 0.1s ease;
+
+    h3 {
+      position: relative;
+      font-size: 1.125rem;
+      color:#fff;
+      padding-bottom: 17px;
+      margin: 0;
+    }
+
+    p {
+      font-size: .8125rem;
+      line-height: 1.375rem;
+      margin-bottom: 15px;
+    }
+
+    .tail {
+      position: absolute;
+      bottom: -35px;
+      left: 50%;
+      margin-left: -36px;
+    }
+
+    .tail:after {
+      content:"";
+      margin: auto;
+      display: inline-block;
+      border-color:#333645 transparent transparent;
+      border-style: solid;
+      border-width: 35px 36px 0;
+    }
   }
+
+  &:hover>.tooltip, .tooltip:hover {
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .ashcroft {
+    a {
+      @include button($bg-color: #926fb1);
+    }
+  }
+
+  .one-traveller {
+    a {
+      @include button($bg-color: #926fb1);
+    }
+  }
+
+  .searles {
+    a {
+      @include button($bg-color: #2ecc71);
+    }
+  }
+
+  .black-swan {
+    a {
+      @include button($bg-color: #e8a008);
+    }
+  }
+
+  .girlguiding {
+    a {
+      @include button($bg-color: #2a6ec6);
+    }
+  }
+
+  .sweetzy {
+    a {
+      @include button($bg-color: #2ecc71);
+    }
+  }
+
+  .gdst {
+    a {
+      @include button($bg-color: #2ecc71);
+    }
+  }
+
 }
+
+
   
