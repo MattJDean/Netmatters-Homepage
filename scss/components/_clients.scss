@@ -12,7 +12,7 @@
 .clients {
     height: 70px;
     max-width: 100%;
-    overflow: hidden;
+    overflow: visible;
     position: relative;
     margin: 50px 0;
     padding: 0 20px;
@@ -29,7 +29,6 @@
         display: flex;
         align-content: center;
         justify-content: space-between;
-      
       }
     
       img {
@@ -50,16 +49,16 @@
 }
 
 .slick-slider {
-  overflow: hidden;  
+  overflow: visible !important;  
 }
 
 .slick-list {
-  overflow: hidden;
+  overflow: visible !important;
   position: relative;
 }
 
 .slick-track {
-  overflow: visible;
+  overflow: visible !important;
 }
 
 .clients__item {
