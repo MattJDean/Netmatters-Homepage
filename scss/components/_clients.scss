@@ -8,15 +8,22 @@
 //----------------------------------------------------------//
 //----------------------------------------------------------//  
 
+.page-wrapper {
+  overflow: hidden;
+}
 
 .clients {
     height: 70px;
     max-width: 100%;
-    overflow-y: visible;
+    overflow: visible;
     position: relative;
     margin: 50px 0;
     padding: 0 20px;
   }
+  
+.slick-list {
+  overflow: visible !important;
+}
   
 .clients__row {
   display: flex;
@@ -25,6 +32,7 @@
   
   
       .slick-slide {
+        position: relative;
         margin: 0 50px;
         display: flex;
         align-content: center;
@@ -48,18 +56,13 @@
       }
 }
 
-// .slick-slider {
-//   overflow: visible !important;  
-// }
+.slick-slide {
+  overflow: visible !important;  
+}
 
-// .slick-list {
-//   overflow: visible !important;
-//   position: relative;
-// }
-
-// .slick-track {
-//   overflow: visible !important;
-// }
+.slick-track {
+  overflow: visible !important;
+}
 
 .clients__item {
   position: relative;
@@ -107,16 +110,12 @@
     .tail:after {
       content:"";
       margin: auto;
-      display: inline-block;
+      display: block;
       border-color:#333645 transparent transparent;
       border-style: solid;
       border-width: 35px 36px 0;
     }
-  }
 
-  &:hover>.tooltip, .tooltip:hover {
-    visibility: visible !important;
-    opacity: 1 !important;
   }
 
   .ashcroft {
@@ -163,5 +162,9 @@
 
 }
 
+.clients__item:hover .tooltip {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
 
   

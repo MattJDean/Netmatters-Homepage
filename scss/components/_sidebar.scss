@@ -274,6 +274,7 @@
         position: relative;
         z-index: 1000;
         transition: transform 0.3s ease;
+        
     
         &.shift-left {
             transform: translateX(-350px); /* Move content left by the width of the sidebar */
