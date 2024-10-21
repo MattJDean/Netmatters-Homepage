@@ -50,6 +50,7 @@ $(document).ready(function() {
       mobileFirst: true, 
       respondTo: 'window', 
       adaptiveHeight: true,
+      swipe: true,
       
   });
 });
