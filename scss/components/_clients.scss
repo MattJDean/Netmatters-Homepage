@@ -8,9 +8,7 @@
 //----------------------------------------------------------//
 //----------------------------------------------------------//  
 
-.page-wrapper {
-  overflow: hidden;
-}
+
 
 .clients {
     height: 70px;
@@ -61,7 +59,7 @@
 }
 
 .slick-track {
-  overflow: visible !important;
+  overflow: hidden !important;
 }
 
 .clients__item {
