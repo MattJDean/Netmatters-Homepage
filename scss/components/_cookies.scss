@@ -136,6 +136,12 @@
         }
       }
 
+      @media (max-width: 768px){
+        .cookies__footer {
+          flex-direction: column;
+        }
+      }
+
       .cookie__consent-btn {
 
         button {
@@ -166,3 +172,9 @@
        
       }
 
+      #change-btn, #accept-btn {
+        width: auto;
+        @media (min-width: 768px) {
+          width: 265px;
+        }
+      }

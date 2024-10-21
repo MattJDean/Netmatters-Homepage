@@ -49,7 +49,8 @@ $(document).ready(function() {
       arrows: false, 
       mobileFirst: true, 
       respondTo: 'window', 
-      adaptiveHeight: true
+      adaptiveHeight: true,
+      
   });
 });
 
