@@ -36,7 +36,7 @@ window.addEventListener('scroll', () => {
 
 // Sliders
 
-// Our Services Slider
+// // Our Services Slider
 $(document).ready(function() {
   $('.banner-slider').slick({
       dots: true, 
@@ -55,7 +55,7 @@ $(document).ready(function() {
   });
 });
 
-// Accreditations Slider
+// // Accreditations Slider
 $(document).ready(function() {
   $('.accreditations__row').slick({
       dots: false,
@@ -72,7 +72,7 @@ $(document).ready(function() {
   });
 });
 
-// Clients Slider
+// // Clients Slider
 $(document).ready(function() {
     $('.clients__row').slick({
         dots: false,
@@ -87,6 +87,7 @@ $(document).ready(function() {
         slidesToShow: 5,
         rows: 1,
     });
+
     // function to apply overflow:visible to slick-list after slight delay
     setTimeout(function() {
         $('.slick-list').css('overflow', 'visible');
