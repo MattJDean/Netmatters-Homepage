@@ -44,51 +44,20 @@
 
     }
 
+    /* Caption and Button*/
     .banner__content {
+      position: relative;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       text-align: center;
       padding: 3.75rem 0;
     }
 
-    @media (min-width: 991px){
-      .banner__content {
-        display: block;
-      }
-
-      .banner__caption {
-        position: absolute;
-        
-        h2 {
-          text-align: left !important;
-          font-size: 4rem !important;
-          line-height: 5rem !important;
-        }
-
-        p {
-          text-align: left !important;
-          font-size: 1.625rem !important;
-          line-height: 2.5rem !important;
-        }
-      }
-
-     .banner__button {
-      position: absolute;
-      bottom: 0 !important;
-      left: 0 !important;
-      transform: translateX(0) !important;
-     }
-
-   
-    }
-  
     .banner__caption {
       position: absolute;
       padding: 0;
-      width: 100%;
       height: auto;
-      bottom: 50%;
+      bottom: 400px;
       color: $font-white;
       z-index: 5000;
   
@@ -104,45 +73,85 @@
         font-size: clamp(1rem, 1.25rem, 1.5rem);
         line-height: clamp(1rem, 1.25rem, 1.5rem);
         font-weight: 600;
-        margin-bottom: 100px;
+        margin-bottom: 0;
         text-align: center;
       }
     }
 
-
-    @media (max-width: 500px) {
-      #start__caption {
-        bottom: 250px !important;
-      }
-
-      #start-btn {
-        bottom: 200px !important;
-      }
-    }
-
-  
     .banner__button {
       position: absolute;
       display: flex;
       justify-items: center;
       left: calc(50% - 110px);
+      bottom: 300px;
       z-index: 5000;
       padding: 5px 20px;
       height: 65px;
       width: auto;
       text-transform: uppercase;
       text-align: center;
-      vertical-align: middle;
       font-weight: 400;
       font-size: 1.25rem;
-      line-height: 50px;
+      line-height: 53px;
       color: $font-white;
       border-radius: 3px;
       white-space: nowrap;
     }
+        /*Justify Left at 991px Breakpoint*/
+        @media (min-width: 991px){
+          .banner__content {
+            position: relative;
+            display: block;
+          }
 
- 
+          .banner__caption {
+            position: absolute;
+            top: -500px;
+            
+            h2 {
+              text-align: left !important;
+              font-size: 4rem !important;
+              line-height: 5rem !important;
+            }
 
+            p {
+              text-align: left !important;
+              font-size: 1.625rem !important;
+              line-height: 2.5rem !important;
+            }
+          }
+
+        .banner__button {
+          position: absolute;
+          bottom: 350px !important;
+          left: 0 !important;
+          transform: translateX(0) !important;
+        }
+      }
+
+        /* First Slide Caption/Button Breakpoint Positioning */
+          @media (max-width: 500px) {
+            #start__caption {
+              bottom: 300px !important;
+            }
+
+            #start-btn {
+              bottom: 200px !important;
+            }
+          }
+
+          @media (min-width: 991px) {
+            #start-btn {
+              bottom: 190px !important;
+            }
+          }
+          @media (min-width: 1260px) {
+            #start-btn {
+              bottom: 260px !important;
+            }
+          }
+    
+      /*Button colours*/
       #start-btn {
         
         background-color: $design-prim;
@@ -214,6 +223,7 @@
         }
       }
 
+      /*Control Dots*/
       .slick-dots {
         position: absolute;
         bottom: 50px; 
@@ -246,6 +256,7 @@
         background-color: rgba(255, 255, 255, 1);
     }
 
+    /*Ring Around Active Dot*/
     .slick-dots li.slick-active button::before {
       content: '';
       position: absolute;
