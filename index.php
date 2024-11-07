@@ -226,7 +226,7 @@
 
                 </div>
                                           
-        <!-- Services -->
+         <!-- Services -->
                 <div class="services">
                     <div class="container">
                         <!-- Heading -->
@@ -345,7 +345,7 @@
                 </div>
 
             <!--News-->
-            
+
                 <?php include 'news.php'; ?>                 
 
             <!--Clients-->
