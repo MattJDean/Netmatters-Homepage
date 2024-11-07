@@ -345,83 +345,8 @@
                 </div>
 
             <!--News-->
-                <div class="container">
-                        <div class="news__h1"><h1>Latest News</h1></div>
-                        <div class="news__view-all--top"><h2>View All <i class="icon-arrow-right-solid"></i></h2></div>
-                            <div class="news__cards-container">
-
-                                <div class="news__card">
-                                    <div class="news__card--header">
-                                        <div class="news__card--banner">
-                                            <span class="news__badge">CAREERS</span>
-                                            <img src="assets/img/1st-line-technician.jpg" alt="Now Hiring: 1st Line Technician">
-                                        </div>
-                                    </div>
-                                    <div class="news__card--main">
-                                        <div class="news__card--body">
-                                            <h2>1st Line Technician <span class="read-time"></span></h2>
-                                            <p>Salary Range £25k-£29k + Bonuses + Pension<br>Hours 40 hours per week, Monday - Friday<br>Location Wymondh...</p>
-                                            <a href="#" class="news__read--btn">READ MORE</a>
-                                        </div>
-                                        <div class="news__card--footer">
-                                            <img src="assets/img/rebecca-icon.jpeg" alt="Profile" class="news__profile--pic">
-                                            <div class="news__card--info">
-                                                <span>Posted by Rebecca Moore</span><br>
-                                                <small>2nd August 2024</small> 
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="news__card">
-                                        <div class="news__card--header">
-                                            <div class="news__card--banner">
-                                                <span class="news__badge">NEWS</span>
-                                                <img src="assets/img/july-notables-2024-5ATy.png" alt="July Notables">
-                                            </div>
-                                        </div>
-                                    <div class="news__card--main">
-                                        <div class="news__card--body">
-                                            <h2>July Notables 2024 - Celebrating Our Team <span class="read-time">- 4 Minute Read</span></h2>
-                                            <p>July Notables 2024 Celebrating the achievements and dedication of our staff, at Netmatters, we put a...</p>
-                                            <a href="#" class="news__read--btn">READ MORE</a>
-                                        </div>
-                                        <div class="news__card--footer">
-                                            <img src="assets/img/netmatters-ltd-VXAv.png" alt="Profile" class="news__profile--pic">
-                                            <div class="news__card--info">
-                                                <p>Posted by Netmatters</p> 
-                                                <small>8th August 2024</small>                       
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="news__card">
-                                        <div class="news__card--header">
-                                            <div class="news__card--banner">
-                                                <span class="news__badge">CAREERS</span>
-                                                <img src="assets/img/2nd-line-technician-Rnd7.jpg" alt="Now Hiring: 2nd Line Technician">
-                                            </div>
-                                        </div>
-                                    <div class="news__card--main">
-                                        <div class="news__card--body">
-                                            <h2>2nd Line Technician <span class="read-time"></span></h2>
-                                            <p>Salary Range £28k-£36k + Bonuses + Pension Hours 40 hours per week, Monday - Friday Location Wymondh...</p>
-                                            <a href="#" class="news__read--btn">READ MORE</a>
-                                        </div>
-                                        <div class="news__card--footer">
-                                            <img src="assets/img/rebecca-moore-1fh7.jpg" alt="Profile" class="news__profile--pic">
-                                            <div class="news__card--info">
-                                                <span>Posted by Rebecca Moore</span><br>
-                                                <small>2nd August 2024</small>                     
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>    
-                        <div class="news__view-all"><h2>View All <i class="icon-arrow-right-solid"></i></h2></div>
-                </div>    
-                
+            
+                <?php include 'news.php'; ?>                 
 
             <!--Clients-->
             

@@ -13,6 +13,8 @@ services:
       - mysql_data:/var/lib/mysql 
     networks:
       - netmatters
+    
+    
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
