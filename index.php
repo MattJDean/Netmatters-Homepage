@@ -18,6 +18,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&family=Poppins:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
         <link rel="preload" href="./assets/fonts/icomoon.eot" as="font" crossorigin="anonymous">
         <link rel="preload" href="./assets/fonts/icomoon.woff" as="font" type="font/woff2" crossorigin>
+        
 
         <!--Stylesheet-->
         <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -56,8 +57,8 @@
                 </div>
         </div>
         
-    <!--Sidebar-->
-    <?php include 'sidebar.php'; ?> 
+<!--Sidebar-->
+<?php include 'sidebar.php'; ?> 
 
 <!--Page Wrapper-->
 <div class="page-wrapper">
@@ -69,7 +70,9 @@
     <!--Navbar-->
     <?php include 'navbar.php'; ?> 
   </div>
+
         <div class="page-content-wrapper">
+
             <!--Banner-->
                 <div class="banner-slider">
                     
