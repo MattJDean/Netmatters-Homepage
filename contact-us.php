@@ -16,9 +16,10 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&family=Poppins:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=check" />
         <link rel="preload" href="./assets/fonts/icomoon.eot" as="font" crossorigin="anonymous">
         <link rel="preload" href="./assets/fonts/icomoon.woff" as="font" type="font/woff2" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=check" />
+        <script src="https://kit.fontawesome.com/ee55ddb165.js" crossorigin="anonymous"></script>
 
         <!--Stylesheet-->
         <link rel="stylesheet" type="text/css" href="css/style.css"> 
@@ -124,7 +125,7 @@
                                 <div class="form-item">
                                     <label class="form-label marketing-info">
                                         <span class="checkbox-container">
-                                        <span class="checkbox"><span class="material-symbols-outlined checked">check</span></span>
+                                        <span class="checkbox"><span class="material-symbols-outlined check">check</span></span>
                                         </span>
                                         <span class="marketing-info-text">
                                         Please tick this box if you wish to receive marketing information from us.
@@ -153,18 +154,19 @@
                             <!--Email/Phone-->
                             <div class="email-phone">
                                 <p><strong>Email us on:</strong></p>
-                                <p><a href="#"></a>sales@netmatters.com</p>
+                                <p class="email-link"><a href="#"></a>sales@netmatters.com</p>
                                 <p><strong>Business hours:</strong></p>
                                 <p><strong>Monday - Friday 07:00 - 18:00</strong></p>
                             </div>
 
                             <!--Out of Hours Accordion-->
                             <div id="out-of-hours">
-                                <h4><a href="#">Out of Hours IT Support</a><i class="fa-solid fa-chevron-down"></i></h4>
+                                <h4 class="accordion-base"><a href="#">Out of Hours IT Support<span class="icon-keyboard_arrow_down"></span></a></h4>
                                 <div class="out-of-hours-content">
                                     <p>Netmatters IT are offering an Out of Hours service for Emergency and Critical tasks.</p>
                                     <p>
                                         <strong>Monday - Friday 18:00 - 22:00</strong>
+                                        <br>
                                         <strong>Saturday 08:00 - 16:00</strong>
                                         <br>
                                         <strong>Sunday 10:00 - 18:00</strong>
