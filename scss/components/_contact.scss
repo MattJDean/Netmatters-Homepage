@@ -10,8 +10,9 @@
     padding: 14px 0 13px;
 }
 
+/*Hidden < 992px*/
 .breadcrumb {
-    display: flex;
+    display: none;
     background: none;
     color: #333645;
     font-size: .8125rem;
@@ -42,6 +43,13 @@
         }
 }
 
+/*Display > 992px*/
+@media (min-width: 992px) {
+    .breadcrumb {
+        display: flex;
+    }
+}
+
 /*Page Heading*/
 
 .top-section {
@@ -67,8 +75,14 @@
 
 .cards-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 30px;
+}
+
+@media (min-width: 992px) {
+    .cards-container {
+        flex-direction: row;
+    }
 }
 
 .office-card {
@@ -160,13 +174,129 @@
     padding-bottom: 50px;
 }
 
-/*Contact Form*/
-
 .contact-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 30px;
 }
+
+/*Row layout at > 992px*/
+@media (min-width: 992px) {
+    .contact-container {
+        flex-direction: row-reverse;
+    }
+}
+
+/*Email/Business Hours*/
+
+.contact-info {
+    width: 100%;
+    padding-bottom: 0;
+}
+
+/*Width at > 992px to accomodate row layout*/
+@media (min-width: 992px) {
+    .contact-info {
+        width: 61.5%;
+    }
+}
+
+.email-phone {
+
+    p {
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1.875;
+        color: #333645;
+        margin-bottom: 25px;
+    }
+
+    .email-link {
+        font-size: 1.625rem;
+        font-weight: 600;
+        color: #926fb1;
+        text-decoration: none;
+
+        &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    }
+}
+
+/*Out Of Hours block*/
+
+.accordion-base {
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    transition: 0.4s;
+    color: #333645;
+    margin-bottom: 25px;
+    
+
+        a {
+            color: #333645;
+        }
+
+        span {
+            font-size: 0.9rem;
+            font-weight: 900;
+            color: #333645;
+            padding-left: 4px;
+        }
+
+        &:hover {
+            text-decoration: none;
+            cursor: pointer;    
+        }        
+}
+
+/*Underlines just the text and not the arrow on hover*/
+.accordion-base:hover h4 {
+    position: relative;
+}
+
+.accordion-base:hover h4:before {
+    content: '';
+    position: absolute;
+    bottom: 4px; 
+    left: 0;
+    height: 1px; 
+    width: 200px;
+    background-color: currentColor; 
+}
+
+/*Accordion Content*/
+.out-of-hours-content {
+    max-height: 0; /*Hidden Initially*/
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+
+    p {
+        margin-top: 40px;
+        margin-bottom: 25px;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.875;
+        color: #666;
+
+            strong {
+                font-weight: 600;
+                color: #333645;
+            }
+    }
+}
+
+/*Toggle Accordion*/
+.out-of-hours-content.open {
+    max-height: 400px; /* Maximum height when toggled open*/
+}
+
+
+/*Contact Form*/
 
 #contact-form {
     display: flex;
@@ -183,14 +313,25 @@
 
 .form-group {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     margin: 0 -15px;
 }
 
 .top-group {
-    width: 50%;
+    width: 100%;
     padding: 0 15px;
+}
+
+/*Top fields row config >992px*/
+@media (min-width: 992px) {
+    .form-group {
+        flex-direction: row;
+    }
+
+    .top-group {
+        width: 50%;
+    }
 }
 
 /*Form Labels*/
@@ -261,34 +402,38 @@
             border: 3px solid #333645;
             border-radius: 3px;
             margin-right: 20px;
+            position: relative;
+            transition: background-color 0.3s ease;
 
                 &:hover {
                     cursor: pointer;
                 }
 
-                &:active {
+                .active {
                     background-color: #333645;
                 }
-
+                
                 .check {
-                    padding: 2px 1px;
+                    opacity: 0;
+                    line-height: 26px;
+                    text-align: center;
+                    font-size: 22px;
+                    color: #fff;
+                    position: absolute; 
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%); 
+                    transition: opacity 0.3s ease;
                 }
         }
 
-        .checked {
-            opacity: 0;
-            line-height: 26px;
-            text-align: center;
-            font-size: 22px;
-            color: #fff;
-            padding: 0 3px;
-
-                &:active {
-                    opacity: 1;
-                }
-
-             
+        .checkbox.active .check {
+            opacity: 1; 
+            background-color: #333645;
+            width: 32px;
         }
+
+        
 
         /*Marketing Info Text Block*/
         .marketing-info-text {
@@ -362,73 +507,33 @@
             color: #333645;
         }
 
-
-/*Email/Business Hours*/
-
-.contact-info {
-    width: 61.5%;
-    padding-bottom: 50px;
-}
-
-.email-phone {
-
-    p {
-        font-size: 1rem;
-        font-weight: 600;
-        line-height: 1.875;
-        color: #333645;
-        margin-bottom: 25px;
-    }
-
-    .email-link {
-        font-size: 1.625rem;
-        font-weight: 600;
-        color: #926fb1;
-        text-decoration: none;
-
-        &:hover {
-            cursor: pointer;
-            text-decoration: underline;
-        }
-    }
-}
-
-/*Out Of Hours*/
-
-.accordion-base {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #333645;
-    margin-bottom: 25px;
-
-        a {
-            color: #333645;
-            text-decoration: none;
+        #error-message-box {
+            display: none;
+            background-color:#f2dede;
+            border-color:#ebccd1;
+            color: #a94442;
+            border: 1px solid #ebccd1;
+            border-radius: 2px;
+            padding: 15px;
+            margin-bottom: 20px;
         }
 
-        span {
-            font-size: 0.9rem;
-            font-weight: 900;
-            color: #333645;
-            padding-left: 4px;
-        }
-}
+        .close-btn {
+            float: right;
+            font-size: 21px;
+            font-weight: 700;
+            line-height: 1;
+            color: #000;
+            text-shadow: 0 1px 0 #fff;
+            opacity: .2;
+            border: 0;
+            padding: 0;
+            background: transparent;
 
-
-
-.out-of-hours-content {
-    display: none; /*Hidden Initially*/
-
-    p {
-        margin-bottom: 25px;
-        font-size: 1rem;
-        font-weight: 400;
-        line-height: 1.875;
-        color: #666;
-
-            strong {
-                font-weight: 600;
-                color: #333645;
+            &:hover {
+                color: #000;
+                text-decoration: none;
+                cursor: pointer;
+                opacity: .5;
             }
-    }
-}
+        }
