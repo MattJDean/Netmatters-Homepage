@@ -1,3 +1,10 @@
+<?php
+include 'config.php';
+
+  $page = 'contact';
+  
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     
@@ -10,35 +17,47 @@
         <title>Full Service Digital Agency | Cambridgeshire & Norfolk | Netmatters</title>
 
         <!--Favicon-->
-        <link rel="icon" href="./assets/img/favicon.png" type="image/png">
+        <link rel="icon" href="assets/img/favicon.png" type="image/png">
 
         <!--Fonts/Icons-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&family=Poppins:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=check" />
-        <link rel="preload" href="./assets/fonts/icomoon.eot" as="font" crossorigin="anonymous">
-        <link rel="preload" href="./assets/fonts/icomoon.woff" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="assets/fonts/icomoon.woff" as="font" type="font/woff" crossorigin="anonymous">
         <script src="https://kit.fontawesome.com/ee55ddb165.js" crossorigin="anonymous"></script>
-
+   
         <!--Stylesheet-->
-        <link rel="stylesheet" type="text/css" href="css/style.css"> 
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
+
+       <!-- JS Scripts -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" defer></script>
+        <script src="assets/js/cookies.js" defer></script>
+        <script src="assets/js/sidebar.js" defer></script>
+        <script src="assets/js/header.js" defer></script>
+        <script src="assets/js/oohAccordion.js" defer></script>
+        <script src="assets/js/contactForm.js" defer></script>
+
     </head>
 
 <body>
 
-    <!--Sidebar-->
-    <?php include 'sidebar.php'; ?> 
+    <!-- Cookies -->
+    <?php include 'includes/cookies.php';?>
 
-<!--Page Wrapper-->
-<div class="page-wrapper">
+    <!--Sidebar-->
+    <?php include 'includes/sidebar.php'; ?> 
+
+    <!--Page Wrapper-->
+    <div class="page-wrapper">
 
         <div id="main-header">
             <!--Header-->
-            <?php include 'header.php'; ?> 
+            <?php include 'includes/header.php'; ?> 
 
             <!--Navbar-->
-            <?php include 'navbar.php'; ?> 
+            <?php include 'includes/navbar.php'; ?> 
         </div>
 
         <div class="page-content-wrapper">
@@ -67,11 +86,11 @@
                 <div class="container">
                     <div class="cards-container">
                         <!--Cambridge Office-->
-                        <?php include 'cambridge-office-card.php'; ?> 
+                        <?php include 'includes/cambridge-office-card.php'; ?> 
                         <!--Wymondham Office-->
-                        <?php include 'wymondham-office-card.php'; ?> 
+                        <?php include 'includes/wymondham-office-card.php'; ?> 
                         <!--Great Yarmouth Office-->
-                        <?php include 'yarmouth-office-card.php'; ?> 
+                        <?php include 'includes/yarmouth-office-card.php'; ?> 
                     </div>
                 </div>
             </section>
@@ -82,23 +101,19 @@
                     <div class="contact-container">
 
                         <!--Contact/Out of Hours-->
-                        <?php include 'out-of-hours.php'; ?>
+                        <?php include 'includes/out-of-hours.php'; ?>
 
                         <!--Contact Form-->
-                        <?php include 'contact-form.php'; ?>
+                        <?php include 'includes/contact-form.php'; ?>
 
                     </div>
                 </div>
             </section>
 
             <!--Footer-->
-            <?php include 'footer.php'; ?> 
-</div>
-
-<!--jQuery-->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<!--js-->
-<script src="js/contact.js"></script>
+            <?php include 'includes/footer.php'; ?> 
+        </div>
+    </div>
 </body>
 
 </html>
