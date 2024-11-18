@@ -1,12 +1,21 @@
 document.addEventListener("DOMContentLoaded", function() {
     const checkbox = document.querySelector(".checkbox");
     const form = document.getElementById("contact-form");
+    const errorMessageBox = document.getElementById("error-message-box");
+    const errorMessagesContainer = document.getElementById("error-messages");
+    const successMessageBox = document.getElementById("success-message-box");
+    const successMessageContainer = document.getElementById("success-message");
+
+    if (!errorMessagesContainer) {
+        console.error("Error: 'error-messages' container is missing in the DOM.");
+        return;
+    }
 
      // Reset the form on page load
      form.reset(); 
      document.querySelectorAll(".error-outline").forEach(field => field.classList.remove("error-outline")); 
      document.getElementById("error-message-box").style.display = "none"; 
-     document.getElementById("successMessageBox").style.display = "none";
+     document.getElementById("success-message-box").style.display = "none";
 
     checkbox.addEventListener("click", function() {
     checkbox.classList.toggle("active");
@@ -28,9 +37,13 @@ document.addEventListener("DOMContentLoaded", function() {
         const message = messageField.value;
         const marketingInfo = checkbox.classList.contains("active");
         const errorMessageBox = document.getElementById("error-message-box");
+
         const errorMessagesContainer = document.getElementById("error-messages");
+        
         const successMessageBox = document.getElementById("success-message-box");
+        
         const successMessageContainer = document.getElementById("success-message");
+        
 
 
         let errors = [];
@@ -88,7 +101,9 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         
             errorMessageBox.style.display = "block";
-        } else {
+        } 
+              
+        else {
             errorMessageBox.style.display = "none";
             submitForm(name, company, email, phone, message, marketingInfo);
         }
@@ -106,8 +121,11 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // Close button event listener
-    document.querySelector(".close-btn").addEventListener("click", function() {
+    document.querySelector(".close-error-btn").addEventListener("click", function() {
     document.getElementById("error-message-box").style.display = "none";
+    });
+    document.querySelector(".close-success-btn").addEventListener("click", function() {
+    document.getElementById("success-message-box").style.display = "none";
     });
 
     function submitForm(name, company, email, phone, message, marketingInfo) {
@@ -132,13 +150,12 @@ document.addEventListener("DOMContentLoaded", function() {
         if (data.success) {
             // Display individual success messages
             successMessageContainer.innerHTML = "";
-            const successMessage = ["Your message has been sent!"];
-            successMessage.forEach(msg => {
+            
+            
                 const successDiv = document.createElement("div");
-                successDiv.classList.add("success-message-box");
-                successDiv.innerText = msg;
+                successDiv.innerText = "Your message has been sent!";
                 successMessageContainer.appendChild(successDiv);
-            });
+            
                 successMessageBox.style.display = "block";
                 errorMessageBox.style.display = "none";
                 form.reset();

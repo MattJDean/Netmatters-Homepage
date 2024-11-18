@@ -6,12 +6,12 @@
 
         
         <div id="success-message-box" class="success-message-box">
-            <button class="close-btn" type="button">x</button>
+            <button class="close-success-btn" type="button">x</button>
             <div id="success-message"></div>
         </div>
 
         <div id="error-message-box" class="error-message-box">
-            <button class="close-btn" type="button">x</button>
+            <button class="close-error-btn" type="button">x</button>
             <div id="error-messages"></div>
         </div>
 
@@ -53,6 +53,7 @@
         <!--Marketing Info-->
         <div class="form-item">
             <label class="form-label marketing-info">
+                <input type="checkbox" id="marketing-info" name="marketing_info" value="1">
                 <span class="checkbox-container">
                 <span class="checkbox"><span class="material-symbols-outlined check">check</span></span>
                 </span>

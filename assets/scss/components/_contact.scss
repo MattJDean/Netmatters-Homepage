@@ -520,7 +520,27 @@
             margin-bottom: 20px;
         }
 
-        .close-btn {
+        .close-error-btn {
+            float: right;
+            font-size: 21px;
+            font-weight: 700;
+            line-height: 1;
+            color: #000;
+            text-shadow: 0 1px 0 #fff;
+            opacity: .2;
+            border: 0;
+            padding: 0;
+            background: transparent;
+
+            &:hover {
+                color: #000;
+                text-decoration: none;
+                cursor: pointer;
+                opacity: .5;
+            }
+        }
+
+        .close-success-btn {
             float: right;
             font-size: 21px;
             font-weight: 700;
@@ -546,15 +566,15 @@
 
         .success-message-box {
             display: none;
-            background-color: #4CAF50; // Green background
-            color: white;
+            background-color: #2ecc71; // Green background
+            color: #fff;
             padding: 15px;
             margin-bottom: 20px;
             border-radius: 4px;
             position: relative;
         }
         
-        .success-message {
+        #success-message {
             margin-bottom: 10px;
             &:last-child {
                 margin-bottom: 0;
