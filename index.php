@@ -17,11 +17,22 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&family=Poppins:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
-        <link rel="preload" href="/assets/fonts/icomoon.eot" as="font" crossorigin="anonymous">
-        <link rel="preload" href="/assets/fonts/icomoon.woff" as="font" type="font/woff" crossorigin>
+        <link rel="preload" href="assets/fonts/icomoon.eot" as="font" crossorigin="anonymous">
+        <link rel="preload" href="assets/fonts/icomoon.woff" as="font" type="font/woff" crossorigin>
+
+        <!-- JS Scripts -->
+        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js" integrity="sha512-eP8DK17a+MOcKHXC5Yrqzd8WI5WKh6F1TIk5QZ/8Lbv+8ssblcz7oGC8ZmQ/ZSAPa7ZmsCU4e/hcovqR8jfJqA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="assets/js/banner.js" defer></script>
+        <script src="assets/js/accredSlider.js" defer></script>
+        <script src="assets/js/clientsSlider.js" defer></script>
+        <script src="assets/js/cookies.js" defer></script>
+        <script src="assets/js/sidebar.js" defer></script>
+        <script src="assets/js/header.js" defer></script>
         
-        <!--Stylesheet-->
-        <link rel="stylesheet" type="text/css" href="assets/css/style.css">       
+        <!--Stylesheets-->
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" />      
 
     </head>
 
@@ -74,15 +85,7 @@
 
   </div>
 
-<!-- JS Scripts -->
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" defer></script>
-        <script src="assets/js/banner.js" defer></script>
-        <script src="assets/js/accredSlider.js" defer></script>
-        <script src="assets/js/clientsSlider.js" defer></script>
-        <script src="assets/js/cookies.js" defer></script>
-        <script src="assets/js/sidebar.js" defer></script>
-        <script src="assets/js/header.js" defer></script>
+
  </body>
 
 

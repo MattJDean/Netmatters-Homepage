@@ -2,14 +2,10 @@ document.addEventListener("DOMContentLoaded", function() {
     const checkbox = document.querySelector(".checkbox");
     const form = document.getElementById("contact-form");
     const errorMessageBox = document.getElementById("error-message-box");
-    const errorMessagesContainer = document.getElementById("error-messages");
+    const errorMessages = document.getElementById("error-messages");
     const successMessageBox = document.getElementById("success-message-box");
-    const successMessageContainer = document.getElementById("success-message");
+    const successMessage = document.getElementById("success-message");
 
-    if (!errorMessagesContainer) {
-        console.error("Error: 'error-messages' container is missing in the DOM.");
-        return;
-    }
 
      // Reset the form on page load
      form.reset(); 
@@ -27,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const nameField = document.getElementById("name");
         const companyField = document.getElementById("company");
         const emailField = document.getElementById("email");
-        const phoneField = document.getElementById("telephone");
+        const phoneField = document.getElementById("phone");
         const messageField = document.getElementById("message");
 
         const name = nameField.value;
@@ -36,15 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const phone = phoneField.value;
         const message = messageField.value;
         const marketingInfo = checkbox.classList.contains("active");
-        const errorMessageBox = document.getElementById("error-message-box");
-
-        const errorMessagesContainer = document.getElementById("error-messages");
-        
-        const successMessageBox = document.getElementById("success-message-box");
-        
-        const successMessageContainer = document.getElementById("success-message");
-        
-
+       
 
         let errors = [];
         
@@ -90,14 +78,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (errors.length > 0) {
             // Clear previous error messages
-            errorMessagesContainer.innerHTML = "";
+            errorMessages.innerHTML = "";
         
             // Create a separate div for each error
             errors.forEach(error => {
                 const errorDiv = document.createElement("div");
                 errorDiv.classList.add("error-message-box");
                 errorDiv.innerText = error;
-                errorMessagesContainer.appendChild(errorDiv);
+                errorMessages.appendChild(errorDiv);
             });
         
             errorMessageBox.style.display = "block";
@@ -111,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Clear error outline on focus
     const inputFields = [document.getElementById("name"), document.getElementById("company"), 
-        document.getElementById("email"), document.getElementById("telephone"), 
+        document.getElementById("email"), document.getElementById("phone"), 
         document.getElementById("message")];
 
         inputFields.forEach(field => {
@@ -141,34 +129,28 @@ document.addEventListener("DOMContentLoaded", function() {
             method: "POST",
             body: formData
         })
-        .then(response => response.text())
-        .then(text => {
-        console.log("Raw response text:", text); // Check the response format
-        return JSON.parse(text); // Parse it after inspection
-        })
+       
+        .then(response => response.json())
         .then(data => {
-        if (data.success) {
-            // Display individual success messages
-            successMessageContainer.innerHTML = "";
-            
-            
-                const successDiv = document.createElement("div");
-                successDiv.innerText = "Your message has been sent!";
-                successMessageContainer.appendChild(successDiv);
-            
+            if (data.success) {
+                // Show success message
+                successMessage.innerHTML = data.message;
                 successMessageBox.style.display = "block";
                 errorMessageBox.style.display = "none";
                 form.reset();
-          }
-                else {
-                errorMessagesContainer.textContent = data.message || "An error occurred.";
+            } else {
+
+                // Show error message
+                errorMessages.textContent = data.message || "An error occurred. Please try again later.";
                 errorMessageBox.style.display = "block";
                 successMessageBox.style.display = "none";
-                }
+            }
         })
-.catch(error => {
-    errorMessagesContainer.textContent = "An error occurred. Please try again.";
-    errorMessageBox.style.display = "block";
-    successMessageBox.style.display = "none";
-});
+        .catch(error => {
+            console.error("Error:", error); // Log fetch errors
+            errorMessages.innerHTML = "An unexpected error occurred. Please try again.";
+            errorMessageBox.style.display = "block";
+            successMessageBox.style.display = "none";
+        });
+   
 }});

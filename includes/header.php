@@ -28,7 +28,7 @@
 
                         <!--Contact Button    Min 992px-->
                         <div class="header__contact">
-                            <i class="icon-paper-plane"></i>Contact
+                            <a href="contact-us.php"><i class="icon-paper-plane"></i>Contact</a>
                         </div>
 
                             <!--md Search Bar 768px - 992px-->

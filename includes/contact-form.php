@@ -2,7 +2,7 @@
 
 <!--Contact Form-->
   <div class="contact-form">
-    <form id="contact-form" action="/utilities/validate-form.php" method="POST" accept-charset="UTF-8">
+    <form id="contact-form" action="utilities/validate-form.php" method="POST" accept-charset="UTF-8">
 
         
         <div id="success-message-box" class="success-message-box">
@@ -16,17 +16,18 @@
         </div>
 
         <div class="form-group">
+
         <!--Name-->
         <div class="form-item top-group">
             <label class="form-label" for="name">Your Name<span class="required"></span>
-            <input id="name" class="form-input" name="name" type="text" required>
+            <input id="name" class="form-input" name="name" type="text" required maxlength="30">
             </label>
         </div>
 
         <!--Comapny Name-->
         <div class="form-item top-group">
             <label class="form-label" for="company">Company Name
-            <input id="company" class="form-input" name="company" type="text">
+            <input id="company" class="form-input" name="company" type="text" maxlength="20">
             </label>
         </div>
 
@@ -37,17 +38,18 @@
             </label>
         </div>
 
-        <!--Telephone-->
+        <!--Phone-->
         <div class="form-item top-group">
-            <label class="form-label" for="telephone">Your Telephone Number<span class="required"></span>
-            <input id="telephone" class="form-input" name="telephone" type="phone" required>
+            <label class="form-label" for="phone">Your Telephone Number<span class="required"></span>
+            <input id="phone" class="form-input" name="phone" type="text" required>
             </label>
         </div>
         </div>
+
         <!--Message-->
         <div class="form-item">
             <label class="form-label required" for="message">Message</label>
-            <textarea id="message" class="form-input" name="message" cols="50" rows="10" required>Hi, I am interested in discussing a Our Offices solution, could you please give me a call or send an email?</textarea>
+            <textarea id="message" class="form-input" name="message" type="text" cols="50" rows="10" required>Hi, I am interested in discussing a Our Offices solution, could you please give me a call or send an email?</textarea>
         </div>
 
         <!--Marketing Info-->

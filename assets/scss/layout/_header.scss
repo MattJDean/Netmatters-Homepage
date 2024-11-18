@@ -142,6 +142,13 @@
           }
         }
 
+        .header__contact {
+          a {
+            text-decoration: none;
+            color: #fff;
+          }
+        }
+
          // Burger Menu //
         .header__hamburger {
           grid-column: 3 / 4;
@@ -243,6 +250,13 @@
 
         img {
           width: 350px;
+        }
+      }
+
+      .header__contact {
+        a {
+          text-decoration: none;
+          color: #fff;
         }
       }
   
@@ -378,6 +392,10 @@
       &:hover {
         background-color: $contact-btn-hover;
       }
+          a {
+            text-decoration: none;
+            color: #fff;
+          }
 
           i {
               font-size: 23px;
@@ -424,6 +442,14 @@
       grid-row: 1 / 2;
       display: inline-block !important;
     }
+
+    .header__contact {
+      a {
+        text-decoration: none;
+        color: #fff;
+      }
+    }
+
     .md-input {
       width: 240px;
     }

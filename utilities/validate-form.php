@@ -1,70 +1,105 @@
 <?php
 
+// Debug
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+ini_set('error_log', $_SERVER['DOCUMENT_ROOT'] . 'utilities/php-error.log');
+
+header('Content-Type: application/json');
+
+ob_start();
+
+
 $response = ["success" => false, "message" => ""];
 
-// Enable error logging
-ini_set('log_errors', 1);
-ini_set('error_log', $_SERVER['DOCUMENT_ROOT'] . '/utilities/php-error.log');
-error_log("Script started.");
 
-// Include database configuration
-include $_SERVER['DOCUMENT_ROOT'] . '/utilities/db-config.php';
+// Check database config exists at path and include it if it does.
+$path = $_SERVER['DOCUMENT_ROOT'] . '/utilities/db-config.php';
+if (file_exists($path)) {
+    include $path;
+} else {
+    $response['message'] = "Database configuration file not found.";
+    error_log("db-config.php not found at $path");
+    echo json_encode($response);
+    exit;
+}
 
 // Check if request method is POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    error_log("POST request received.");
-    file_put_contents($_SERVER['DOCUMENT_ROOT'] . '/utilities/debug.log', "POST Data: " . print_r($_POST, true), FILE_APPEND);
+    
 
     // Capture and sanitize input
-    $name = isset($_POST['name']) ? trim($_POST['name']) : '';
+    $name = isset($_POST['name']) ? htmlspecialchars($_POST['name'], ENT_QUOTES, 'UTF-8') : '';
     $company = isset($_POST['company']) ? trim($_POST['company']) : '';
-    $email = isset($_POST['email']) ? trim($_POST['email']) : '';
+    $email = isset($_POST['email']) ? htmlspecialchars($_POST['email'], ENT_QUOTES, 'UTF-8') : '';
     $phone = isset($_POST['phone']) ? trim($_POST['phone']) : '';
     $message = isset($_POST['message']) ? trim($_POST['message']) : '';
     $marketingInfo = isset($_POST['marketing_info']) ? (int) $_POST['marketing_info'] : 0;
 
-    // Log individual fields
-    error_log("Name: $name, Email: $email, Phone: $phone, Message: $message");
+    $errors = [];
 
-    // Normalize and validate phone
-    if (!isset($_POST['phone'])) {
-        error_log("Phone field missing in POST data.");
-        $response['message'] = "Phone number is required.";
-        echo json_encode($response);
-        exit;
+    // Validate name
+    if (empty($name)) {
+        $errors[] = "Name is required.";
+    } elseif (!preg_match('/^[A-Za-z][A-Za-z\s]*$/', $name)) {
+        $errors[] = "Name cannot include numbers or special characters.";
     }
 
+    // Validate email
+    if (empty($email)) {
+        $errors[] = "Email is required.";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors[] = "Please enter a valid email address.";
+    }
+
+    // Validate phone
     if (empty($phone)) {
-        error_log("Phone field is empty.");
-        $response['message'] = "Phone number is required.";
+        $errors[] = "Phone number is required.";
+    } elseif (!preg_match('/^[0-9]{10,15}$/', $phone)) {
+        $errors[] = "Please enter a valid phone number (digits only, 10-15 digits).";
+    }
+
+    // Validate message
+    if (empty($message)) {
+        $errors[] = "Message is required.";
+    } elseif (strlen($message) < 20) {
+        $errors[] = "Message must be at least 20 characters long.";
+    }
+
+    // Check for validation errors
+    if (!empty($errors)) {
+        $response['success'] = false;
+        $response['message'] = implode(' ', $errors); // Combine all error messages
         echo json_encode($response);
         exit;
     }
 
-    if (!preg_match('/^\+?[0-9]{7,15}$/', $phone)) {
-        error_log("Phone validation failed.");
-        $response['message'] = "Valid phone number is required.";
-        echo json_encode($response);
-        exit;
-    }
+    // If validation passes, post to database
 
-    // Insert into database
-    $stmt = $conn->prepare("INSERT INTO contact_form_submissions (name, company, email, phone, message, marketing_info) VALUES (?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssssi", $name, $company, $email, $phone, $message, $marketingInfo);
-
-    if ($stmt->execute()) {
+    try {
+        
+        $stmt = $conn->prepare("INSERT INTO contact_form_submissions (name, company, email, phone, message, marketing_info) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("sssssi", $name, $company, $email, $phone, $message, $marketingInfo);
+        $stmt->execute();
         $response['success'] = true;
-        $response['message'] = "Thank you for your message!";
-    } else {
-        $response['message'] = "Failed to submit your message. Please try again.";
-    }
+        $response['message'] = "Your message has been sent!";
+        
 
-    $stmt->close();
-} else {
-    $response['message'] = "Invalid request method.";
+    } catch (Exception $e) {
+        
+        unset($response['errors']);
+        $response['message'] = "Database error: " . $e->getMessage();
+        error_log("Database error: " . $e->getMessage() . " in " . $e->getFile() . " on line " . $e->getLine());
+    }   
 }
 
-$conn->close();
-error_log("Script finished.");
+// Output response as JSON
+$output = ob_get_clean(); // Capture non-JSON output
+if (!empty($output)) {
+    error_log("Non-JSON output detected: " . $output);
+}
 echo json_encode($response);
+
+$conn->close();
+
 exit;
