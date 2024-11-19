@@ -57,7 +57,7 @@
             <label class="form-label marketing-info">
                 <input type="checkbox" id="marketing-info" name="marketing_info" value="1">
                 <span class="checkbox-container">
-                <span class="checkbox"><span class="material-symbols-outlined check">check</span></span>
+                <span class="checkbox"><svg class="check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#fff" d="m464.563 144.563-256 256c-7.813 7.812-18.047 11.718-28.282 11.718s-20.468-3.906-28.281-11.718l-128-128C8.375 256.938 8.375 231.625 24 216s40.938-15.625 56.562 0l99.719 99.719L408 88c15.625-15.625 40.938-15.625 56.562 0s15.626 40.938.001 56.563Z"/></svg></span>
                 </span>
                 <span class="marketing-info-text">
                 Please tick this box if you wish to receive marketing information from us.

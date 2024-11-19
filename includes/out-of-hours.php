@@ -11,7 +11,8 @@
 
     <!--Out of Hours Accordion-->
     <div id="out-of-hours">
-        <a class="accordion-base"><h4>Out of Hours IT Support<span class="arrow icon-keyboard_arrow_down"></span></h4></a>
+        <a class="accordion-base"><h4>Out of Hours IT Support</h4><span class="material-symbols-outlined">
+        keyboard_arrow_down</span></a>
         <div class="out-of-hours-content">
             <p>Netmatters IT are offering an Out of Hours service for Emergency and Critical tasks.</p>
             <p>
