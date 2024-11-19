@@ -70,7 +70,7 @@
                     <div class="xs-sidebar-top">
                         <ul>    
                             <li class="xs-sidebar-header">
-                                <a class="xs-contact" href="#">Contact Us</a>
+                                <a class="xs-contact" href="contact-us.php">Contact Us</a>
                             </li>
                         </ul>
 

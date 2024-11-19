@@ -8,7 +8,7 @@
 
                         <!--logo-->
                         <div class="header__logo">
-                            <img src="assets/img/f-logo.png" alt="Netmatters Logo">
+                            <a href="index.php"><img src="assets/img/f-logo.png" alt="Netmatters Logo"></a>
                         </div>
 
                         <!--xs Search Bar--> <!--Hidden at 768px-->
