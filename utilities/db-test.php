@@ -1,20 +1,19 @@
 <?php
 
     // Database config
-    $host = 'mysql'; 
-    $db   = getenv('MYSQL_DATABASE');
+    $host = getenv('MYSQL_HOST');; 
     $user = getenv('MYSQL_USER');
     $pass = getenv('MYSQL_PASSWORD');
-
+    $db = getenv('MYSQL_DATABASE');
+    
         // Check valid environment variables
-        if (!$host || !$db || !$user || !$pass) {
+        if (!$host || !$user || !$pass || !$db) {
             die("Database config error.");
             echo "Database config error.";
         }
-            
-
-
-    $conn = new mysqli($host, $user, $pass, $db);
+        
+        // Database connection    
+        $conn = new mysqli($host, $user, $pass, $db);
 
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
