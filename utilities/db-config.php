@@ -1,21 +1,27 @@
 <?php
 
-// Database config
-    $host = getenv('MYSQL_HOST');
-    $user = getenv('MYSQL_USER');
-    $pass = getenv('MYSQL_PASSWORD');
-    $db = getenv('MYSQL_DATABASE');
+require_once __DIR__ . '/vendor/autoload.php'; 
+use Dotenv\Dotenv;
 
-        // Check valid environment variables
-        if (!$host || !$user || !$pass || !$db) {
-            die("Database config error.");
-        }
+$dotenv = Dotenv::createImmutable(__DIR__);
 
-        // Database connection 
-         $conn = new mysqli($host, $user, $pass, $db);
+$dotenv->load();
+   
+// Database configuration
+$host = $_ENV['HOST']; 
+$user = $_ENV['USER'];
+$pass = $_ENV['PASS'];
+$db   = $_ENV['DATABASE'];
 
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        } 
+// Validate the required environment variables
+if (!$host || !$user || !$pass || !$db) {
+    die("Config error.");
+}
 
+// Create a MySQL connection
+$conn = new mysqli($host, $user, $pass, $db);
 
+// Check for connection errors
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
