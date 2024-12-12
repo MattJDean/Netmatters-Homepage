@@ -1,0 +1,6 @@
+.env
+.yml
+.log
+dockerfile
+db-test.php
+
